@@ -8,11 +8,11 @@ from PhysicsTools.PatAlgos.triggerLayer1.triggerEventProducer_cfi import *
 #from PhysicsTools.PatAlgos.triggerLayer1.triggerMatcher_cfi import * -- deprecated in 73
 
 muonMatch = muonMatch.clone(
-    src = cms.InputTag("muons"),
+    src = cms.InputTag("slimmedMuons"),
     resolveByMatchQuality = cms.bool(True)
 )
 patMuons = patMuons.clone(
-    muonSource = cms.InputTag("muons"),
+    muonSource = cms.InputTag("slimmedMuons"),
     genParticleMatch = cms.InputTag("muonMatch"),
     addTeVRefits = cms.bool(False),
     embedTrack = cms.bool(True),
@@ -23,7 +23,7 @@ patMuons = patMuons.clone(
     embedHighLevelSelection = cms.bool(True),
     usePV = cms.bool(True),
     beamLineSrc = cms.InputTag("offlineBeamSpot"),
-    pvSrc = cms.InputTag("offlinePrimaryVertices"),
+    pvSrc = cms.InputTag("offlineSlimmedPrimaryVertices"),
     isolation = cms.PSet(),
     isoDeposits = cms.PSet(),
     embedCaloMETMuonCorrs = cms.bool(False),
