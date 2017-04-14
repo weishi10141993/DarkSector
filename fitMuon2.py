@@ -343,15 +343,16 @@ for ID, ALLBINS in ID_BINS:
 
     DEN = B.clone(); num_ = ID;
     FillBin(par)
+    
+    print 'X is', X
+    print 'B is', B
+    print 'num_ is', num_
 
     if not "iso" in num: #customize only for ID
         print 'Customize only for ID...'
         if bgFitFunction == 'default':
             print 'Input background fit function is default...'
             if ('pt' in X):
-                print 'X is', X
-                print 'B is', B
-                print 'num_ is', num_
                 print 'den is', den 
                 print 'num is ', num
                 if den == "highptid" or num == "highptid":
