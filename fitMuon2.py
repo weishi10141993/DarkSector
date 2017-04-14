@@ -136,7 +136,7 @@ else:
 process = cms.Process("TagProbe")
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.source = cms.Source("EmptySource")
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
 
 if not num  in ['looseid', 'mediumid', 'tightid', 'highptid', 'looseiso', 'tightiso', 'tklooseiso']:
     print '@ERROR: num should be in ',['looseid', 'mediumid', 'tightid', 'highptid', 'looseiso', 'tightiso', 'tklooseiso'], 'You used', num, '.Abort'
