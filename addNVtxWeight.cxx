@@ -42,7 +42,7 @@ void addNVtxWeight(TString treeName="tpTree", TString cut = "") { //, TString cu
     std::cout << "Adding weight column ..." << std::endl;
     Float_t nVtx, weight;
     tMC.SetBranchAddress("tag_nVertices", &nVtx);
-    TFile *fOut = new TFile("tnpZ_withNVtxWeights.root", "RECREATE");
+    TFile *fOut = new TFile("tnp_withNVtxWeights.root", "RECREATE");
     fOut->mkdir("tpTree")->cd();
     TTree *tOut = tMC.CloneTree(0);
     tOut->Branch("weight", &weight, "weight/F");
