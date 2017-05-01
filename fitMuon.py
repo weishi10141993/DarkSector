@@ -272,7 +272,8 @@ if sample == "mc_J_Psi":
     process.TnP_MuonID = Template.clone(
         InputFileNames = cms.vstring(
             #'TnPTree_80X_DYLL_M50_MadGraphMLM_allpart_skimv3_NVtxWeights.root',
-            'TnPTree_80X_TuneCUEP8M1_skim.root',
+            #'TnPTree_80X_TuneCUEP8M1_skim.root',
+            'tnp_withNVtxWeights.root',
             ),
         InputTreeName = cms.string("fitter_tree"),
         InputDirectoryName = cms.string("tpTree"),
