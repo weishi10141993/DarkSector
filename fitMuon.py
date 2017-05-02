@@ -350,7 +350,7 @@ for ID, ALLBINS in ID_BINS:
         _output += '/MC' + '_' + sample
     if not os.path.exists(_output):
         os.makedirs(_output)
-    module = process.TnP_MuonID.clone(OutputFileName = cms.string(_output + "/TnP_MC_%s.root" % (X)))
+    module = process.TnP_MuonID.clone(OutputFileName = cms.string(_output + "/TnP_%s.root" % (X)))
     #save the fitconfig in the plot directory
     shutil.copyfile(os.getcwd()+'/fitMuon.py',_output+'/fitMuon.py')
     #default signal shape
