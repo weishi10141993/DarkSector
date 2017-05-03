@@ -250,7 +250,7 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 
     binnedFit = cms.bool(True),
     binsForFit = cms.uint32(40),
-    saveDistributionsPlot = cms.bool(False),
+    saveDistributionsPlot = cms.bool(True),
 
     Efficiencies = cms.PSet(), # will be filled later
 )
