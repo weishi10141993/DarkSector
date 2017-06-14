@@ -5,14 +5,14 @@
         "input1"    :
         {
             "label"             : "Data",
-            "filename"          : "EfficiencyFolderSuffix/DATA_data_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "filename"          : "PUT THE DIRECTORY OF THE EFFICIENCY FILE HERE FOR DATA",
             "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
             "binnedVariable"    : "pt_PLOT_abseta_bin0"
         },
         "input2"    :
         {
             "label"             : "MC",
-            "filename"          : "EfficiencyFolderSuffix/MC_mc_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "filename"          : "PUT THE DIRECTORY OF THE EFFICIENCY FILE HERE FOR MC",
             "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
             "binnedVariable"    : "pt_PLOT_abseta_bin0"
         },
@@ -40,14 +40,14 @@
         "input1"    :
         {
             "label"             : "Data",
-            "filename"          : "EfficiencyFolderSuffix/DATA_data_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "filename"          : "PUT THE DIRECTORY OF THE EFFICIENCY FILE HERE FOR DATA",
             "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
             "binnedVariable"    : "pt_PLOT_abseta_bin1"
         },
         "input2"    :
         {
             "label"             : "MC",
-            "filename"          : "EfficiencyFolderSuffix/MC_mc_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "filename"          : "PUT THE DIRECTORY OF THE EFFICIENCY FILE HERE FOR MC",
             "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
             "binnedVariable"    : "pt_PLOT_abseta_bin1"
         },
