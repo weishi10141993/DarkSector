@@ -1,0 +1,141 @@
+{
+    "example0"   :
+    {
+        "comment"   : "abseta<0.9",
+        "input1"    :
+        {
+            "label"             : "Data",
+            "filename"          : "EfficiencyFolderSuffix/DATA_data_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin0"
+        },
+        "input2"    :
+        {
+            "label"             : "MC",
+            "filename"          : "EfficiencyFolderSuffix/MC_mc_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin0"
+        },
+        "plot"      :
+        {
+            "x"                 : [2, 40, "Muon pT"],
+            "yAbsolute"         : [0.55, 1.35, "Efficiency"],
+            "yRatio"            : [0.65, 1.35, "Data/MC"],
+            "legend"            : ["Muon low pT, abseta < 0.9", "Data", "MC"],
+            "caption"           : "2016 B-H",
+            "logo"              : ["CMS", "Preliminary"],
+            "colorMap"          : [1, 4, 1]
+        },
+        "output"    :
+        {
+            "directory"         : "Ratio/",
+            "filenameRatio"     : "ratio_eta_0.9",
+            "fileType"          : ["root"]
+        }
+    },
+
+    "example1"   :
+    {
+        "comment"   : "0.9<abseta<1.2",
+        "input1"    :
+        {
+            "label"             : "Data",
+            "filename"          : "EfficiencyFolderSuffix/DATA_data_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin1"
+        },
+        "input2"    :
+        {
+            "label"             : "MC",
+            "filename"          : "EfficiencyFolderSuffix/MC_mc_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin1"
+        },
+        "plot"      :
+        {
+            "x"                 : [2, 40, "Muon pT"],
+            "yAbsolute"         : [0.55, 1.35, "Efficiency"],
+            "yRatio"            : [0.65, 1.35, "Data/MC"],
+            "legend"            : ["Muon low pT, 0.9 < abseta < 1.2", "Data", "MC"],
+            "caption"           : "2016 B-H",
+            "logo"              : ["CMS", "Preliminary"],
+            "colorMap"          : [1, 4, 1]
+        },
+        "output"    :
+        {
+            "directory"         : "Ratio/",
+            "filenameRatio"     : "ratio_0.9_eta_1.2",
+            "fileType"          : [ "root"]
+        }
+    },
+
+    "example2"   :
+    {
+        "comment"   : "1.2<abseta<2.1",
+        "input1"    :
+        {
+            "label"             : "Data",
+            "filename"          : "EfficiencyFolderSuffix/DATA_data_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin2"
+        },
+        "input2"    :
+        {
+            "label"             : "MC",
+            "filename"          : "EfficiencyFolderSuffix/MC_mc_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin2"
+        },
+        "plot"      :
+        {
+            "x"                 : [2, 40, "Muon pT"],
+            "yAbsolute"         : [0.55, 1.35, "Efficiency"],
+            "yRatio"            : [0.65, 1.35, "Data/MC"],
+            "legend"            : ["Muon low pT, 1.2 < abseta < 2.1", "Data", "MC"],
+            "caption"           : "2016 B-H",
+            "logo"              : ["CMS", "Preliminary"],
+            "colorMap"          : [1, 4, 1]
+        },
+        "output"    :
+        {
+            "directory"         : "Ratio/",
+            "filenameRatio"     : "ratio_1.2_eta_2.1",
+            "fileType"          : ["root"]
+        }
+    },
+
+    "example3"   :
+    {
+        "comment"   : "2.1<abseta<2.4",
+        "input1"    :
+        {
+            "label"             : "Data",
+            "filename"          : "EfficiencyFolderSuffix/DATA_data_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin3"
+        },
+        "input2"    :
+        {
+            "label"             : "MC",
+            "filename"          : "EfficiencyFolderSuffix/MC_mc_J_Psi/TnP_NUM_LooseID_DEN_genTracks_PAR_pt_eta.root",
+            "directory"         : "tpTree/Loose_Muon_NUM_LooseID_DEN_genTracks_PAR_pt_eta/",
+            "binnedVariable"    : "pt_PLOT_abseta_bin3"
+        },
+        "plot"      :
+        {
+            "x"                 : [2, 40, "Muon pT"],
+            "yAbsolute"         : [0.55, 1.35, "Efficiency"],
+            "yRatio"            : [0.65, 1.35, "Data/MC"],
+            "legend"            : ["Muon low pT, 2.1 < abseta < 2.4", "Data", "MC"],
+            "caption"           : "2016 B-H",
+            "logo"              : ["CMS", "Preliminary"],
+            "colorMap"          : [1, 4, 1]
+        },
+        "output"    :
+        {
+            "directory"         : "Ratio/",
+            "filenameRatio"     : "ratio_2.1_eta_2.4",
+            "fileType"          : ["root"]
+        }
+    }
+}
