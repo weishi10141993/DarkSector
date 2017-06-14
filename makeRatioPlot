@@ -1,0 +1,273 @@
+#!/usr/bin/env python
+
+import argparse
+import sys
+import os
+import json
+
+"""
+Setup argument parser
+"""
+
+parser = argparse.ArgumentParser(description="This program takes an input JSON config and extracts plots from Tag-and-Probe ROOT files. The output consists of a ratio plot of two efficiency graphs and the according fit canvases.")
+parser.add_argument("inputJsonConfig", help="Path to the input JSON config file")
+parser.add_argument("-f", "--fast", default=0, action="count", help="Skip fetching and saving the fit canvases for each plot")
+parser.add_argument("-v", "--verbosity", default=1, help="Increase or decrease output verbosity")
+args = parser.parse_args()
+
+"""
+Parse JSON file
+"""
+
+with open(args.inputJsonConfig, 'r') as f:
+    data = json.loads(f.read())
+
+"""
+Go through plots defined in config JSON
+"""
+
+from ROOT import * # import this here, otherwise it overwrites the argparse stuff
+gROOT.SetBatch(True) # set ROOT to batch mode, this suppresses printing canvases
+gROOT.ProcessLine("gErrorIgnoreLevel = 1001;") # suppress stdout pollution of canvas.Print(...)
+from array import array
+
+for keyPlot in data:
+    if args.verbosity==1:
+        print('Processing plot config: {}'.format(keyPlot))
+        print('Config comment: {}'.format(data[keyPlot]['comment']))
+
+    # Get result plots from fit canvases (in dir fit_eff_plots)
+
+    # Get input files
+    filenameInput1 = data[keyPlot]['input1']['filename']
+    filenameInput2 = data[keyPlot]['input2']['filename']
+    if args.verbosity==1:
+        print('Input files: {} {}'.format(filenameInput1, filenameInput2))
+    fileInput1 = TFile.Open(filenameInput1)
+    if not fileInput1:
+        print('[ERROR] File not found: {}'.format(filenameInput1))
+        sys.exit()
+    fileInput2 = TFile.Open(filenameInput2)
+    if not fileInput2:
+        print('[ERROR] File not found: {}'.format(filenameInput2))
+        sys.exit()
+
+    # Get path to result plot
+    pathInput1 = os.path.join(data[keyPlot]['input1']['directory'],'fit_eff_plots/')
+    pathInput2 = os.path.join(data[keyPlot]['input2']['directory'],'fit_eff_plots/')
+    if args.verbosity==1:
+        print('Paths to plots: {} {}'.format(pathInput1, pathInput2))
+
+    # Get result plot name
+    dirInput1 = fileInput1.GetDirectory(pathInput1)
+    dirInput2 = fileInput2.GetDirectory(pathInput2)
+    nameInput1 = None
+    nameInput2 = None
+    binnedVariableInput1 = data[keyPlot]['input1']['binnedVariable']
+    binnedVariableInput2 = data[keyPlot]['input2']['binnedVariable']
+    for keys in dirInput1.GetListOfKeys():
+        if keys.GetName()[0:len(binnedVariableInput1)]==binnedVariableInput1:
+            nameInput1 = keys.GetName()
+    for keys in dirInput2.GetListOfKeys():
+        if keys.GetName()[0:len(binnedVariableInput2)]==binnedVariableInput2:
+            nameInput2 = keys.GetName()
+    if args.verbosity==1:
+        print('Plot names: {} {}'.format(nameInput1, nameInput2))
+
+    # Get plot data (graphs)
+    graphInput1 = dirInput1.Get(nameInput1).GetPrimitive('hxy_fit_eff')
+    graphInput2 = dirInput2.Get(nameInput2).GetPrimitive('hxy_fit_eff')
+
+    # Generate ratio plot
+    numPoints = graphInput1.GetN()
+    if numPoints != graphInput2.GetN():
+        print('[ERROR] Input graphs have different number of points')
+        sys.exit()
+
+    # Get bin boundaries for histograms
+    xBins = array('f', [0.0]*(numPoints+1))
+    for iPoint in range(numPoints):
+        x = Double(0)
+        y = Double(0)
+        graphInput1.GetPoint(iPoint, x, y)
+        xErrLow = graphInput1.GetErrorXlow(iPoint)
+        xErrHigh = graphInput1.GetErrorXhigh(iPoint)
+        if iPoint == numPoints-1:
+            xBins[iPoint] = x-xErrLow
+            xBins[iPoint+1] = x+xErrHigh
+        else:
+            xBins[iPoint] = x-xErrLow
+    hist1 = TH1F('h1', 'h1', numPoints, xBins)
+    hist2 = TH1F('h2', 'h2', numPoints, xBins)
+
+    # Fill histogram with graph values
+    for iPoint in range(numPoints):
+        x1 = Double(0)
+        y1 = Double(0)
+        x2 = Double(0)
+        y2 = Double(0)
+        graphInput1.GetPoint(iPoint, x1, y1)
+        graphInput2.GetPoint(iPoint, x2, y2)
+        yErrLow1 = graphInput1.GetErrorYlow(iPoint)
+        yErrHigh1 = graphInput1.GetErrorYhigh(iPoint)
+        yErrLow2 = graphInput2.GetErrorYlow(iPoint)
+        yErrHigh2 = graphInput2.GetErrorYhigh(iPoint)
+        hist1.SetBinContent(hist1.FindBin(x1), y1)
+        hist1.SetBinError(hist1.FindBin(x1), max(yErrLow1, yErrHigh1))
+        hist2.SetBinContent(hist2.FindBin(x2), y2)
+        hist2.SetBinError(hist2.FindBin(x2), max(yErrLow2, yErrHigh2))
+
+    # Divide histogram 1 with histogram 2 with error propagation
+    hist1.Divide(hist2)
+    ratio = hist1
+
+    # Put together a canvas with graphs in top, ratio in bottom and CMS/Lumi text/caption
+    canvasRatio = TCanvas('canvasRatio', 'canvasRatio', 800, 800)
+    colorMap = data[keyPlot]['plot']['colorMap']
+    if len(colorMap) != 3:
+        print('[ERROR] Colormap needs to have length 3 [color input1, color input2, color ratio]')
+        sys.exit()
+
+    padUpper = TPad('padUpper', 'padUpper', 0, 0.3, 1, 1.0)
+    padUpper.SetBottomMargin(0.0)
+    padUpper.SetTopMargin(0.12)
+    padUpper.Draw()
+    padUpper.cd()
+    graphInput1.Draw('AP')
+    graphInput1.SetTitle('')
+    plotX = data[keyPlot]['plot']['x']
+    plotYabsolute = data[keyPlot]['plot']['yAbsolute']
+    graphInput1.GetXaxis().SetRangeUser(plotX[0], plotX[1])
+    graphInput1.GetYaxis().SetRangeUser(plotYabsolute[0], plotYabsolute[1])
+    graphInput1.GetYaxis().SetTitle(plotYabsolute[2])
+    graphInput1.GetYaxis().SetTitleOffset(1.2)
+    graphInput1.GetYaxis().SetTitleSize(22)
+    graphInput1.GetYaxis().SetTitleFont(63)
+    graphInput1.GetYaxis().SetLabelFont(43)
+    graphInput1.GetYaxis().SetLabelSize(20)
+    graphInput1.SetMarkerStyle(20)
+    graphInput1.SetLineColor(colorMap[0])
+    graphInput1.SetMarkerColor(colorMap[0])
+    graphInput2.Draw('P')
+    graphInput2.SetMarkerStyle(21)
+    graphInput2.SetLineColor(colorMap[1])
+    graphInput2.SetMarkerColor(colorMap[1])
+
+    legend = data[keyPlot]['plot']['legend']
+    leg = TLegend(0.35, 0.67, 0.75, 0.85)
+    leg.SetHeader(legend[0])
+    header = leg.GetListOfPrimitives().First()
+    header.SetTextColor(1)
+    header.SetTextFont(43)
+    header.SetTextSize(20)
+    leg.AddEntry(graphInput1, legend[1], 'LP')
+    leg.AddEntry(graphInput2, legend[2], 'LP')
+    leg.SetBorderSize(0)
+    leg.SetTextFont(43)
+    leg.SetTextSize(20)
+    leg.Draw()
+
+    canvasRatio.cd()
+    padLower = TPad('padLower', 'padLower', 0, 0.0, 1, 0.3)
+    padLower.SetBottomMargin(0.35)
+    padLower.SetTopMargin(0.0)
+    padLower.SetGridy()
+    padLower.Draw()
+    padLower.cd()
+    plotYratio = data[keyPlot]['plot']['yRatio']
+    ratio.SetStats(0)
+    ratio.SetTitle('')
+    ratio.SetLineWidth(2)
+    ratio.SetLineColor(1)
+    ratio.SetMarkerStyle(20)
+    ratio.SetMarkerColor(1)
+    ratio.GetXaxis().SetRangeUser(plotX[0], plotX[1])
+    ratio.GetXaxis().SetTitle(plotX[2])
+    ratio.GetXaxis().SetTitleSize(22)
+    ratio.GetXaxis().SetTitleFont(63)
+    ratio.GetXaxis().SetLabelFont(43)
+    ratio.GetXaxis().SetLabelSize(20)
+    ratio.GetXaxis().SetTitleOffset(3.5)
+    ratio.GetYaxis().SetRangeUser(plotYratio[0], plotYratio[1])
+    ratio.GetYaxis().SetTitle(plotYratio[2])
+    ratio.GetYaxis().SetNdivisions(505)
+    ratio.GetYaxis().SetLabelSize(22)
+    ratio.GetYaxis().SetTitleFont(63)
+    ratio.GetYaxis().SetLabelFont(43)
+    ratio.GetYaxis().SetTitleSize(22)
+    ratio.GetYaxis().SetLabelSize(20)
+    ratio.GetYaxis().SetTitleOffset(1.2)
+    ratio.SetLineColor(colorMap[2])
+    ratio.SetMarkerColor(colorMap[2])
+    ratio.Draw()
+
+    canvasRatio.cd()
+    latex = TLatex()
+    latex.SetNDC()
+    latex.SetTextFont(61)
+    latex.SetTextSize(0.06)
+    latex.DrawLatex(0.14, 0.84, data[keyPlot]['plot']['logo'][0])
+    latex.SetTextFont(52)
+    latex.SetTextSize(0.04)
+    latex.SetTextAlign(11);
+    latex.DrawLatex(0.14, 0.79, data[keyPlot]['plot']['logo'][1])
+    latex.SetTextFont(42)
+    latex.SetTextSize(0.038)
+    latex.SetTextAlign(31);
+    latex.DrawLatex(0.90, 0.93, data[keyPlot]['plot']['caption'])
+    canvasRatio.Update()
+
+    # Make directory and save ratio canvas
+    outputDirectory = data[keyPlot]['output']['directory']
+    if args.verbosity==1:
+        print('Output directory: {}'.format(outputDirectory))
+    if not os.path.exists(outputDirectory):
+        os.makedirs(outputDirectory)
+    for fileType in data[keyPlot]['output']['fileType']:
+        canvasRatio.SaveAs(os.path.join(outputDirectory,data[keyPlot]['output']['filenameRatio']+'.'+fileType))
+
+
+    # Skip fetching fit canvases if flag is set
+    if args.fast != 0:
+        if args.verbosity==1:
+            print('')
+        continue
+
+    # Make directories for fit canvases
+    labelInput1 = data[keyPlot]['input1']['label']
+    labelInput2 = data[keyPlot]['input2']['label']
+    outputDirectoryInput1 = os.path.join(outputDirectory, labelInput1)
+    outputDirectoryInput2 = os.path.join(outputDirectory, labelInput2)
+    if args.verbosity==1:
+        print('Output directories fit canvases: {} {}'.format(outputDirectoryInput1, outputDirectoryInput2))
+    if not os.path.exists(outputDirectoryInput1):
+        os.makedirs(outputDirectoryInput1)
+    if not os.path.exists(outputDirectoryInput2):
+        os.makedirs(outputDirectoryInput2)
+
+    # Get fit canvases and store them to output sub-directory
+    pathInput1 = data[keyPlot]['input1']['directory']
+    pathInput2 = data[keyPlot]['input2']['directory']
+    dirInput1 = fileInput1.GetDirectory(pathInput1)
+    dirInput2 = fileInput2.GetDirectory(pathInput2)
+    for keys in dirInput1.GetListOfKeys():
+        if TString(keys.GetName()).Contains(binnedVariableInput1):
+            dirBin = fileInput1.GetDirectory(os.path.join(pathInput1,keys.GetName()))
+            for fileType in data[keyPlot]['output']['fileType']:
+                canvas = dirBin.Get('fit_canvas') # NOTE you have to put this here, otherwise the loop won't work
+                if not canvas:
+                    print('[WARNING] Found missing fit canvas in input 1 (directory, directory bin): {}, {}, {}'.format(dirInput1, dirBin))
+                else:
+                    canvas.SaveAs(os.path.join(outputDirectoryInput1, keys.GetName()+'.'+fileType))
+    for keys in dirInput2.GetListOfKeys():
+        if TString(keys.GetName()).Contains(binnedVariableInput2):
+            dirBin = fileInput2.GetDirectory(os.path.join(pathInput2,keys.GetName()))
+            for fileType in data[keyPlot]['output']['fileType']:
+                canvas = dirBin.Get('fit_canvas')
+                if not canvas:
+                    print('[WARNING] Found missing fit canvas in input 2 (directory, directory bin): {}, {}, {}'.format(dirInput2, dirBin))
+                else:
+                    canvas.SaveAs(os.path.join(outputDirectoryInput2, keys.GetName()+'.'+fileType))
+
+    if args.verbosity==1:
+        print('')
