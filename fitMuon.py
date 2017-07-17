@@ -22,7 +22,7 @@ def FillNumDen(num, den):
         #Category defines all the discrete variables of the probes available in the input tree and intended for use in the efficiency calculations
         #This reads Loose branch from the TnP tree
         process.TnP_MuonID.Categories.Loose  = cms.vstring("Loose Muon", "dummy[pass=1,fail=0]")
-        #This defines a new variable "Loose_Var" which has value 1 or 0 depending on "Loose==1" or not, 3rd component indicates the variable used
+        #This defines a new variable "Loose_Var" which has value 1 or 0 depending on "Loose==1" or not, 3rd and 4th component indicate the variables used
         process.TnP_MuonID.Expressions.Loose_Var  = cms.vstring("Loose_Var", "Loose==1", "Loose")
         #This defines a dynamical category so simple cut value can be applied, using "above" or "below" in the "EfficiencyCategoryAndState"
         process.TnP_MuonID.Cuts.Loose_Muon = cms.vstring("Loose_Muon", "Loose_Var", "0.5")
@@ -51,7 +51,7 @@ def FillNumDen(num, den):
         process.TnP_MuonID.Cuts.LooseTkIso3 = cms.vstring("LooseTkIso3" ,"relTkIso", "0.10")
     #DEN
     if den == "looseid":
-        process.TnP_MuonID.Categories.PF  = cms.vstring("PF Muon", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Categories.Loose  = cms.vstring("Loose Muon", "dummy[pass=1,fail=0]")
     elif den == "mediumid":
         process.TnP_MuonID.Categories.Medium2016  = cms.vstring("Medium Id. Muon (ICHEP version)", "dummy[pass=1,fail=0]")
     elif den == "tightid":
@@ -100,7 +100,7 @@ def FillBin(par):
         DEN.tag_nVertices = cms.vdouble(0.5,2.5,4.5,6.5,8.5,10.5,12.5,14.5,16.5,18.5,20.5,22.5,24.5,26.5,28.5,30.5)
     #Selections
     if den == "gentrack": pass
-    elif den == "looseid": DEN.PF = cms.vstring("pass")
+    elif den == "looseid": DEN.Loose = cms.vstring("pass")
     elif den == "mediumid": DEN.Medium2016 = cms.vstring("pass")
     elif den == "tightid": 
         DEN.Tight2012 = cms.vstring("pass")
@@ -298,7 +298,6 @@ if sample == "data_J_Psi":
 if sample == "mc_J_Psi":
     process.TnP_MuonID = Template.clone(
         InputFileNames = cms.vstring(
-            #'TnPTree_80X_TuneCUEP8M1_skim.root',
             'tnp_withNVtxWeights.root',
             ),
         InputTreeName = cms.string("fitter_tree"),
