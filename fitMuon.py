@@ -93,9 +93,9 @@ def FillBin(par):
     elif par == 'eta':
         DEN.eta = cms.vdouble(-2.4, -2.1, -1.6, -1.2, -0.9, -0.3, -0.2, 0.2, 0.3, 0.9, 1.2, 1.6, 2.1, 2.4)
     elif par == 'pt':
-        DEN.pt = cms.vdouble(2, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.5, 5, 6, 8, 10, 15, 20, 30, 35, 40)
+        DEN.pt = cms.vdouble(8, 10, 15, 20, 30, 35, 40)
     elif par == 'pt_eta':
-        DEN.pt = cms.vdouble(2, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.5, 5, 6, 8, 10, 15, 20, 30, 35, 40)
+        DEN.pt = cms.vdouble(8, 10, 15, 20, 30, 35, 40)
         DEN.abseta = cms.vdouble( 0., 0.9, 1.2, 2.1, 2.4)
     elif par == 'vtx':
         print 'I filled it also asdf'
@@ -398,14 +398,14 @@ for ID, ALLBINS in ID_BINS:
                 else:
                     #Select fit function for signal and bkg
                     print 'Low pT...'
-                    if (len(DEN.pt)==18):
-                        print 'len of DEN.pt is 18, assign fit function for all pT bins...'
+                    if (len(DEN.pt)==7):
+                        print 'len of DEN.pt is 7, assign fit function for all pT bins...'
                         print 'DEN.pt is', DEN.pt
                         shape = cms.vstring("CBPlusExpo")
-                    if (len(DEN.pt)==7):
-                        print 'len of DEN.pt is 7'
-                        print 'DEN.pt is', DEN.pt
-                        shape = cms.vstring("vpvPlusCMS","*pt_bin3*","vpvPlusCMSbeta0p2","*pt_bin4*","vpvPlusCMSbeta0p2","*pt_bin5*","vpvPlusCMSbeta0p2")
+                    #if (len(DEN.pt)==18):
+                    #    print 'len of DEN.pt is 18'
+                    #    print 'DEN.pt is', DEN.pt
+                    #    shape = cms.vstring("vpvPlusCMS","*pt_bin3*","vpvPlusCMSbeta0p2","*pt_bin4*","vpvPlusCMSbeta0p2","*pt_bin5*","vpvPlusCMSbeta0p2")
         elif bgFitFunction == 'CMSshape':
             print 'Input background fit function is CMSshape...'
             if den == "highpt":
