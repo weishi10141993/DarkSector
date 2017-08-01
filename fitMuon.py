@@ -22,6 +22,8 @@ def FillNumDen(num, den):
         #Category defines all the discrete variables of the probes available in the input tree and intended for use in the efficiency calculations
         #This reads Loose branch from the TnP tree
         process.TnP_MuonID.Categories.Loose  = cms.vstring("Loose Muon", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Categories.tag_Mu7p5_Track7_Jpsi_MU = cms.vstring("tag trigger","dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Categories.Mu7p5_Track7_Jpsi_TK = cms.vstring("probe trigger","dummy[pass=1,fail=0]")
         #This defines a new variable "Loose_Var" which has value 1 or 0 depending on "Loose==1" or not, 3rd and 4th component indicate the variables used
         process.TnP_MuonID.Expressions.Loose_Var  = cms.vstring("Loose_Var", "Loose==1", "Loose")
         #This defines a dynamical category so simple cut value can be applied, using "above" or "below" in the "EfficiencyCategoryAndState"
