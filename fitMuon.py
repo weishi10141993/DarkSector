@@ -311,8 +311,10 @@ if scenario == "mc_all":
     process.TnP_MuonID.WeightVariable = cms.string("weight")
     process.TnP_MuonID.Variables.weight = cms.vstring("weight","0","20","")
 
-
+#flag for trigger match
 BIN = cms.PSet(
+    tag_Mu7p5_Track7_Jpsi_MU = cms.vstring("pass"),
+    Mu7p5_Track7_Jpsi_TK = cms.vstring("pass")
         )
 
 print 'Creating dictionary...'
