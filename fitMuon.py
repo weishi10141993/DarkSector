@@ -93,9 +93,9 @@ def FillBin(par):
     elif par == 'eta':
         DEN.eta = cms.vdouble(-2.4, -2.1, -1.6, -1.2, -0.9, -0.3, -0.2, 0.2, 0.3, 0.9, 1.2, 1.6, 2.1, 2.4)
     elif par == 'pt':
-        DEN.pt = cms.vdouble(8, 10, 15, 20, 30, 35, 40)
+        DEN.pt = cms.vdouble(8, 10, 15, 20, 30, 35)
     elif par == 'pt_eta':
-        DEN.pt = cms.vdouble(8, 10, 15, 20, 30, 35, 40)
+        DEN.pt = cms.vdouble(8, 10, 15, 20, 30, 35)
         DEN.abseta = cms.vdouble( 0., 0.9, 1.2, 2.1, 2.4)
     elif par == 'vtx':
         print 'I filled it also asdf'
@@ -398,8 +398,8 @@ for ID, ALLBINS in ID_BINS:
                 else:
                     #Select fit function for signal and bkg
                     print 'Low pT...'
-                    if (len(DEN.pt)==7):
-                        print 'len of DEN.pt is 7, assign fit function for all pT bins...'
+                    if (len(DEN.pt)==6):
+                        print 'len of DEN.pt is 6, assign fit function for all pT bins...'
                         print 'DEN.pt is', DEN.pt
                         shape = cms.vstring("CBPlusExpo")
                     #if (len(DEN.pt)==18):
