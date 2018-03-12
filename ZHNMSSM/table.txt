@@ -1,0 +1,34 @@
+ mass  H_NM cT  s/us
+ TotEff 0.102339
+ epsvsalph[k]  0.516364
+        
+begin{table}[ht]
+renewcommand{tabcolsep}{2pt}
+ caption{Acceptances and efficiencies of the event selection requirements for dark photon m=H_NM and ctau=s/us}  
+centering 
+begin{tabular}{ |c|c|c|c|c|c|}  hline
+ Selection &   \# Events &     Tot. Eff  &  Rel. Eff &   Tot. EffError &   Rel.  EffError   hline 
+ No cut      &   54730       &   1.000         &     1.000           &   0.000        &   0.000 hline 
+ is1GenMu17  &   30086.000    &    0.550        &        0.550      &    0.002 &   0.002   hline 
+ is2GenMu8   &   29787.000    &    0.544        &        0.990      &     0.002   & 0.001   hline 
+ is3GenMu8   &   25979.000    &    0.475        &        0.872      &     0.002   & 0.002   hline 
+ is4GenMu8   &   10847.000    &    0.198        &        0.418      &     0.002   & 0.003   hline 
+ Lxy<9.8 AND Lz<48.5 & 10847.000  &  0.198       &     1.000         &    0.0017 &   0.000 hline 
+                                                                           hline 
+ is1SelMu17   &    30522.000  &    0.558     &      0.558    &    0.002   &  0.002 hline 
+ is2SelMu8    &    30237.000  &    0.552   &      0.991   &   0.002  & 0.001 hline 
+ is3SelMu8    &    26383.000  &    0.482   &    0.873   &   0.002 &  0.002 hline 
+ is4SelMu8    &    11942.000  &    0.218   &    0.453   &   0.002 &  0.003 hline 
+                                                                         hline 
+ isVertexOK            &  11942.000  &    0.218 &    1.000  &   0.0018 &  0.0000 hline 
+ is2MuJets            &  8131.0000  &    0.1486 &    0.6809  &   0.0015 &  0.0043 hline 
+ is2dimuon            &  8015.0000  &    0.1464 &    0.9857  &   0.0015 &  0.0013 hline 
+ is2DiMuonsPixHitOk  &  8010.0000  &    0.1464 &     0.9994 &   0.0015 &  0.000 hline 
+ is2DiMuonsFittedDz    &  7988.000  &    0.146 &     0.997 &   0.0015 &  0.001 hline 
+ is2DiMuonsMassOK   &  7805.000  &    0.143 &     0.977 &   0.0015 &  0.002 hline 
+ is2DiMuonsIsoTkOK    &  5810.000 &    0.106 &     0.744 &   0.0013 &  0.005 hline 
+ is2DiMuonsHLT   &  5601.000 &    0.102 &     0.964 &   0.0013 &  0.002 hline 
+                                                            hline 
+ epsilon\_rec/alpha\_gen  & 0.516$\pm$ 0.005 hline 
+end{tabular}
+end{table}
