@@ -1,0 +1,1238 @@
+%MSG-i ThreadStreamSetup:  (NoModuleName) 01-May-2018 14:33:34 CEST pre-events
+setting # threads 4
+setting # streams 4
+%MSG
+DQMStore: MultiThread option is enabled
+01-May-2018 14:33:48 CEST  Initiating request to open file root://cms-xrd-global.cern.ch//store/mc/RunIISummer17DRStdmix/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/GEN-SIM-RAW/NZSFlatPU28to62_92X_upgrade2017_realistic_v10-v2/50000/0043237F-0DA1-E711-AD49-346AC29F11B8.root
+%MSG-w XrdAdaptor:  file_open 01-May-2018 14:33:52 CEST pre-events
+Data is served from T1_UK_RAL instead of original site T2_CH_CERN
+%MSG
+01-May-2018 14:33:53 CEST  Successfully opened file root://cms-xrd-global.cern.ch//store/mc/RunIISummer17DRStdmix/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/GEN-SIM-RAW/NZSFlatPU28to62_92X_upgrade2017_realistic_v10-v2/50000/0043237F-0DA1-E711-AD49-346AC29F11B8.root
+%MSG-e JetCorrectorParametersHelper:   EventSetupRecordDataGetter:hltGetConditions@streamBeginRun  01-May-2018 14:34:35 CEST Run: 1 Stream: 1
+Duplicate binning in record found (existing index,current index)=(0,1)
+	Bins(lower bounds)=(-5.2, -9999, -9999)
+%MSG
+%MSG-e JetCorrectorParametersHelper:   EventSetupRecordDataGetter:hltGetConditions@streamBeginRun  01-May-2018 14:34:35 CEST Run: 1 Stream: 1
+The mapping of bin lower bounds to indices does not contain all possible entries!!!
+%MSG
+%MSG-e JetCorrectorParametersHelper:   EventSetupRecordDataGetter:hltGetConditions@streamBeginRun  01-May-2018 14:34:35 CEST Run: 1 Stream: 1
+Duplicate binning in record found (existing index,current index)=(0,1)
+	Bins(lower bounds)=(-5.2, -9999, -9999)
+%MSG
+%MSG-e JetCorrectorParametersHelper:   EventSetupRecordDataGetter:hltGetConditions@streamBeginRun  01-May-2018 14:34:35 CEST Run: 1 Stream: 1
+The mapping of bin lower bounds to indices does not contain all possible entries!!!
+%MSG
+FastReport       CPU time      Real time      Allocated    Deallocated  Transition
+FastReport         3.7 ms         7.8 ms         +97 kB         -97 kB  run 1, lumisection 13178
+
+FastReport --------------------------- Run 1 Summary ---------------------------
+FastReport   CPU time avg.      when run  Real time avg.      when run     Alloc. avg.      when run   Dealloc. avg.      when run  Modules
+FastReport         0.3 ms         0.3 ms         9.3 ms         9.3 ms        +331 kB        +331 kB        -207 kB        -207 kB  source
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 process TEST20180501123044
+FastReport         0.2 ms         0.2 ms         0.2 ms         0.2 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltGetConditions
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltGetRaw
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltBoolFalse
+FastReport         0.0 ms         0.0 ms         0.1 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltTriggerType
+FastReport         0.3 ms         0.3 ms         0.5 ms         0.5 ms         +34 kB         +34 kB         -24 kB         -24 kB    hltGtStage2Digis
+FastReport         5.3 ms         5.3 ms         5.7 ms         5.7 ms       +3807 kB       +3807 kB       -3427 kB       -3427 kB    hltGtStage2ObjectMap
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltScalersRawToDigi
+FastReport         0.0 ms         0.0 ms         0.1 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltOnlineBeamSpot
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.1 ms          +5 kB          +5 kB          -3 kB          -3 kB    hltL1sSingleMu7
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltPreTrkMu16NoFiltersNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +1 kB          +2 kB          +0 kB          -1 kB    hltL1fL1sSingleMu7L1Filtered0
+FastReport         0.0 ms         0.1 ms         0.1 ms         0.2 ms          +9 kB         +25 kB          -6 kB         -17 kB    hltMuonDTDigis
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltDt1DRecHits
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltDt4DSegments
+FastReport         2.5 ms         6.9 ms         2.8 ms         7.6 ms       +1570 kB       +4245 kB       -1072 kB       -2899 kB    hltMuonCSCDigis
+FastReport         1.1 ms         3.0 ms         1.2 ms         3.1 ms        +156 kB        +422 kB        -146 kB        -396 kB    hltCsc2DRecHits
+FastReport         0.4 ms         1.0 ms         0.5 ms         1.2 ms        +127 kB        +343 kB        -116 kB        -315 kB    hltCscSegments
+FastReport         0.1 ms         0.3 ms         0.1 ms         0.3 ms          +4 kB         +11 kB          -1 kB          -5 kB    hltMuonRPCDigis
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.1 ms          +4 kB         +12 kB          -3 kB         -10 kB    hltRpcRecHits
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms         +22 kB         +61 kB         -19 kB         -53 kB    hltL2OfflineMuonSeeds
+FastReport         0.2 ms         0.4 ms         0.2 ms         0.6 ms          +8 kB         +23 kB          -6 kB         -17 kB    hltL2MuonSeeds
+FastReport         1.0 ms         2.6 ms         1.0 ms         2.7 ms         +94 kB        +254 kB         -88 kB        -238 kB    hltL2Muons
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltL2MuonCandidatesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +3 kB          +0 kB          -2 kB    hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx
+FastReport         2.7 ms         7.3 ms         2.8 ms         7.4 ms        +653 kB       +1765 kB        -510 kB       -1379 kB    hltSiPixelDigis
+FastReport         4.3 ms        11.6 ms         4.6 ms        12.4 ms       +1277 kB       +3453 kB        -837 kB       -2263 kB    hltSiPixelClusters
+FastReport         1.8 ms         4.9 ms         2.1 ms         5.8 ms        +252 kB        +681 kB        -185 kB        -501 kB    hltSiPixelClustersCache
+FastReport         3.7 ms         9.9 ms         3.9 ms        10.6 ms       +2149 kB       +5810 kB       -1752 kB       -4737 kB    hltSiPixelRecHits
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltSiStripExcludedFEDListProducer
+FastReport         0.1 ms         0.3 ms         0.1 ms         0.3 ms       +3180 kB       +8596 kB         -71 kB        -192 kB    hltSiStripRawToClustersFacility
+FastReport         0.1 ms         0.2 ms         0.2 ms         0.4 ms        +187 kB        +507 kB          +0 kB          -2 kB    hltSiStripClusters
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.7 ms         +20 kB         +54 kB         -16 kB         -44 kB    hltIterL3OISeedsFromL2MuonsNoVtx
+FastReport         2.9 ms         7.8 ms         3.0 ms         8.1 ms        +882 kB       +2383 kB        -851 kB       -2302 kB    hltIterL3OITrackCandidatesNoVtx
+FastReport         0.2 ms         0.6 ms         0.3 ms         0.8 ms         +43 kB        +117 kB         -41 kB        -112 kB    hltIterL3OIMuCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIMuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          +0 kB    hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+FastReport         0.2 ms         0.6 ms         0.3 ms         0.8 ms         +21 kB         +56 kB         -15 kB         -41 kB    hltL3MuonsIterL3OINoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIL3MuonsLinksCombinationNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIL3MuonsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIL3MuonCandidatesNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltL2SelectorForL3IONoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksFilterNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksFitterNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+FastReport         0.1 ms         0.3 ms         0.1 ms         0.3 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIterL3MuonPixelLayerQuadrupletsNoVtx
+FastReport         1.5 ms         4.1 ms         2.2 ms         6.1 ms        +650 kB       +1758 kB        -636 kB       -1719 kB    hltIterL3MuonPixelTracksHitDoubletsNoVtx
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.3 ms         +54 kB        +146 kB         -54 kB        -146 kB    hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksNoVtx
+FastReport         0.0 ms         0.1 ms         0.1 ms         0.3 ms          +1 kB          +4 kB          -1 kB          -3 kB    hltIterL3MuonPixelVerticesNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonTrimmedPixelVerticesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          -1 kB    hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.6 ms         +42 kB        +115 kB         -40 kB        -110 kB    hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.2 ms         +10 kB         +29 kB         -10 kB         -27 kB    hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter0IterL3MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +1 kB          +4 kB          +0 kB          -2 kB    hltIter2IterL3MuonClustersRefRemovalNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIter2IterL3MuonPixelLayerTripletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3MuonPixelClusterCheckNoVtx
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.6 ms         +27 kB         +74 kB         -23 kB         -64 kB    hltIter2IterL3MuonPixelHitDoubletsNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms         +56 kB        +153 kB         -56 kB        -152 kB    hltIter2IterL3MuonPixelHitTripletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.1 ms         0.1 ms          +1 kB          +4 kB          -1 kB          -3 kB    hltIter2IterL3MuonPixelSeedsNoVtx
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms         +36 kB         +97 kB         -34 kB         -92 kB    hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +7 kB         +21 kB          -7 kB         -19 kB    hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.1 ms         0.1 ms         0.2 ms          +1 kB          +4 kB          +0 kB          -1 kB    hltIter2IterL3MuonMergedNoVtx
+FastReport         0.2 ms         0.4 ms         0.2 ms         0.4 ms         +15 kB         +40 kB         -10 kB         -29 kB    hltL3MuonsIterL3IONoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonsFromL2LinksCombinationNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonsFromL2NoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltIterL3MuonL1MuonNoL2SelectorNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          -1 kB    hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+FastReport         0.7 ms         1.8 ms         0.9 ms         2.6 ms        +257 kB        +695 kB        -246 kB        -664 kB    hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms        +110 kB        +299 kB        -110 kB        -298 kB    hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +2 kB          +0 kB          -1 kB    hltIterL3FromL1MuonPixelTracksNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +4 kB          -1 kB          -3 kB    hltIterL3FromL1MuonPixelVerticesNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +3 kB          -1 kB          -2 kB    hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+FastReport         0.2 ms         0.7 ms         0.2 ms         0.7 ms         +54 kB        +147 kB         -49 kB        -133 kB    hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms         +17 kB         +46 kB         -16 kB         -43 kB    hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +1 kB          +4 kB          +0 kB          -1 kB    hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +1 kB          +4 kB          +0 kB          -2 kB    hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.6 ms         +56 kB        +153 kB         -47 kB        -128 kB    hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms        +123 kB        +332 kB        -122 kB        -331 kB    hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.1 ms          +9 kB         +24 kB          -7 kB         -19 kB    hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+FastReport         0.5 ms         1.4 ms         0.6 ms         1.5 ms        +109 kB        +295 kB         -98 kB        -265 kB    hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+FastReport         0.2 ms         0.4 ms         0.2 ms         0.4 ms         +37 kB        +101 kB         -35 kB         -95 kB    hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +2 kB          +6 kB          -1 kB          -2 kB    hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +3 kB          +9 kB          +0 kB          -2 kB    hltIter2IterL3FromL1MuonMergedNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +2 kB          +5 kB          +0 kB          -1 kB    hltIterL3MuonMergedNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +4 kB         +11 kB          +0 kB          -2 kB    hltIterL3MuonAndMuonFromL1MergedNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltL3MuonsIterL3LinksNoVtx
+FastReport         2.0 ms         5.3 ms         2.1 ms         5.8 ms         +65 kB        +176 kB         -59 kB        -162 kB    hltIterL3MuonsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonCandidatesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +3 kB          +0 kB          -2 kB    hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltPixelTracksFilter
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltPixelTracksFitter
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.2 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltPixelTracksTrackingRegions
+FastReport         0.0 ms         0.3 ms         0.0 ms         0.3 ms         +22 kB        +447 kB         -14 kB        -280 kB    hltPixelLayerQuadruplets
+FastReport         0.5 ms        10.6 ms         0.7 ms        13.1 ms        +222 kB       +4441 kB        -144 kB       -2890 kB    hltPixelTracksHitDoublets
+FastReport         0.8 ms        15.8 ms         0.8 ms        16.2 ms        +342 kB       +6849 kB        -340 kB       -6810 kB    hltPixelTracksHitQuadruplets
+FastReport         0.3 ms         6.5 ms         0.4 ms         8.6 ms         +62 kB       +1253 kB         -38 kB        -772 kB    hltPixelTracks
+FastReport         0.3 ms         6.6 ms         0.3 ms         6.7 ms         +84 kB       +1680 kB         -76 kB       -1526 kB    hltMuTrackSeeds
+FastReport         0.8 ms        15.7 ms         1.1 ms        22.5 ms        +227 kB       +4559 kB        -219 kB       -4389 kB    hltMuCkfTrackCandidates
+FastReport         0.0 ms         0.9 ms         0.0 ms         0.9 ms         +12 kB        +257 kB         -12 kB        -243 kB    hltMuCtfTracks
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB         +26 kB          +0 kB          -5 kB    hltDiMuonMergingNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltDiMuonLinksNoVtx
+FastReport         1.0 ms        20.4 ms         1.2 ms        24.5 ms         +51 kB       +1026 kB         -46 kB        -931 kB    hltGlbTrkMuonsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltGlbTrkMuonCandsNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +4 kB          +0 kB          -2 kB    hltSingleTrkMuFiltered16NoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltBoolEnd
+FastReport         0.2 ms         0.2 ms         0.2 ms         0.2 ms        +224 kB        +224 kB        -112 kB        -112 kB    hltFEDSelector
+FastReport         0.1 ms         0.1 ms         0.2 ms         0.2 ms          +7 kB          +7 kB          -5 kB          -5 kB    hltTriggerSummaryAOD
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +3 kB          +3 kB          -1 kB          -1 kB    hltTriggerSummaryRAW
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    dqmOutput
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    TriggerResults
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLTriggerFirstPath
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLT_TrkMu16_NoFiltersNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLTriggerFinalPath
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    DQMOutput
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 total
+
+FastReport     CPU time sched. / depend.    Real time sched. / depend.       Alloc. sched. / depend.     Dealloc. sched. / depend.  Processes and Paths
+FastReport         0.3 ms                        9.3 ms                       +331 kB                       -207 kB                 source
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 process TEST20180501123044
+FastReport         0.2 ms         0.2 ms         0.2 ms         0.2 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLTriggerFirstPath
+FastReport        45.3 ms        39.1 ms        51.0 ms        44.1 ms      +20825 kB      +17892 kB      -13802 kB      -12142 kB    HLT_TrkMu16_NoFiltersNoVtx
+FastReport         0.6 ms        39.4 ms         1.0 ms        44.4 ms        +270 kB      +18127 kB        -143 kB      -12261 kB    HLTriggerFinalPath
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    DQMOutput
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 total
+
+FastReport       CPU time      Real time      Allocated    Deallocated  Transition
+FastReport     45565.2 ms    210278.5 ms    +6211727 kB    -5074697 kB  Run 1
+
+01-May-2018 14:35:11 CEST  Closed file root://cms-xrd-global.cern.ch//store/mc/RunIISummer17DRStdmix/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/GEN-SIM-RAW/NZSFlatPU28to62_92X_upgrade2017_realistic_v10-v2/50000/0043237F-0DA1-E711-AD49-346AC29F11B8.root
+
+TriggerSummaryProducerAOD::globalEndJob - accumulated tags:
+ Overall number of Collections/Filters: 8/5
+ The collections: 8
+  0 hltGlbTrkMuonCandsNoVtx::TEST20180501123044
+  1 hltGtStage2Digis:EGamma:TEST20180501123044
+  2 hltGtStage2Digis:EtSum:TEST20180501123044
+  3 hltGtStage2Digis:Jet:TEST20180501123044
+  4 hltGtStage2Digis:Muon:TEST20180501123044
+  5 hltGtStage2Digis:Tau:TEST20180501123044
+  6 hltIterL3MuonCandidatesNoVtx::TEST20180501123044
+  7 hltL2MuonCandidatesNoVtx::TEST20180501123044
+ The filters:5
+  0 hltL1fL1sSingleMu7L1Filtered0::TEST20180501123044
+  1 hltL1sSingleMu7::TEST20180501123044
+  2 hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx::TEST20180501123044
+  3 hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx::TEST20180501123044
+  4 hltSingleTrkMuFiltered16NoVtx::TEST20180501123044
+TriggerSummaryProducerAOD::endJob.
+
+
+TrigReport ---------- Event  Summary ------------
+TrigReport Events total = 100 passed = 5 failed = 95
+
+TrigReport ---------- Path   Summary ------------
+TrigReport  Trig Bit#   Executed     Passed     Failed      Error Name
+TrigReport     1    0        100          0        100          0 HLTriggerFirstPath
+TrigReport     1    1        100          5         95          0 HLT_TrkMu16_NoFiltersNoVtx
+TrigReport     1    2        100          0        100          0 HLTriggerFinalPath
+
+TrigReport -------End-Path   Summary ------------
+TrigReport  Trig Bit#   Executed     Passed     Failed      Error Name
+TrigReport     0    0        100        100          0          0 DQMOutput
+
+TrigReport ---------- Modules in Path: HLTriggerFirstPath ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    0        100        100          0          0 hltGetConditions
+TrigReport     1    1        100        100          0          0 hltGetRaw
+TrigReport     1    2        100          0        100          0 hltBoolFalse
+
+TrigReport ---------- Modules in Path: HLT_TrkMu16_NoFiltersNoVtx ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    0        100        100          0          0 hltTriggerType
+TrigReport     1    1        100        100          0          0 hltGtStage2Digis
+TrigReport     1    2        100        100          0          0 hltGtStage2ObjectMap
+TrigReport     1    3        100        100          0          0 hltScalersRawToDigi
+TrigReport     1    4        100        100          0          0 hltOnlineBeamSpot
+TrigReport     1    5        100         37         63          0 hltL1sSingleMu7
+TrigReport     1    6         37         37          0          0 hltPreTrkMu16NoFiltersNoVtx
+TrigReport     1    7         37         37          0          0 hltL1fL1sSingleMu7L1Filtered0
+TrigReport     1    8         37         37          0          0 hltMuonDTDigis
+TrigReport     1    9         37         37          0          0 hltDt1DRecHits
+TrigReport     1   10         37         37          0          0 hltDt4DSegments
+TrigReport     1   11         37         37          0          0 hltMuonCSCDigis
+TrigReport     1   12         37         37          0          0 hltCsc2DRecHits
+TrigReport     1   13         37         37          0          0 hltCscSegments
+TrigReport     1   14         37         37          0          0 hltMuonRPCDigis
+TrigReport     1   15         37         37          0          0 hltRpcRecHits
+TrigReport     1   16         37         37          0          0 hltL2OfflineMuonSeeds
+TrigReport     1   17         37         37          0          0 hltL2MuonSeeds
+TrigReport     1   18         37         37          0          0 hltL2Muons
+TrigReport     1   19         37         37          0          0 hltL2MuonCandidatesNoVtx
+TrigReport     1   20         37         37          0          0 hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx
+TrigReport     1   21         37         37          0          0 hltSiPixelDigis
+TrigReport     1   22         37         37          0          0 hltSiPixelClusters
+TrigReport     1   23         37         37          0          0 hltSiPixelClustersCache
+TrigReport     1   24         37         37          0          0 hltSiPixelRecHits
+TrigReport     1   25         37         37          0          0 hltSiStripExcludedFEDListProducer
+TrigReport     1   26         37         37          0          0 hltSiStripRawToClustersFacility
+TrigReport     1   27         37         37          0          0 hltSiStripClusters
+TrigReport     1   28         37         37          0          0 hltIterL3OISeedsFromL2MuonsNoVtx
+TrigReport     1   29         37         37          0          0 hltIterL3OITrackCandidatesNoVtx
+TrigReport     1   30         37         37          0          0 hltIterL3OIMuCtfWithMaterialTracksNoVtx
+TrigReport     1   31         37         37          0          0 hltIterL3OIMuonTrackCutClassifierNoVtx
+TrigReport     1   32         37         37          0          0 hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+TrigReport     1   33         37         37          0          0 hltL3MuonsIterL3OINoVtx
+TrigReport     1   34         37         37          0          0 hltIterL3OIL3MuonsLinksCombinationNoVtx
+TrigReport     1   35         37         37          0          0 hltIterL3OIL3MuonsNoVtx
+TrigReport     1   36         37         37          0          0 hltIterL3OIL3MuonCandidatesNoVtx
+TrigReport     1   37         37         37          0          0 hltL2SelectorForL3IONoVtx
+TrigReport     1   38         37         37          0          0 hltIterL3MuonPixelTracksFilterNoVtx
+TrigReport     1   39         37         37          0          0 hltIterL3MuonPixelTracksFitterNoVtx
+TrigReport     1   40         37         37          0          0 hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+TrigReport     1   41         37         37          0          0 hltIterL3MuonPixelLayerQuadrupletsNoVtx
+TrigReport     1   42         37         37          0          0 hltIterL3MuonPixelTracksHitDoubletsNoVtx
+TrigReport     1   43         37         37          0          0 hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+TrigReport     1   44         37         37          0          0 hltIterL3MuonPixelTracksNoVtx
+TrigReport     1   45         37         37          0          0 hltIterL3MuonPixelVerticesNoVtx
+TrigReport     1   46         37         37          0          0 hltIterL3MuonTrimmedPixelVerticesNoVtx
+TrigReport     1   47         37         37          0          0 hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+TrigReport     1   48         37         37          0          0 hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+TrigReport     1   49         37         37          0          0 hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+TrigReport     1   50         37         37          0          0 hltIter0IterL3MuonTrackCutClassifierNoVtx
+TrigReport     1   51         37         37          0          0 hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+TrigReport     1   52         37         37          0          0 hltIter2IterL3MuonClustersRefRemovalNoVtx
+TrigReport     1   53         37         37          0          0 hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+TrigReport     1   54         37         37          0          0 hltIter2IterL3MuonPixelLayerTripletsNoVtx
+TrigReport     1   55         37         37          0          0 hltIter2IterL3MuonPixelClusterCheckNoVtx
+TrigReport     1   56         37         37          0          0 hltIter2IterL3MuonPixelHitDoubletsNoVtx
+TrigReport     1   57         37         37          0          0 hltIter2IterL3MuonPixelHitTripletsNoVtx
+TrigReport     1   58         37         37          0          0 hltIter2IterL3MuonPixelSeedsNoVtx
+TrigReport     1   59         37         37          0          0 hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+TrigReport     1   60         37         37          0          0 hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+TrigReport     1   61         37         37          0          0 hltIter2IterL3MuonTrackCutClassifierNoVtx
+TrigReport     1   62         37         37          0          0 hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+TrigReport     1   63         37         37          0          0 hltIter2IterL3MuonMergedNoVtx
+TrigReport     1   64         37         37          0          0 hltL3MuonsIterL3IONoVtx
+TrigReport     1   65         37         37          0          0 hltIterL3MuonsFromL2LinksCombinationNoVtx
+TrigReport     1   66         37         37          0          0 hltIterL3MuonsFromL2NoVtx
+TrigReport     1   67         37         37          0          0 hltIterL3MuonL1MuonNoL2SelectorNoVtx
+TrigReport     1   68         37         37          0          0 hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+TrigReport     1   69         37         37          0          0 hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+TrigReport     1   70         37         37          0          0 hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+TrigReport     1   71         37         37          0          0 hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+TrigReport     1   72         37         37          0          0 hltIterL3FromL1MuonPixelTracksNoVtx
+TrigReport     1   73         37         37          0          0 hltIterL3FromL1MuonPixelVerticesNoVtx
+TrigReport     1   74         37         37          0          0 hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+TrigReport     1   75         37         37          0          0 hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+TrigReport     1   76         37         37          0          0 hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TrigReport     1   77         37         37          0          0 hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TrigReport     1   78         37         37          0          0 hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+TrigReport     1   79         37         37          0          0 hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TrigReport     1   80         37         37          0          0 hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+TrigReport     1   81         37         37          0          0 hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+TrigReport     1   82         37         37          0          0 hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+TrigReport     1   83         37         37          0          0 hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+TrigReport     1   84         37         37          0          0 hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+TrigReport     1   85         37         37          0          0 hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+TrigReport     1   86         37         37          0          0 hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+TrigReport     1   87         37         37          0          0 hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TrigReport     1   88         37         37          0          0 hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TrigReport     1   89         37         37          0          0 hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+TrigReport     1   90         37         37          0          0 hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TrigReport     1   91         37         37          0          0 hltIter2IterL3FromL1MuonMergedNoVtx
+TrigReport     1   92         37         37          0          0 hltIterL3MuonMergedNoVtx
+TrigReport     1   93         37         37          0          0 hltIterL3MuonAndMuonFromL1MergedNoVtx
+TrigReport     1   94         37         37          0          0 hltL3MuonsIterL3LinksNoVtx
+TrigReport     1   95         37         37          0          0 hltIterL3MuonsNoVtx
+TrigReport     1   96         37         37          0          0 hltIterL3MuonCandidatesNoVtx
+TrigReport     1   97         37          5         32          0 hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx
+TrigReport     1   98          5          5          0          0 hltSiPixelDigis
+TrigReport     1   99          5          5          0          0 hltSiPixelClusters
+TrigReport     1  100          5          5          0          0 hltSiPixelClustersCache
+TrigReport     1  101          5          5          0          0 hltSiPixelRecHits
+TrigReport     1  102          5          5          0          0 hltPixelTracksFilter
+TrigReport     1  103          5          5          0          0 hltPixelTracksFitter
+TrigReport     1  104          5          5          0          0 hltPixelTracksTrackingRegions
+TrigReport     1  105          5          5          0          0 hltPixelLayerQuadruplets
+TrigReport     1  106          5          5          0          0 hltPixelTracksHitDoublets
+TrigReport     1  107          5          5          0          0 hltPixelTracksHitQuadruplets
+TrigReport     1  108          5          5          0          0 hltPixelTracks
+TrigReport     1  109          5          5          0          0 hltSiStripExcludedFEDListProducer
+TrigReport     1  110          5          5          0          0 hltSiStripRawToClustersFacility
+TrigReport     1  111          5          5          0          0 hltSiStripClusters
+TrigReport     1  112          5          5          0          0 hltMuTrackSeeds
+TrigReport     1  113          5          5          0          0 hltMuCkfTrackCandidates
+TrigReport     1  114          5          5          0          0 hltMuCtfTracks
+TrigReport     1  115          5          5          0          0 hltSiPixelDigis
+TrigReport     1  116          5          5          0          0 hltSiPixelClusters
+TrigReport     1  117          5          5          0          0 hltSiPixelClustersCache
+TrigReport     1  118          5          5          0          0 hltSiPixelRecHits
+TrigReport     1  119          5          5          0          0 hltSiStripExcludedFEDListProducer
+TrigReport     1  120          5          5          0          0 hltSiStripRawToClustersFacility
+TrigReport     1  121          5          5          0          0 hltSiStripClusters
+TrigReport     1  122          5          5          0          0 hltIterL3OISeedsFromL2MuonsNoVtx
+TrigReport     1  123          5          5          0          0 hltIterL3OITrackCandidatesNoVtx
+TrigReport     1  124          5          5          0          0 hltIterL3OIMuCtfWithMaterialTracksNoVtx
+TrigReport     1  125          5          5          0          0 hltIterL3OIMuonTrackCutClassifierNoVtx
+TrigReport     1  126          5          5          0          0 hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+TrigReport     1  127          5          5          0          0 hltL3MuonsIterL3OINoVtx
+TrigReport     1  128          5          5          0          0 hltIterL3OIL3MuonsLinksCombinationNoVtx
+TrigReport     1  129          5          5          0          0 hltIterL3OIL3MuonsNoVtx
+TrigReport     1  130          5          5          0          0 hltIterL3OIL3MuonCandidatesNoVtx
+TrigReport     1  131          5          5          0          0 hltL2SelectorForL3IONoVtx
+TrigReport     1  132          5          5          0          0 hltIterL3MuonPixelTracksFilterNoVtx
+TrigReport     1  133          5          5          0          0 hltIterL3MuonPixelTracksFitterNoVtx
+TrigReport     1  134          5          5          0          0 hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+TrigReport     1  135          5          5          0          0 hltIterL3MuonPixelLayerQuadrupletsNoVtx
+TrigReport     1  136          5          5          0          0 hltIterL3MuonPixelTracksHitDoubletsNoVtx
+TrigReport     1  137          5          5          0          0 hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+TrigReport     1  138          5          5          0          0 hltIterL3MuonPixelTracksNoVtx
+TrigReport     1  139          5          5          0          0 hltIterL3MuonPixelVerticesNoVtx
+TrigReport     1  140          5          5          0          0 hltIterL3MuonTrimmedPixelVerticesNoVtx
+TrigReport     1  141          5          5          0          0 hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+TrigReport     1  142          5          5          0          0 hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+TrigReport     1  143          5          5          0          0 hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+TrigReport     1  144          5          5          0          0 hltIter0IterL3MuonTrackCutClassifierNoVtx
+TrigReport     1  145          5          5          0          0 hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+TrigReport     1  146          5          5          0          0 hltIter2IterL3MuonClustersRefRemovalNoVtx
+TrigReport     1  147          5          5          0          0 hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+TrigReport     1  148          5          5          0          0 hltIter2IterL3MuonPixelLayerTripletsNoVtx
+TrigReport     1  149          5          5          0          0 hltIter2IterL3MuonPixelClusterCheckNoVtx
+TrigReport     1  150          5          5          0          0 hltIter2IterL3MuonPixelHitDoubletsNoVtx
+TrigReport     1  151          5          5          0          0 hltIter2IterL3MuonPixelHitTripletsNoVtx
+TrigReport     1  152          5          5          0          0 hltIter2IterL3MuonPixelSeedsNoVtx
+TrigReport     1  153          5          5          0          0 hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+TrigReport     1  154          5          5          0          0 hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+TrigReport     1  155          5          5          0          0 hltIter2IterL3MuonTrackCutClassifierNoVtx
+TrigReport     1  156          5          5          0          0 hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+TrigReport     1  157          5          5          0          0 hltIter2IterL3MuonMergedNoVtx
+TrigReport     1  158          5          5          0          0 hltL3MuonsIterL3IONoVtx
+TrigReport     1  159          5          5          0          0 hltIterL3MuonsFromL2LinksCombinationNoVtx
+TrigReport     1  160          5          5          0          0 hltIterL3MuonsFromL2NoVtx
+TrigReport     1  161          5          5          0          0 hltIterL3MuonL1MuonNoL2SelectorNoVtx
+TrigReport     1  162          5          5          0          0 hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+TrigReport     1  163          5          5          0          0 hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+TrigReport     1  164          5          5          0          0 hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+TrigReport     1  165          5          5          0          0 hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+TrigReport     1  166          5          5          0          0 hltIterL3FromL1MuonPixelTracksNoVtx
+TrigReport     1  167          5          5          0          0 hltIterL3FromL1MuonPixelVerticesNoVtx
+TrigReport     1  168          5          5          0          0 hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+TrigReport     1  169          5          5          0          0 hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+TrigReport     1  170          5          5          0          0 hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TrigReport     1  171          5          5          0          0 hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TrigReport     1  172          5          5          0          0 hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+TrigReport     1  173          5          5          0          0 hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TrigReport     1  174          5          5          0          0 hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+TrigReport     1  175          5          5          0          0 hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+TrigReport     1  176          5          5          0          0 hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+TrigReport     1  177          5          5          0          0 hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+TrigReport     1  178          5          5          0          0 hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+TrigReport     1  179          5          5          0          0 hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+TrigReport     1  180          5          5          0          0 hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+TrigReport     1  181          5          5          0          0 hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TrigReport     1  182          5          5          0          0 hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TrigReport     1  183          5          5          0          0 hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+TrigReport     1  184          5          5          0          0 hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TrigReport     1  185          5          5          0          0 hltIter2IterL3FromL1MuonMergedNoVtx
+TrigReport     1  186          5          5          0          0 hltIterL3MuonMergedNoVtx
+TrigReport     1  187          5          5          0          0 hltIterL3MuonAndMuonFromL1MergedNoVtx
+TrigReport     1  188          5          5          0          0 hltL3MuonsIterL3LinksNoVtx
+TrigReport     1  189          5          5          0          0 hltIterL3MuonsNoVtx
+TrigReport     1  190          5          5          0          0 hltDiMuonMergingNoVtx
+TrigReport     1  191          5          5          0          0 hltDiMuonLinksNoVtx
+TrigReport     1  192          5          5          0          0 hltGlbTrkMuonsNoVtx
+TrigReport     1  193          5          5          0          0 hltGlbTrkMuonCandsNoVtx
+TrigReport     1  194          5          5          0          0 hltSingleTrkMuFiltered16NoVtx
+TrigReport     1  195          5          5          0          0 hltBoolEnd
+
+TrigReport ---------- Modules in Path: HLTriggerFinalPath ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    0        100        100          0          0 hltGtStage2Digis
+TrigReport     1    1        100        100          0          0 hltScalersRawToDigi
+TrigReport     1    2        100        100          0          0 hltFEDSelector
+TrigReport     1    3        100        100          0          0 hltTriggerSummaryAOD
+TrigReport     1    4        100        100          0          0 hltTriggerSummaryRAW
+TrigReport     1    5        100          0        100          0 hltBoolFalse
+
+TrigReport ------ Modules in End-Path: DQMOutput ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     0    0        100        100          0          0 dqmOutput
+
+TrigReport ---------- Module Summary ------------
+TrigReport    Visited   Executed     Passed     Failed      Error Name
+TrigReport        100        100        100          0          0 DQMOutput
+TrigReport        100        100        100          0          0 HLT_TrkMu16_NoFiltersNoVtx
+TrigReport        100        100        100          0          0 HLTriggerFinalPath
+TrigReport        100        100        100          0          0 HLTriggerFirstPath
+TrigReport        100        100        100          0          0 TriggerResults
+TrigReport        100        100        100          0          0 dqmOutput
+TrigReport          5          5          5          0          0 hltBoolEnd
+TrigReport        200        100          0        100          0 hltBoolFalse
+TrigReport         37         37         37          0          0 hltCsc2DRecHits
+TrigReport         37         37         37          0          0 hltCscSegments
+TrigReport          5          5          5          0          0 hltDiMuonLinksNoVtx
+TrigReport          5          5          5          0          0 hltDiMuonMergingNoVtx
+TrigReport         37         37         37          0          0 hltDt1DRecHits
+TrigReport         37         37         37          0          0 hltDt4DSegments
+TrigReport        100        100        100          0          0 hltFEDSelector
+TrigReport        100        100        100          0          0 hltGetConditions
+TrigReport        100        100        100          0          0 hltGetRaw
+TrigReport          5          5          5          0          0 hltGlbTrkMuonCandsNoVtx
+TrigReport          5          5          5          0          0 hltGlbTrkMuonsNoVtx
+TrigReport        200        100        100          0          0 hltGtStage2Digis
+TrigReport        100        100        100          0          0 hltGtStage2ObjectMap
+TrigReport         42         37         37          0          0 hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3MuonTrackCutClassifierNoVtx
+TrigReport         42         37         37          0          0 hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonMergedNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonClustersRefRemovalNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonMergedNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonPixelClusterCheckNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonPixelHitDoubletsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonPixelHitTripletsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonPixelLayerTripletsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonPixelSeedsNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonTrackCutClassifierNoVtx
+TrigReport         42         37         37          0          0 hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonPixelTracksNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonPixelVerticesNoVtx
+TrigReport         42         37         37          0          0 hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonAndMuonFromL1MergedNoVtx
+TrigReport         37         37         37          0          0 hltIterL3MuonCandidatesNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonL1MuonNoL2SelectorNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonMergedNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelLayerQuadrupletsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelTracksFilterNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelTracksFitterNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelTracksHitDoubletsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelTracksNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonPixelVerticesNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonTrimmedPixelVerticesNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonsFromL2LinksCombinationNoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonsFromL2NoVtx
+TrigReport         42         37         37          0          0 hltIterL3MuonsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OIL3MuonCandidatesNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OIL3MuonsLinksCombinationNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OIL3MuonsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OIMuCtfWithMaterialTracksNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OIMuonTrackCutClassifierNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OISeedsFromL2MuonsNoVtx
+TrigReport         42         37         37          0          0 hltIterL3OITrackCandidatesNoVtx
+TrigReport         37         37         37          0          0 hltL1fL1sSingleMu7L1Filtered0
+TrigReport        100        100         37         63          0 hltL1sSingleMu7
+TrigReport         37         37         37          0          0 hltL2MuonCandidatesNoVtx
+TrigReport         37         37         37          0          0 hltL2MuonSeeds
+TrigReport         37         37         37          0          0 hltL2Muons
+TrigReport         37         37         37          0          0 hltL2OfflineMuonSeeds
+TrigReport         42         37         37          0          0 hltL2SelectorForL3IONoVtx
+TrigReport         37         37         37          0          0 hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx
+TrigReport         42         37         37          0          0 hltL3MuonsIterL3IONoVtx
+TrigReport         42         37         37          0          0 hltL3MuonsIterL3LinksNoVtx
+TrigReport         42         37         37          0          0 hltL3MuonsIterL3OINoVtx
+TrigReport         37         37          5         32          0 hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx
+TrigReport          5          5          5          0          0 hltMuCkfTrackCandidates
+TrigReport          5          5          5          0          0 hltMuCtfTracks
+TrigReport          5          5          5          0          0 hltMuTrackSeeds
+TrigReport         37         37         37          0          0 hltMuonCSCDigis
+TrigReport         37         37         37          0          0 hltMuonDTDigis
+TrigReport         37         37         37          0          0 hltMuonRPCDigis
+TrigReport        100        100        100          0          0 hltOnlineBeamSpot
+TrigReport          5          5          5          0          0 hltPixelLayerQuadruplets
+TrigReport          5          5          5          0          0 hltPixelTracks
+TrigReport          5          5          5          0          0 hltPixelTracksFilter
+TrigReport          5          5          5          0          0 hltPixelTracksFitter
+TrigReport          5          5          5          0          0 hltPixelTracksHitDoublets
+TrigReport          5          5          5          0          0 hltPixelTracksHitQuadruplets
+TrigReport          5          5          5          0          0 hltPixelTracksTrackingRegions
+TrigReport         37         37         37          0          0 hltPreTrkMu16NoFiltersNoVtx
+TrigReport         37         37         37          0          0 hltRpcRecHits
+TrigReport        200        100        100          0          0 hltScalersRawToDigi
+TrigReport         47         37         37          0          0 hltSiPixelClusters
+TrigReport         47         37         37          0          0 hltSiPixelClustersCache
+TrigReport         47         37         37          0          0 hltSiPixelDigis
+TrigReport         47         37         37          0          0 hltSiPixelRecHits
+TrigReport         47         37         37          0          0 hltSiStripClusters
+TrigReport         47         37         37          0          0 hltSiStripExcludedFEDListProducer
+TrigReport         47         37         37          0          0 hltSiStripRawToClustersFacility
+TrigReport          5          5          5          0          0 hltSingleTrkMuFiltered16NoVtx
+TrigReport        100        100        100          0          0 hltTriggerSummaryAOD
+TrigReport        100        100        100          0          0 hltTriggerSummaryRAW
+TrigReport        100        100        100          0          0 hltTriggerType
+
+TimeReport ---------- Event  Summary ---[sec]----
+TimeReport       event loop CPU/event = 0.729369
+TimeReport      event loop Real/event = 0.710615
+TimeReport     sum Streams Real/event = 0.397487
+TimeReport efficiency CPU/Real/thread = 0.256598
+
+TimeReport ---------- Path   Summary ---[Real sec]----
+TimeReport  per event     per exec  Name
+TimeReport   0.342147     0.342147  HLTriggerFirstPath
+TimeReport   0.386279     0.386279  HLT_TrkMu16_NoFiltersNoVtx
+TimeReport   0.386557     0.386557  HLTriggerFinalPath
+TimeReport  per event     per exec  Name
+
+TimeReport -------End-Path   Summary ---[Real sec]----
+TimeReport  per event     per exec  Name
+TimeReport   0.003404     0.003404  DQMOutput
+TimeReport  per event     per exec  Name
+
+TimeReport ---------- Modules in Path: HLTriggerFirstPath ---[Real sec]----
+TimeReport  per event    per visit  Name
+TimeReport   0.000155     0.000155  hltGetConditions
+TimeReport   0.000010     0.000010  hltGetRaw
+TimeReport   0.000001     0.000001  hltBoolFalse
+
+TimeReport ---------- Modules in Path: HLT_TrkMu16_NoFiltersNoVtx ---[Real sec]----
+TimeReport  per event    per visit  Name
+TimeReport   0.000060     0.000060  hltTriggerType
+TimeReport   0.000000     0.000000  hltGtStage2Digis
+TimeReport   0.005676     0.005676  hltGtStage2ObjectMap
+TimeReport   0.000000     0.000000  hltScalersRawToDigi
+TimeReport   0.000051     0.000051  hltOnlineBeamSpot
+TimeReport   0.000115     0.000115  hltL1sSingleMu7
+TimeReport   0.000001     0.000002  hltPreTrkMu16NoFiltersNoVtx
+TimeReport   0.000041     0.000112  hltL1fL1sSingleMu7L1Filtered0
+TimeReport   0.000058     0.000158  hltMuonDTDigis
+TimeReport   0.000021     0.000058  hltDt1DRecHits
+TimeReport   0.000035     0.000093  hltDt4DSegments
+TimeReport   0.002821     0.007624  hltMuonCSCDigis
+TimeReport   0.001155     0.003121  hltCsc2DRecHits
+TimeReport   0.000454     0.001228  hltCscSegments
+TimeReport   0.000101     0.000273  hltMuonRPCDigis
+TimeReport   0.000054     0.000145  hltRpcRecHits
+TimeReport   0.000196     0.000530  hltL2OfflineMuonSeeds
+TimeReport   0.000201     0.000542  hltL2MuonSeeds
+TimeReport   0.000983     0.002657  hltL2Muons
+TimeReport   0.000010     0.000027  hltL2MuonCandidatesNoVtx
+TimeReport   0.000021     0.000056  -hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx
+TimeReport   0.002753     0.007440  hltSiPixelDigis
+TimeReport   0.004572     0.012357  hltSiPixelClusters
+TimeReport   0.002133     0.005765  hltSiPixelClustersCache
+TimeReport   0.003917     0.010586  hltSiPixelRecHits
+TimeReport   0.000008     0.000020  hltSiStripExcludedFEDListProducer
+TimeReport   0.000093     0.000251  hltSiStripRawToClustersFacility
+TimeReport   0.000165     0.000447  hltSiStripClusters
+TimeReport   0.000245     0.000663  hltIterL3OISeedsFromL2MuonsNoVtx
+TimeReport   0.002979     0.008053  hltIterL3OITrackCandidatesNoVtx
+TimeReport   0.000275     0.000743  hltIterL3OIMuCtfWithMaterialTracksNoVtx
+TimeReport   0.000011     0.000030  hltIterL3OIMuonTrackCutClassifierNoVtx
+TimeReport   0.000013     0.000035  hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000305     0.000826  hltL3MuonsIterL3OINoVtx
+TimeReport   0.000005     0.000013  hltIterL3OIL3MuonsLinksCombinationNoVtx
+TimeReport   0.000007     0.000020  hltIterL3OIL3MuonsNoVtx
+TimeReport   0.000006     0.000016  hltIterL3OIL3MuonCandidatesNoVtx
+TimeReport   0.000009     0.000025  hltL2SelectorForL3IONoVtx
+TimeReport   0.000004     0.000010  hltIterL3MuonPixelTracksFilterNoVtx
+TimeReport   0.000006     0.000015  hltIterL3MuonPixelTracksFitterNoVtx
+TimeReport   0.000009     0.000025  hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+TimeReport   0.000110     0.000297  hltIterL3MuonPixelLayerQuadrupletsNoVtx
+TimeReport   0.002245     0.006069  hltIterL3MuonPixelTracksHitDoubletsNoVtx
+TimeReport   0.000097     0.000262  hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+TimeReport   0.000014     0.000037  hltIterL3MuonPixelTracksNoVtx
+TimeReport   0.000104     0.000281  hltIterL3MuonPixelVerticesNoVtx
+TimeReport   0.000004     0.000010  hltIterL3MuonTrimmedPixelVerticesNoVtx
+TimeReport   0.000033     0.000090  hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+TimeReport   0.000218     0.000589  hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000076     0.000205  hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000004     0.000010  hltIter0IterL3MuonTrackCutClassifierNoVtx
+TimeReport   0.000007     0.000018  hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000018     0.000047  hltIter2IterL3MuonClustersRefRemovalNoVtx
+TimeReport   0.000030     0.000080  hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+TimeReport   0.000200     0.000541  hltIter2IterL3MuonPixelLayerTripletsNoVtx
+TimeReport   0.000003     0.000007  hltIter2IterL3MuonPixelClusterCheckNoVtx
+TimeReport   0.000226     0.000609  hltIter2IterL3MuonPixelHitDoubletsNoVtx
+TimeReport   0.000032     0.000087  hltIter2IterL3MuonPixelHitTripletsNoVtx
+TimeReport   0.000054     0.000146  hltIter2IterL3MuonPixelSeedsNoVtx
+TimeReport   0.000200     0.000539  hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000048     0.000130  hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000003     0.000009  hltIter2IterL3MuonTrackCutClassifierNoVtx
+TimeReport   0.000006     0.000016  hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000090     0.000242  hltIter2IterL3MuonMergedNoVtx
+TimeReport   0.000165     0.000445  hltL3MuonsIterL3IONoVtx
+TimeReport   0.000003     0.000008  hltIterL3MuonsFromL2LinksCombinationNoVtx
+TimeReport   0.000002     0.000006  hltIterL3MuonsFromL2NoVtx
+TimeReport   0.000033     0.000090  hltIterL3MuonL1MuonNoL2SelectorNoVtx
+TimeReport   0.000037     0.000099  hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+TimeReport   0.000090     0.000244  hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+TimeReport   0.000946     0.002558  hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+TimeReport   0.000065     0.000176  hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+TimeReport   0.000011     0.000030  hltIterL3FromL1MuonPixelTracksNoVtx
+TimeReport   0.000029     0.000078  hltIterL3FromL1MuonPixelVerticesNoVtx
+TimeReport   0.000002     0.000005  hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+TimeReport   0.000020     0.000054  hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+TimeReport   0.000246     0.000666  hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000073     0.000197  hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000004     0.000011  hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+TimeReport   0.000010     0.000028  hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000007     0.000018  hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+TimeReport   0.000022     0.000060  hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+TimeReport   0.000188     0.000507  hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+TimeReport   0.000002     0.000004  hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+TimeReport   0.000228     0.000615  hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+TimeReport   0.000063     0.000170  hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+TimeReport   0.000051     0.000138  hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+TimeReport   0.000560     0.001515  hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000153     0.000414  hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000005     0.000014  hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+TimeReport   0.000011     0.000029  hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000017     0.000046  hltIter2IterL3FromL1MuonMergedNoVtx
+TimeReport   0.000018     0.000049  hltIterL3MuonMergedNoVtx
+TimeReport   0.000014     0.000037  hltIterL3MuonAndMuonFromL1MergedNoVtx
+TimeReport   0.000029     0.000078  hltL3MuonsIterL3LinksNoVtx
+TimeReport   0.002137     0.005776  hltIterL3MuonsNoVtx
+TimeReport   0.000006     0.000015  hltIterL3MuonCandidatesNoVtx
+TimeReport   0.000044     0.000120  hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx
+TimeReport   0.000000     0.000000  hltSiPixelDigis
+TimeReport   0.000000     0.000000  hltSiPixelClusters
+TimeReport   0.000000     0.000000  hltSiPixelClustersCache
+TimeReport   0.000000     0.000000  hltSiPixelRecHits
+TimeReport   0.000000     0.000009  hltPixelTracksFilter
+TimeReport   0.000001     0.000013  hltPixelTracksFitter
+TimeReport   0.000010     0.000193  hltPixelTracksTrackingRegions
+TimeReport   0.000016     0.000327  hltPixelLayerQuadruplets
+TimeReport   0.000652     0.013039  hltPixelTracksHitDoublets
+TimeReport   0.000809     0.016176  hltPixelTracksHitQuadruplets
+TimeReport   0.000432     0.008639  hltPixelTracks
+TimeReport   0.000000     0.000000  hltSiStripExcludedFEDListProducer
+TimeReport   0.000000     0.000000  hltSiStripRawToClustersFacility
+TimeReport   0.000000     0.000000  hltSiStripClusters
+TimeReport   0.000334     0.006685  hltMuTrackSeeds
+TimeReport   0.001123     0.022461  hltMuCkfTrackCandidates
+TimeReport   0.000047     0.000946  hltMuCtfTracks
+TimeReport   0.000000     0.000000  hltSiPixelDigis
+TimeReport   0.000000     0.000000  hltSiPixelClusters
+TimeReport   0.000000     0.000000  hltSiPixelClustersCache
+TimeReport   0.000000     0.000000  hltSiPixelRecHits
+TimeReport   0.000000     0.000000  hltSiStripExcludedFEDListProducer
+TimeReport   0.000000     0.000000  hltSiStripRawToClustersFacility
+TimeReport   0.000000     0.000000  hltSiStripClusters
+TimeReport   0.000000     0.000000  hltIterL3OISeedsFromL2MuonsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3OITrackCandidatesNoVtx
+TimeReport   0.000000     0.000000  hltIterL3OIMuCtfWithMaterialTracksNoVtx
+TimeReport   0.000000     0.000000  hltIterL3OIMuonTrackCutClassifierNoVtx
+TimeReport   0.000000     0.000000  hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000000     0.000000  hltL3MuonsIterL3OINoVtx
+TimeReport   0.000000     0.000000  hltIterL3OIL3MuonsLinksCombinationNoVtx
+TimeReport   0.000000     0.000000  hltIterL3OIL3MuonsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3OIL3MuonCandidatesNoVtx
+TimeReport   0.000000     0.000000  hltL2SelectorForL3IONoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelTracksFilterNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelTracksFitterNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelLayerQuadrupletsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelTracksHitDoubletsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelTracksNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonPixelVerticesNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonTrimmedPixelVerticesNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3MuonTrackCutClassifierNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonClustersRefRemovalNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonPixelLayerTripletsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonPixelClusterCheckNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonPixelHitDoubletsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonPixelHitTripletsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonPixelSeedsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonTrackCutClassifierNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3MuonMergedNoVtx
+TimeReport   0.000000     0.000000  hltL3MuonsIterL3IONoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonsFromL2LinksCombinationNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonsFromL2NoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonL1MuonNoL2SelectorNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonPixelTracksNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonPixelVerticesNoVtx
+TimeReport   0.000000     0.000000  hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+TimeReport   0.000000     0.000000  hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000000     0.000000  hltIter2IterL3FromL1MuonMergedNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonMergedNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonAndMuonFromL1MergedNoVtx
+TimeReport   0.000000     0.000000  hltL3MuonsIterL3LinksNoVtx
+TimeReport   0.000000     0.000000  hltIterL3MuonsNoVtx
+TimeReport   0.000006     0.000115  hltDiMuonMergingNoVtx
+TimeReport   0.000002     0.000031  hltDiMuonLinksNoVtx
+TimeReport   0.001226     0.024524  hltGlbTrkMuonsNoVtx
+TimeReport   0.000001     0.000025  hltGlbTrkMuonCandsNoVtx
+TimeReport   0.000003     0.000056  hltSingleTrkMuFiltered16NoVtx
+TimeReport   0.000000     0.000001  hltBoolEnd
+
+TimeReport ---------- Modules in Path: HLTriggerFinalPath ---[Real sec]----
+TimeReport  per event    per visit  Name
+TimeReport   0.000536     0.000536  hltGtStage2Digis
+TimeReport   0.000021     0.000021  hltScalersRawToDigi
+TimeReport   0.000171     0.000171  hltFEDSelector
+TimeReport   0.000197     0.000197  hltTriggerSummaryAOD
+TimeReport   0.000034     0.000034  hltTriggerSummaryRAW
+TimeReport   0.000000     0.000000  hltBoolFalse
+TimeReport  per event    per visit  Name
+
+TimeReport ------ Modules in End-Path: DQMOutput ---[Real sec]----
+TimeReport  per event    per visit  Name
+TimeReport   0.000001     0.000001  dqmOutput
+TimeReport  per event    per visit  Name
+
+TimeReport ---------- Module Summary ---[Real sec]----
+TimeReport  per event     per exec    per visit  Name
+TimeReport   0.000007     0.000007     0.000007  DQMOutput
+TimeReport   0.000005     0.000005     0.000005  HLT_TrkMu16_NoFiltersNoVtx
+TimeReport   0.000004     0.000004     0.000004  HLTriggerFinalPath
+TimeReport   0.000015     0.000015     0.000015  HLTriggerFirstPath
+TimeReport   0.000005     0.000005     0.000005  TriggerResults
+TimeReport   0.000001     0.000001     0.000001  dqmOutput
+TimeReport   0.000000     0.000001     0.000001  hltBoolEnd
+TimeReport   0.000001     0.000001     0.000001  hltBoolFalse
+TimeReport   0.001155     0.003121     0.003121  hltCsc2DRecHits
+TimeReport   0.000454     0.001228     0.001228  hltCscSegments
+TimeReport   0.000002     0.000031     0.000031  hltDiMuonLinksNoVtx
+TimeReport   0.000006     0.000115     0.000115  hltDiMuonMergingNoVtx
+TimeReport   0.000021     0.000058     0.000058  hltDt1DRecHits
+TimeReport   0.000035     0.000093     0.000093  hltDt4DSegments
+TimeReport   0.000171     0.000171     0.000171  hltFEDSelector
+TimeReport   0.000155     0.000155     0.000155  hltGetConditions
+TimeReport   0.000010     0.000010     0.000010  hltGetRaw
+TimeReport   0.000001     0.000025     0.000025  hltGlbTrkMuonCandsNoVtx
+TimeReport   0.001226     0.024524     0.024524  hltGlbTrkMuonsNoVtx
+TimeReport   0.000536     0.000536     0.000268  hltGtStage2Digis
+TimeReport   0.005676     0.005676     0.005676  hltGtStage2ObjectMap
+TimeReport   0.000246     0.000666     0.000587  hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000073     0.000197     0.000174  hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000020     0.000054     0.000048  hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+TimeReport   0.000004     0.000011     0.000010  hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+TimeReport   0.000010     0.000028     0.000025  hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000218     0.000589     0.000519  hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000076     0.000205     0.000181  hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000033     0.000090     0.000079  hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+TimeReport   0.000004     0.000010     0.000009  hltIter0IterL3MuonTrackCutClassifierNoVtx
+TimeReport   0.000007     0.000018     0.000016  hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000560     0.001515     0.001334  hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000007     0.000018     0.000016  hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+TimeReport   0.000153     0.000414     0.000365  hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000022     0.000060     0.000053  hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+TimeReport   0.000017     0.000046     0.000040  hltIter2IterL3FromL1MuonMergedNoVtx
+TimeReport   0.000002     0.000004     0.000004  hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+TimeReport   0.000228     0.000615     0.000542  hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+TimeReport   0.000063     0.000170     0.000150  hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+TimeReport   0.000188     0.000507     0.000447  hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+TimeReport   0.000051     0.000138     0.000121  hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+TimeReport   0.000005     0.000014     0.000012  hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+TimeReport   0.000011     0.000029     0.000026  hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000200     0.000539     0.000475  hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+TimeReport   0.000018     0.000047     0.000042  hltIter2IterL3MuonClustersRefRemovalNoVtx
+TimeReport   0.000048     0.000130     0.000114  hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+TimeReport   0.000030     0.000080     0.000070  hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+TimeReport   0.000090     0.000242     0.000213  hltIter2IterL3MuonMergedNoVtx
+TimeReport   0.000003     0.000007     0.000007  hltIter2IterL3MuonPixelClusterCheckNoVtx
+TimeReport   0.000226     0.000609     0.000537  hltIter2IterL3MuonPixelHitDoubletsNoVtx
+TimeReport   0.000032     0.000087     0.000076  hltIter2IterL3MuonPixelHitTripletsNoVtx
+TimeReport   0.000200     0.000541     0.000476  hltIter2IterL3MuonPixelLayerTripletsNoVtx
+TimeReport   0.000054     0.000146     0.000128  hltIter2IterL3MuonPixelSeedsNoVtx
+TimeReport   0.000003     0.000009     0.000008  hltIter2IterL3MuonTrackCutClassifierNoVtx
+TimeReport   0.000006     0.000016     0.000014  hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000090     0.000244     0.000215  hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+TimeReport   0.000946     0.002558     0.002253  hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+TimeReport   0.000065     0.000176     0.000155  hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+TimeReport   0.000011     0.000030     0.000026  hltIterL3FromL1MuonPixelTracksNoVtx
+TimeReport   0.000037     0.000099     0.000087  hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+TimeReport   0.000029     0.000078     0.000068  hltIterL3FromL1MuonPixelVerticesNoVtx
+TimeReport   0.000002     0.000005     0.000005  hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+TimeReport   0.000014     0.000037     0.000032  hltIterL3MuonAndMuonFromL1MergedNoVtx
+TimeReport   0.000006     0.000015     0.000015  hltIterL3MuonCandidatesNoVtx
+TimeReport   0.000033     0.000090     0.000079  hltIterL3MuonL1MuonNoL2SelectorNoVtx
+TimeReport   0.000018     0.000049     0.000044  hltIterL3MuonMergedNoVtx
+TimeReport   0.000110     0.000297     0.000261  hltIterL3MuonPixelLayerQuadrupletsNoVtx
+TimeReport   0.000004     0.000010     0.000009  hltIterL3MuonPixelTracksFilterNoVtx
+TimeReport   0.000006     0.000015     0.000013  hltIterL3MuonPixelTracksFitterNoVtx
+TimeReport   0.002245     0.006069     0.005346  hltIterL3MuonPixelTracksHitDoubletsNoVtx
+TimeReport   0.000097     0.000262     0.000231  hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+TimeReport   0.000014     0.000037     0.000033  hltIterL3MuonPixelTracksNoVtx
+TimeReport   0.000009     0.000025     0.000022  hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+TimeReport   0.000104     0.000281     0.000248  hltIterL3MuonPixelVerticesNoVtx
+TimeReport   0.000004     0.000010     0.000008  hltIterL3MuonTrimmedPixelVerticesNoVtx
+TimeReport   0.000003     0.000008     0.000007  hltIterL3MuonsFromL2LinksCombinationNoVtx
+TimeReport   0.000002     0.000006     0.000005  hltIterL3MuonsFromL2NoVtx
+TimeReport   0.002137     0.005776     0.005088  hltIterL3MuonsNoVtx
+TimeReport   0.000006     0.000016     0.000014  hltIterL3OIL3MuonCandidatesNoVtx
+TimeReport   0.000005     0.000013     0.000012  hltIterL3OIL3MuonsLinksCombinationNoVtx
+TimeReport   0.000007     0.000020     0.000017  hltIterL3OIL3MuonsNoVtx
+TimeReport   0.000275     0.000743     0.000655  hltIterL3OIMuCtfWithMaterialTracksNoVtx
+TimeReport   0.000011     0.000030     0.000027  hltIterL3OIMuonTrackCutClassifierNoVtx
+TimeReport   0.000013     0.000035     0.000031  hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+TimeReport   0.000245     0.000663     0.000584  hltIterL3OISeedsFromL2MuonsNoVtx
+TimeReport   0.002979     0.008053     0.007094  hltIterL3OITrackCandidatesNoVtx
+TimeReport   0.000041     0.000112     0.000112  hltL1fL1sSingleMu7L1Filtered0
+TimeReport   0.000115     0.000115     0.000115  hltL1sSingleMu7
+TimeReport   0.000010     0.000027     0.000027  hltL2MuonCandidatesNoVtx
+TimeReport   0.000201     0.000542     0.000542  hltL2MuonSeeds
+TimeReport   0.000983     0.002657     0.002657  hltL2Muons
+TimeReport   0.000196     0.000530     0.000530  hltL2OfflineMuonSeeds
+TimeReport   0.000009     0.000025     0.000022  hltL2SelectorForL3IONoVtx
+TimeReport   0.000021     0.000056     0.000056  hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx
+TimeReport   0.000165     0.000445     0.000392  hltL3MuonsIterL3IONoVtx
+TimeReport   0.000029     0.000078     0.000069  hltL3MuonsIterL3LinksNoVtx
+TimeReport   0.000305     0.000826     0.000727  hltL3MuonsIterL3OINoVtx
+TimeReport   0.000044     0.000120     0.000120  hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx
+TimeReport   0.001123     0.022461     0.022461  hltMuCkfTrackCandidates
+TimeReport   0.000047     0.000946     0.000946  hltMuCtfTracks
+TimeReport   0.000334     0.006685     0.006685  hltMuTrackSeeds
+TimeReport   0.002821     0.007624     0.007624  hltMuonCSCDigis
+TimeReport   0.000058     0.000158     0.000158  hltMuonDTDigis
+TimeReport   0.000101     0.000273     0.000273  hltMuonRPCDigis
+TimeReport   0.000051     0.000051     0.000051  hltOnlineBeamSpot
+TimeReport   0.000016     0.000327     0.000327  hltPixelLayerQuadruplets
+TimeReport   0.000432     0.008639     0.008639  hltPixelTracks
+TimeReport   0.000000     0.000009     0.000009  hltPixelTracksFilter
+TimeReport   0.000001     0.000013     0.000013  hltPixelTracksFitter
+TimeReport   0.000652     0.013039     0.013039  hltPixelTracksHitDoublets
+TimeReport   0.000809     0.016176     0.016176  hltPixelTracksHitQuadruplets
+TimeReport   0.000010     0.000193     0.000193  hltPixelTracksTrackingRegions
+TimeReport   0.000001     0.000002     0.000002  hltPreTrkMu16NoFiltersNoVtx
+TimeReport   0.000054     0.000145     0.000145  hltRpcRecHits
+TimeReport   0.000021     0.000021     0.000011  hltScalersRawToDigi
+TimeReport   0.004572     0.012357     0.009727  hltSiPixelClusters
+TimeReport   0.002133     0.005765     0.004538  hltSiPixelClustersCache
+TimeReport   0.002753     0.007440     0.005857  hltSiPixelDigis
+TimeReport   0.003917     0.010586     0.008334  hltSiPixelRecHits
+TimeReport   0.000165     0.000447     0.000352  hltSiStripClusters
+TimeReport   0.000008     0.000020     0.000016  hltSiStripExcludedFEDListProducer
+TimeReport   0.000093     0.000251     0.000197  hltSiStripRawToClustersFacility
+TimeReport   0.000003     0.000056     0.000056  hltSingleTrkMuFiltered16NoVtx
+TimeReport   0.000197     0.000197     0.000197  hltTriggerSummaryAOD
+TimeReport   0.000034     0.000034     0.000034  hltTriggerSummaryRAW
+TimeReport   0.000060     0.000060     0.000060  hltTriggerType
+TimeReport  per event     per exec    per visit  Name
+
+T---Report end!
+
+FastReport ---------------------------- Job Summary ----------------------------
+FastReport   CPU time avg.      when run  Real time avg.      when run     Alloc. avg.      when run   Dealloc. avg.      when run  Modules
+FastReport         0.3 ms         0.3 ms         9.3 ms         9.3 ms        +331 kB        +331 kB        -207 kB        -207 kB  source
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 process TEST20180501123044
+FastReport         0.2 ms         0.2 ms         0.2 ms         0.2 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltGetConditions
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltGetRaw
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltBoolFalse
+FastReport         0.0 ms         0.0 ms         0.1 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltTriggerType
+FastReport         0.3 ms         0.3 ms         0.5 ms         0.5 ms         +34 kB         +34 kB         -24 kB         -24 kB    hltGtStage2Digis
+FastReport         5.3 ms         5.3 ms         5.7 ms         5.7 ms       +3807 kB       +3807 kB       -3427 kB       -3427 kB    hltGtStage2ObjectMap
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltScalersRawToDigi
+FastReport         0.0 ms         0.0 ms         0.1 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltOnlineBeamSpot
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.1 ms          +5 kB          +5 kB          -3 kB          -3 kB    hltL1sSingleMu7
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltPreTrkMu16NoFiltersNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +1 kB          +2 kB          +0 kB          -1 kB    hltL1fL1sSingleMu7L1Filtered0
+FastReport         0.0 ms         0.1 ms         0.1 ms         0.2 ms          +9 kB         +25 kB          -6 kB         -17 kB    hltMuonDTDigis
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltDt1DRecHits
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltDt4DSegments
+FastReport         2.5 ms         6.9 ms         2.8 ms         7.6 ms       +1570 kB       +4245 kB       -1072 kB       -2899 kB    hltMuonCSCDigis
+FastReport         1.1 ms         3.0 ms         1.2 ms         3.1 ms        +156 kB        +422 kB        -146 kB        -396 kB    hltCsc2DRecHits
+FastReport         0.4 ms         1.0 ms         0.5 ms         1.2 ms        +127 kB        +343 kB        -116 kB        -315 kB    hltCscSegments
+FastReport         0.1 ms         0.3 ms         0.1 ms         0.3 ms          +4 kB         +11 kB          -1 kB          -5 kB    hltMuonRPCDigis
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.1 ms          +4 kB         +12 kB          -3 kB         -10 kB    hltRpcRecHits
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms         +22 kB         +61 kB         -19 kB         -53 kB    hltL2OfflineMuonSeeds
+FastReport         0.2 ms         0.4 ms         0.2 ms         0.6 ms          +8 kB         +23 kB          -6 kB         -17 kB    hltL2MuonSeeds
+FastReport         1.0 ms         2.6 ms         1.0 ms         2.7 ms         +94 kB        +254 kB         -88 kB        -238 kB    hltL2Muons
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltL2MuonCandidatesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +3 kB          +0 kB          -2 kB    hltL2fL1sSingleMu7L1f0L2Filtered10OneMuNoVtx
+FastReport         2.7 ms         7.3 ms         2.8 ms         7.4 ms        +653 kB       +1765 kB        -510 kB       -1379 kB    hltSiPixelDigis
+FastReport         4.3 ms        11.6 ms         4.6 ms        12.4 ms       +1277 kB       +3453 kB        -837 kB       -2263 kB    hltSiPixelClusters
+FastReport         1.8 ms         4.9 ms         2.1 ms         5.8 ms        +252 kB        +681 kB        -185 kB        -501 kB    hltSiPixelClustersCache
+FastReport         3.7 ms         9.9 ms         3.9 ms        10.6 ms       +2149 kB       +5810 kB       -1752 kB       -4737 kB    hltSiPixelRecHits
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltSiStripExcludedFEDListProducer
+FastReport         0.1 ms         0.3 ms         0.1 ms         0.3 ms       +3180 kB       +8596 kB         -71 kB        -192 kB    hltSiStripRawToClustersFacility
+FastReport         0.1 ms         0.2 ms         0.2 ms         0.4 ms        +187 kB        +507 kB          +0 kB          -2 kB    hltSiStripClusters
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.7 ms         +20 kB         +54 kB         -16 kB         -44 kB    hltIterL3OISeedsFromL2MuonsNoVtx
+FastReport         2.9 ms         7.8 ms         3.0 ms         8.1 ms        +882 kB       +2383 kB        -851 kB       -2302 kB    hltIterL3OITrackCandidatesNoVtx
+FastReport         0.2 ms         0.6 ms         0.3 ms         0.8 ms         +43 kB        +117 kB         -41 kB        -112 kB    hltIterL3OIMuCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIMuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          +0 kB    hltIterL3OIMuonTrackSelectionHighPurityNoVtx
+FastReport         0.2 ms         0.6 ms         0.3 ms         0.8 ms         +21 kB         +56 kB         -15 kB         -41 kB    hltL3MuonsIterL3OINoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIL3MuonsLinksCombinationNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIL3MuonsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3OIL3MuonCandidatesNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltL2SelectorForL3IONoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksFilterNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksFitterNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksTrackingRegionsNoVtx
+FastReport         0.1 ms         0.3 ms         0.1 ms         0.3 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIterL3MuonPixelLayerQuadrupletsNoVtx
+FastReport         1.5 ms         4.1 ms         2.2 ms         6.1 ms        +650 kB       +1758 kB        -636 kB       -1719 kB    hltIterL3MuonPixelTracksHitDoubletsNoVtx
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.3 ms         +54 kB        +146 kB         -54 kB        -146 kB    hltIterL3MuonPixelTracksHitQuadrupletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          +0 kB    hltIterL3MuonPixelTracksNoVtx
+FastReport         0.0 ms         0.1 ms         0.1 ms         0.3 ms          +1 kB          +4 kB          -1 kB          -3 kB    hltIterL3MuonPixelVerticesNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonTrimmedPixelVerticesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          -1 kB    hltIter0IterL3MuonPixelSeedsFromPixelTracksNoVtx
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.6 ms         +42 kB        +115 kB         -40 kB        -110 kB    hltIter0IterL3MuonCkfTrackCandidatesNoVtx
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.2 ms         +10 kB         +29 kB         -10 kB         -27 kB    hltIter0IterL3MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter0IterL3MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter0IterL3MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +1 kB          +4 kB          +0 kB          -2 kB    hltIter2IterL3MuonClustersRefRemovalNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter2IterL3MuonMaskedMeasurementTrackerEventNoVtx
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIter2IterL3MuonPixelLayerTripletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3MuonPixelClusterCheckNoVtx
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.6 ms         +27 kB         +74 kB         -23 kB         -64 kB    hltIter2IterL3MuonPixelHitDoubletsNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms         +56 kB        +153 kB         -56 kB        -152 kB    hltIter2IterL3MuonPixelHitTripletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.1 ms         0.1 ms          +1 kB          +4 kB          -1 kB          -3 kB    hltIter2IterL3MuonPixelSeedsNoVtx
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms         +36 kB         +97 kB         -34 kB         -92 kB    hltIter2IterL3MuonCkfTrackCandidatesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +7 kB         +21 kB          -7 kB         -19 kB    hltIter2IterL3MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter2IterL3MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.1 ms         0.1 ms         0.2 ms          +1 kB          +4 kB          +0 kB          -1 kB    hltIter2IterL3MuonMergedNoVtx
+FastReport         0.2 ms         0.4 ms         0.2 ms         0.4 ms         +15 kB         +40 kB         -10 kB         -29 kB    hltL3MuonsIterL3IONoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonsFromL2LinksCombinationNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonsFromL2NoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltIterL3MuonL1MuonNoL2SelectorNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          -1 kB    hltIterL3FromL1MuonPixelTracksTrackingRegionsNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIterL3FromL1MuonPixelLayerQuadrupletsNoVtx
+FastReport         0.7 ms         1.8 ms         0.9 ms         2.6 ms        +257 kB        +695 kB        -246 kB        -664 kB    hltIterL3FromL1MuonPixelTracksHitDoubletsNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms        +110 kB        +299 kB        -110 kB        -298 kB    hltIterL3FromL1MuonPixelTracksHitQuadrupletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +2 kB          +0 kB          -1 kB    hltIterL3FromL1MuonPixelTracksNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +4 kB          -1 kB          -3 kB    hltIterL3FromL1MuonPixelVerticesNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3FromL1MuonTrimmedPixelVerticesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +3 kB          -1 kB          -2 kB    hltIter0IterL3FromL1MuonPixelSeedsFromPixelTracksNoVtx
+FastReport         0.2 ms         0.7 ms         0.2 ms         0.7 ms         +54 kB        +147 kB         -49 kB        -133 kB    hltIter0IterL3FromL1MuonCkfTrackCandidatesNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms         +17 kB         +46 kB         -16 kB         -43 kB    hltIter0IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter0IterL3FromL1MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +1 kB          +4 kB          +0 kB          -1 kB    hltIter0IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +1 kB          +4 kB          +0 kB          -2 kB    hltIter2IterL3FromL1MuonClustersRefRemovalNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +2 kB          +0 kB          +0 kB    hltIter2IterL3FromL1MuonMaskedMeasurementTrackerEventNoVtx
+FastReport         0.2 ms         0.5 ms         0.2 ms         0.5 ms        +141 kB        +382 kB         -90 kB        -243 kB    hltIter2IterL3FromL1MuonPixelLayerTripletsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3FromL1MuonPixelClusterCheckNoVtx
+FastReport         0.2 ms         0.6 ms         0.2 ms         0.6 ms         +56 kB        +153 kB         -47 kB        -128 kB    hltIter2IterL3FromL1MuonPixelHitDoubletsNoVtx
+FastReport         0.1 ms         0.2 ms         0.1 ms         0.2 ms        +123 kB        +332 kB        -122 kB        -331 kB    hltIter2IterL3FromL1MuonPixelHitTripletsNoVtx
+FastReport         0.1 ms         0.1 ms         0.1 ms         0.1 ms          +9 kB         +24 kB          -7 kB         -19 kB    hltIter2IterL3FromL1MuonPixelSeedsNoVtx
+FastReport         0.5 ms         1.4 ms         0.6 ms         1.5 ms        +109 kB        +295 kB         -98 kB        -265 kB    hltIter2IterL3FromL1MuonCkfTrackCandidatesNoVtx
+FastReport         0.2 ms         0.4 ms         0.2 ms         0.4 ms         +37 kB        +101 kB         -35 kB         -95 kB    hltIter2IterL3FromL1MuonCtfWithMaterialTracksNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIter2IterL3FromL1MuonTrackCutClassifierNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +2 kB          +6 kB          -1 kB          -2 kB    hltIter2IterL3FromL1MuonTrackSelectionHighPurityNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +3 kB          +9 kB          +0 kB          -2 kB    hltIter2IterL3FromL1MuonMergedNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +2 kB          +5 kB          +0 kB          -1 kB    hltIterL3MuonMergedNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +4 kB         +11 kB          +0 kB          -2 kB    hltIterL3MuonAndMuonFromL1MergedNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.1 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltL3MuonsIterL3LinksNoVtx
+FastReport         2.0 ms         5.3 ms         2.1 ms         5.8 ms         +65 kB        +176 kB         -59 kB        -162 kB    hltIterL3MuonsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltIterL3MuonCandidatesNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB          +3 kB          +0 kB          -2 kB    hltL3fL1sSingleMu7L1f0L2f10OneMuL3Filtered16NoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltPixelTracksFilter
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltPixelTracksFitter
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.2 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltPixelTracksTrackingRegions
+FastReport         0.0 ms         0.3 ms         0.0 ms         0.3 ms         +22 kB        +447 kB         -14 kB        -280 kB    hltPixelLayerQuadruplets
+FastReport         0.5 ms        10.6 ms         0.7 ms        13.1 ms        +222 kB       +4441 kB        -144 kB       -2890 kB    hltPixelTracksHitDoublets
+FastReport         0.8 ms        15.8 ms         0.8 ms        16.2 ms        +342 kB       +6849 kB        -340 kB       -6810 kB    hltPixelTracksHitQuadruplets
+FastReport         0.3 ms         6.5 ms         0.4 ms         8.6 ms         +62 kB       +1253 kB         -38 kB        -772 kB    hltPixelTracks
+FastReport         0.3 ms         6.6 ms         0.3 ms         6.7 ms         +84 kB       +1680 kB         -76 kB       -1526 kB    hltMuTrackSeeds
+FastReport         0.8 ms        15.7 ms         1.1 ms        22.5 ms        +227 kB       +4559 kB        -219 kB       -4389 kB    hltMuCkfTrackCandidates
+FastReport         0.0 ms         0.9 ms         0.0 ms         0.9 ms         +12 kB        +257 kB         -12 kB        -243 kB    hltMuCtfTracks
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +1 kB         +26 kB          +0 kB          -5 kB    hltDiMuonMergingNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltDiMuonLinksNoVtx
+FastReport         1.0 ms        20.4 ms         1.2 ms        24.5 ms         +51 kB       +1026 kB         -46 kB        -931 kB    hltGlbTrkMuonsNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +1 kB          +0 kB          -1 kB    hltGlbTrkMuonCandsNoVtx
+FastReport         0.0 ms         0.1 ms         0.0 ms         0.1 ms          +0 kB          +4 kB          +0 kB          -2 kB    hltSingleTrkMuFiltered16NoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    hltBoolEnd
+FastReport         0.2 ms         0.2 ms         0.2 ms         0.2 ms        +224 kB        +224 kB        -112 kB        -112 kB    hltFEDSelector
+FastReport         0.1 ms         0.1 ms         0.2 ms         0.2 ms          +7 kB          +7 kB          -5 kB          -5 kB    hltTriggerSummaryAOD
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +3 kB          +3 kB          -1 kB          -1 kB    hltTriggerSummaryRAW
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    dqmOutput
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    TriggerResults
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLTriggerFirstPath
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLT_TrkMu16_NoFiltersNoVtx
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLTriggerFinalPath
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    DQMOutput
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 total
+
+FastReport     CPU time sched. / depend.    Real time sched. / depend.       Alloc. sched. / depend.     Dealloc. sched. / depend.  Processes and Paths
+FastReport         0.3 ms                        9.3 ms                       +331 kB                       -207 kB                 source
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 process TEST20180501123044
+FastReport         0.2 ms         0.2 ms         0.2 ms         0.2 ms          +0 kB          +0 kB          +0 kB          +0 kB    HLTriggerFirstPath
+FastReport        45.3 ms        39.1 ms        51.0 ms        44.1 ms      +20825 kB      +17892 kB      -13802 kB      -12142 kB    HLT_TrkMu16_NoFiltersNoVtx
+FastReport         0.6 ms        39.4 ms         1.0 ms        44.4 ms        +270 kB      +18127 kB        -143 kB      -12261 kB    HLTriggerFinalPath
+FastReport         0.0 ms         0.0 ms         0.0 ms         0.0 ms          +0 kB          +0 kB          +0 kB          +0 kB    DQMOutput
+FastReport        39.7 ms                       44.7 ms                     +18128 kB                     -12261 kB                 total
+
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 Alignment            -i EventSetupRecord GeometryAligner:      4*       4
+    2 Alignment            -i EventSetupRecord GeometryAligner:      2*       2
+    3 Alignment            -i MuonIdProducer:h GeometryAligner:      2*       2
+    4 AutoMagneticField    -i EventSetupRecord                       1*       1
+    5 AutoParametrizedMagn -i EventSetupRecord                       1*       1
+    6 CSC                  -i CSCSegmentProduc                      40*      40
+    7 CSCSegment           -i CSCSegmentProduc                      40*      40
+    8 CaloGeometryBuilder  -i EventSetupRecord                       6*       6
+    9 CandidateSeededTrack -i CandidateSeededT                      24*      24
+   10 ClusterShapeHitFilte -i (NoModuleName)                         4*       4
+   11 CondDBESSource       -i AfterSource                         1630*    1630
+   12 CondDBESSource       -i PostGlobalEndLum                       6*       6
+   13 DDCompactViewImpl    -i EventSetupRecord                       1*       1
+   14 EventSetupDependency -i AfterSource                           12*      12
+   15 FastReport           -i AfterModEndJob                         1        1
+   16 FastReport           -i PreGlobalEndLumi                       1        1
+   17 FastReport           -i PreGlobalEndRun                        1        1
+   18 FwkReport            -i AfterSource                          100*     100
+   19 FwkSummary           -i AfterModEndJob                       731      731
+   20 Geometry             -i (NoModuleName)   CSCGeometryESMod      1*       1
+   21 Geometry             -i (NoModuleName)   DTGeometryESModu      1*       1
+   22 Geometry             -i (NoModuleName)   TrackerDigiGeome      1*       1
+   23 GeometryGlobalTracki -i EventSetupRecord                       2*       2
+   24 GsfBetheHeitlerUpdat -i EventSetupRecord                       2*       2
+   25 HCAL                 -i (NoModuleName)                         2*       2
+   26 HCAL                 -i AfterSource                            1*       1
+   27 HCAL                 -i EventSetupRecord                       2*       2
+   28 HcalSeverityLevelCom -i EventSetupRecord                       9*       9
+   29 MagneticField        -i EventSetupRecord                       2*       2
+   30 MeasurementTracker   -i EventSetupRecord                       2*       2
+   31 Muon                 -i EventSetupRecord                       1*       1
+   32 Muon                 -i TSGForOI:hltIter                      37*      37
+   33 MuonDetLayerGeometry -i EventSetupRecord                       1*       1
+   34 ParameterSet         -i EventSetupRecord                       2*       2
+   35 ParameterSet         -i L2MuonProducer:h                       8*       8
+   36 PixelTrackProducer   -i PixelTrackProduc                       4*       4
+   37 PixelTrackProducer   -i PixelTrackProduc                       4*       4
+   38 PixelVertexProducer  -i PixelVertexProdu                      33*      33
+   39 PixelVertexProducer  -i PixelVertexProdu                      33*      33
+   40 PrescaleSummary      -i HLTPrescaler:hlt                       1*       1
+   41 RecoMuon             -i EventSetupRecord                       1*       1
+   42 RecoMuon             -i TSGForOI:hltIter                      37*      37
+   43 RecoMuonDetLayers    -i EventSetupRecord                       1*       1
+   44 SiPixelGenError      -i EventSetupRecord                      24*      24
+   45 SiPixelQualityESProd -i (NoModuleName)                         1*       1
+   46 SiPixelTemplate      -i EventSetupRecord                      24*      24
+   47 SiStripBackPlaneCorr -i (NoModuleName)                         1*       1
+   48 SiStripBackPlaneCorr -i EventSetupRecord                       1*       1
+   49 SiStripDetInfoFileRe -i SiStripClusteriz                       2*       2
+   50 SiStripDetInfoFileRe -i SiStripClusteriz                       2*       2
+   51 SiStripLorentzAngleD -i (NoModuleName)                         1*       1
+   52 SiStripLorentzAngleD -i EventSetupRecord                       1*       1
+   53 SiStripQualityESProd -i (NoModuleName)                         1*       1
+   54 SiStripQualityESProd -i SiStripClusteriz                       6*       6
+   55 TRACKER              -i (NoModuleName)                         1*       1
+   56 TSGForOI             -i TSGForOI:hltIter                      37*      37
+   57 TkDetLayers          -i EventSetupRecord                      52*      52
+   58 TkDetLayers          -i TrackProducer:hl                       9*       9
+   59 TrackAssociator      -i EventSetupRecord                       6*       6
+   60 TrackerTopologyEP    -i SiStripClusteriz                       1*       1
+   61 TriggerSummaryProduc -i TriggerSummaryPr                      20       20
+   62 XrdAdaptorInternal   -i (NoModuleName)                        58*      58
+   63 XrdAdaptorInternal   -i AfterFile                             28*      28
+   64 XrdAdaptorInternal   -i AfterModBeginStr                       3*       3
+   65 XrdAdaptorInternal   -i AfterSource                            7*       7
+   66 XrdAdaptorInternal   -i PostModuleEvent                       38*      38
+   67 XrdAdaptorInternal   -i PostProcessPath                        5*       5
+   68 XrdAdaptorInternal   -i PostStreamBeginR                       6*       6
+   69 XrdAdaptorInternal   -i file_open                              7*       7
+   70 XrdAdaptorInternal   -i source                                 5*       5
+   71 XrdFileInfo          -i file_close                             1*       1
+   72 XrdFileInfo          -i file_open                              2*       2
+   73 XrdAdaptor           -w file_open                              1        1
+   74 JetCorrectorParamete -e EventSetupRecord                       4        4
+   75 fileAction           -s file_close                             1        1
+   76 fileAction           -s file_open                              2        2
+
+* Some occurrences of this message were suppressed in all logs, due to limits.
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 Alignment            Run: 1 Stream: 2 Run: 1 Stream: 2 Run: 1 Stream: 1
+    2 Alignment            Run: 1 Stream: 2 Run: 1 Stream: 2 
+    3 Alignment            Run: 1 Stream: 1 Run: 1 Stream: 1 
+    4 AutoMagneticField    Run: 1 Stream: 2                  
+    5 AutoParametrizedMagneticField Run: 1 Stream: 2                  
+    6 CSC                  pre-events       pre-events       pre-events
+    7 CSCSegment           pre-events       pre-events       pre-events
+    8 CaloGeometryBuilder  Run: 1 Stream: 1 Run: 1 Stream: 1 Run: 1 Stream: 1
+    9 CandidateSeededTrackingRegionsProducer 1/8899193        1/8899200        1/8899291
+   10 ClusterShapeHitFilterESProducer pre-events       pre-events       pre-events
+   11 CondDBESSource       BeforeEvents     BeforeEvents     BeforeEvents
+   12 CondDBESSource       PostGlobalEndLum PostGlobalEndLum PostGlobalEndLum
+   13 DDCompactViewImpl    Run: 1 Stream: 2                  
+   14 EventSetupDependency BeforeEvents     BeforeEvents     BeforeEvents
+   15 FastReport           PostGlobalEndRun                  
+   16 FastReport           Run: 1 Lumi: 131                  
+   17 FastReport           End Run: 1                        
+   18 FwkReport            AfterSource      AfterSource      AfterSource
+   19 FwkSummary           PostGlobalEndRun PostGlobalEndRun PostGlobalEndRun
+   20 Geometry             pre-events                        
+   21 Geometry             pre-events                        
+   22 Geometry             pre-events                        
+   23 GeometryGlobalTrackingGeometryBuilder Run: 1 Stream: 0 Run: 1 Stream: 0 
+   24 GsfBetheHeitlerUpdator Run: 1 Stream: 2 Run: 1 Stream: 2 
+   25 HCAL                 pre-events       pre-events       
+   26 HCAL                 BeforeEvents                      
+   27 HCAL                 Run: 1 Stream: 1 Run: 1 Stream: 1 
+   28 HcalSeverityLevelComputer Run: 1 Stream: 1 Run: 1 Stream: 1 Run: 1 Stream: 1
+   29 MagneticField        Run: 1 Stream: 2 Run: 1 Stream: 2 
+   30 MeasurementTracker   Run: 1 Stream: 1 Run: 1 Stream: 1 
+   31 Muon                 Run: 1 Stream: 1                  
+   32 Muon                 1/8899196        1/8899197        1/8899291
+   33 MuonDetLayerGeometryESProducer Run: 1 Stream: 1                  
+   34 ParameterSet         Run: 1 Stream: 0 Run: 1 Stream: 0 
+   35 ParameterSet         pre-events       pre-events       pre-events
+   36 PixelTrackProducer   pre-events       pre-events       pre-events
+   37 PixelTrackProducer   pre-events       pre-events       pre-events
+   38 PixelVertexProducer  1/8899196        1/8899193        1/8899291
+   39 PixelVertexProducer  1/8899196        1/8899193        1/8899291
+   40 PrescaleSummary      PostGlobalEndRun                  
+   41 RecoMuon             Run: 1 Stream: 1                  
+   42 RecoMuon             1/8899196        1/8899197        1/8899291
+   43 RecoMuonDetLayers    Run: 1 Stream: 1                  
+   44 SiPixelGenError      Run: 1 Stream: 2 Run: 1 Stream: 2 Run: 1 Stream: 2
+   45 SiPixelQualityESProducer::SiPixelQualityESProducer pre-events                        
+   46 SiPixelTemplate      Run: 1 Stream: 2 Run: 1 Stream: 2 Run: 1 Stream: 2
+   47 SiStripBackPlaneCorrectionDepESProducer pre-events                        
+   48 SiStripBackPlaneCorrectionDepESProducer Run: 1 Stream: 2                  
+   49 SiStripDetInfoFileReader Run: 1 Stream: 0 Run: 1 Stream: 0 
+   50 SiStripDetInfoFileReader::SiStripDetInfoFileReader - END of file reached Run: 1 Stream: 0 Run: 1 Stream: 0 
+   51 SiStripLorentzAngleDepESProducer pre-events                        
+   52 SiStripLorentzAngleDepESProducer Run: 1 Stream: 2                  
+   53 SiStripQualityESProducer pre-events                        
+   54 SiStripQualityESProducer Run: 1 Stream: 0 Run: 1 Stream: 0 Run: 1 Stream: 0
+   55 TRACKER              pre-events                        
+   56 TSGForOI             1/8899196        1/8899197        1/8899291
+   57 TkDetLayers          Run: 1 Stream: 1 Run: 1 Stream: 1 Run: 1 Stream: 1
+   58 TkDetLayers          1/8899197        1/8899197        1/8899270
+   59 TrackAssociator      Run: 1 Stream: 0 Run: 1 Stream: 0 Run: 1 Stream: 0
+   60 TrackerTopologyEP    Run: 1 Stream: 0                  
+   61 TriggerSummaryProducerAOD PostGlobalEndRun PostGlobalEndRun PostGlobalEndRun
+   62 XrdAdaptorInternal   pre-events       pre-events       pre-events
+   63 XrdAdaptorInternal   pre-events       pre-events       pre-events
+   64 XrdAdaptorInternal   BeforeEvents     BeforeEvents     BeforeEvents
+   65 XrdAdaptorInternal   AfterSource      AfterSource      AfterSource
+   66 XrdAdaptorInternal   1/8899220        1/8899220        1/8899287
+   67 XrdAdaptorInternal   1/8899232        1/8899232        1/8899232
+   68 XrdAdaptorInternal   PostStreamBeginR PostStreamBeginR PostStreamBeginR
+   69 XrdAdaptorInternal   pre-events       pre-events       pre-events
+   70 XrdAdaptorInternal   PostStreamBeginL PostStreamBeginL PostStreamBeginL
+   71 XrdFileInfo          PostGlobalEndRun                  
+   72 XrdFileInfo          pre-events       pre-events       
+   73 XrdAdaptor           pre-events                        
+   74 JetCorrectorParametersHelper Run: 1 Stream: 1 Run: 1 Stream: 1 Run: 1 Stream: 1
+   75 fileAction           PostGlobalEndRun                  
+   76 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Info                 3145                3145
+Warning                 1                   1
+Error                   4                   4
+System                  3                   3
+
+dropped waiting message count 0
