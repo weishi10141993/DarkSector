@@ -1,0 +1,324 @@
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob ======== Starting execution. Task Worker Version 3.3.1805.rc1
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:PostJob Creating symbolic link in task web directory to post-job log file: /home/grid/cms280/180508_093519:wshi_crab_DIGI_RAW_DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100/postjob.1.2.txt -> postjob.1.2.txt
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:PostJob Copying job stdout from job_out.1 to /home/grid/cms280/180508_093519:wshi_crab_DIGI_RAW_DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100/job_out.1.2.txt.
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:PostJob Copying job report from jobReport.json.1 to job_fjr.1.2.json.
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:PostJob Creating symbolic link in task web directory to job report file: /home/grid/cms280/180508_093519:wshi_crab_DIGI_RAW_DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100/job_fjr.1.2.json -> job_fjr.1.2.json
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob This is job retry number 2. The maximum allowed number of retries is 2.
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:PostJob This post-job corresponds to job with Condor ID 20916852.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob ====== Starting to parse job ad file /data/srv/glidecondor/condor_local/job_history/history.20916852.0.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob        -----> Started 0 time out of 5 -----
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob        -----> Succeeded to parse job ad file -----
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob        -----> Succeeded to copy job ad file.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob ====== Finished to parse job ad.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob ====== Starting to analyze job exit status.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob        -----> RetryJob log start -----
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:RetryJob Job ads already present. Will not use condor_q, but will load previous jobs ads.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:RetryJob Job or stageout wrapper finished with exit code 8028. Trying to determine the meaning of the exit code and if it is a recoverable or fatal error.
+Tue, 08 May 2018 12:19:59 CEST(+0000):ERROR:RetryJob Job failed to open local and fallback files.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob        <----- RetryJob log finish ----
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob The retry handler indicated this was a recoverable error, but the maximum number of retries was already hit. DAGMan will not retry.
+Tue, 08 May 2018 12:19:59 CEST(+0000):INFO:PostJob ====== Starting to prepare/send report to dashboard.
+Tue, 08 May 2018 12:19:59 CEST(+0000):DEBUG:PostJob Dashboard exit code already set on the worker node. Continuing normally.
+Tue, 08 May 2018 12:20:00 CEST(+0000):INFO:PostJob Setting Dashboard state to Aborted. Dashboard parameters: {'MonitorID': '180508_093519:wshi_crab_DIGI_RAW_DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100', 'MonitorJobID': '1_https://glidein.cern.ch/1/180508:093519:wshi:crab:DIGI:RAW:DarkSUSY:mH:125:mN1:10:mND:1:mGammaD:0p25:cT:100_2', 'StatusValue': 'Aborted'}
+Tue, 08 May 2018 12:20:00 CEST(+0000):INFO:PostJob ====== Finished to prepare/send report to dashboard.
+Tue, 08 May 2018 12:20:00 CEST(+0000):INFO:PostJob ====== Finished to analyze job exit status.
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob ====== Starting to prepare error report.
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob Acquiring lock on error summary file.
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob Acquired lock on error summary file.
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob Updating error summary for jobid 1 retry 2 with following information:
+'exit code' = 8028
+'exit message' = CmsRunFailure
+CMSSW error message follows.
+Fatal Exception
+An exception of category 'FallbackFileOpenError' occurred while
+   [0] Constructing the EventProcessor
+   [1] Constructing input source of type PoolSource
+   [2] Calling RootFileSequenceBase::initTheFile()
+   [3] Calling StorageFactory::open()
+   [4] Calling XrdFile::open()
+Exception Message:
+Failed to open the file 'root://xrootd.ba.infn.it//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root'
+   Additional Info:
+      [a] open() failed with system error 'No such file or directory' (error code 2)
+      [b] Input file /fdata/hepx/store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root could not be opened.
+Fallback Input file root://xrootd.ba.infn.it//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root also could not be opened.
+Original exception info is above; fallback exception info is below.
+      [c] XrdCl::File::Open(name='root://xrootd.ba.infn.it//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.
+' (errno=3011, code=400). No additional data servers were found.
+      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root?tried=+1213xrootd.ba.infn.it,
+      [e] Problematic data server: cms-xrd-global.cern.ch:1094
+      [f] Disabled source: cms-xrd-global.cern.ch:1094
+
+'error message' = {u'type': u'Fatal Exception', u'details': u"An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://xrootd.ba.infn.it//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /fdata/hepx/store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root could not be opened.\nFallback Input file root://xrootd.ba.infn.it//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://xrootd.ba.infn.it//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/GEN_SIM/180507_195402/0000/out_sim_1.root?tried=+1213xrootd.ba.infn.it,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", u'exitCode': u'8028'}
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob Writing error summary file
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob Written error summary file
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob ====== Finished to prepare error report.
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob ====== Starting to prepare WMArchive report.
+Tue, 08 May 2018 12:20:01 CEST(+0000):ERROR:PostJob Unknown error while preparing the WMArchive report.
+Traceback (most recent call last):
+  File "TaskWorker/Actions/PostJob.py", line 1575, in execute
+    self.processWMArchive(retval)
+  File "TaskWorker/Actions/PostJob.py", line 2755, in processWMArchive
+    archiveDoc["meta_data"]['crab_exit_code'] = self.job_report['exitCode']
+KeyError: 'exitCode'
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob ====== Finished to prepare WMArchive report.
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob Will not write postjob_env.txt file. Continue.
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob ------ Job classad values for debug purposes:
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob ----------------------------------------------------------------------------------------------------
+                    AccountingGroup    analysis.wshi
+                          AcctGroup    analysis
+                      AcctGroupUser    wshi
+                          Arguments    -a sandbox.tar.gz --sourceURL=https://cmsweb.cern.ch/crabcache --jobNumber=1 --cmsswVersion=CMSSW_9_4_1 --scramArch=slc6_amd64_gcc630 --inputFile=job_input_file_list_1.txt --runAndLumis=job_lumis_1.json --lheInputFiles=False --firstEvent=None --firstLumi=None --lastEvent=None --firstRun=None --seeding=AutomaticSeeding --scriptExe=None --eventsPerLumi=None --maxRuntime=-60 --scriptArgs=[] -o {}
+                    BlockReadKbytes    0
+                         BlockReads    0
+                   BlockWriteKbytes    0
+                        BlockWrites    0
+                    BufferBlockSize    32768
+                         BufferSize    524288
+                ChirpCMSSWCPUModels    Intel(R) Xeon(R) CPU E5420 @ 2.50GHz
+                 ChirpCMSSWCPUSpeed    2250
+                  ChirpCMSSWElapsed    0
+                   ChirpCMSSWEvents    0
+                    ChirpCMSSWFiles    0
+               ChirpCMSSWLastUpdate    1525774764
+                    ChirpCMSSWLumis    0
+                ChirpCMSSWMaxEvents    -1
+                 ChirpCMSSWMaxFiles    -1
+                 ChirpCMSSWMaxLumis    -1
+                ChirpCMSSWReadBytes    0
+                  ChirpCMSSWReadOps    0
+             ChirpCMSSWReadSegments    0
+            ChirpCMSSWReadTimeMsecs    0
+                 ChirpCMSSWReadVOps    0
+                     ChirpCMSSWRuns    0
+               ChirpCMSSWWriteBytes    0
+           ChirpCMSSWWriteTimeMsecs    0
+           Chirp_CRAB3_Job_ExitCode    8028
+                          ClusterId    20916852
+                                Cmd    /data/srv/glidecondor/condor_local/spool/4060/0/cluster20914060.proc0.subproc0/gWMS-CMSRunAnalysis.sh
+                          CMSGroups    /cms,T3_US_TAMU
+                 CMS_ALLOW_OVERFLOW    True
+            CommittedSuspensionTime    0
+                      CommittedTime    69
+                     CompletionDate    1525774791
+                     CondorPlatform    $CondorPlatform: x86_64_RedHat6 $
+                      CondorVersion    $CondorVersion: 8.6.8 Oct 30 2017 BuildID: 422919 $
+                           CoreSize    -1
+                         CRAB_ASODB    filetransfers
+                    CRAB_ASOTimeout    86400
+                        CRAB_ASOURL    https://cmsweb.cern.ch/crabserver/prod
+                     CRAB_AsyncDest    T3_US_TAMU
+                     CRAB_DataBlock    /DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/wshi-GEN_SIM-21fd64682e845e630b293e515db358b1/USER#8b0ce5c3-1766-4903-8c5d-2c7fc04a403a
+                        CRAB_DBSURL    https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader
+                   CRAB_Destination    srm://srm.brazos.tamu.edu:8443/srm/v2/server?SFN=/fdata/hepx/store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/DIGI_RAW/180508_093519/0000/log/cmsRun_1.log.tar.gz, srm://srm.brazos.tamu.edu:8443/srm/v2/server?SFN=/fdata/hepx/store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/DIGI_RAW/180508_093519/0000/out_raw_1.root
+                            CRAB_Id    1
+                           CRAB_ISB    https://cmsweb.cern.ch/crabcache
+                       CRAB_JobArch    slc6_amd64_gcc630
+                         CRAB_JobSW    CMSSW_9_4_1
+                       CRAB_JobType    analysis
+              CRAB_localOutputFiles    out_raw.root=out_raw_1.root
+            CRAB_NumAutomJobRetries    2
+                  CRAB_oneEventMode    0
+                     CRAB_OutLFNDir    /store/user/wshi/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/DIGI_RAW/180508_093519
+                 CRAB_OutTempLFNDir    /store/temp/user/wshi.63a69f219e26fe6d24cb66b819d1010afce47764/DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/DIGI_RAW/180508_093519
+                CRAB_PrimaryDataset    DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8
+                       CRAB_Publish    1
+                 CRAB_PublishDBSURL    https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter
+              CRAB_PublishGroupName    0
+                   CRAB_PublishName    DIGI_RAW-00000000000000000000000000000000
+                       CRAB_ReqName    180508_093519:wshi_crab_DIGI_RAW_DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100
+                      CRAB_RestHost    cmsweb.cern.ch
+                  CRAB_RestURInoAPI    /crabserver/prod
+                         CRAB_Retry    2
+            CRAB_RetryOnASOFailures    1
+                  CRAB_SaveLogsFlag    0
+                CRAB_StageoutPolicy    local,remote
+               CRAB_SubmitterIpAddr    188.185.67.179
+                   CRAB_TaskEndTime    1528364119
+              CRAB_TaskLifetimeDays    30
+                    CRAB_TaskWorker    vocms052
+               CRAB_TransferOutputs    1
+                        CRAB_UserDN    /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=wshi/CN=791920/CN=Wei Shi
+                     CRAB_UserGroup    undefined
+                        CRAB_UserHN    wshi
+                      CRAB_UserRole    undefined
+                      CRAB_Workflow    180508_093519:wshi_crab_DIGI_RAW_DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100
+           CumulativeSuspensionTime    0
+                       CurrentHosts    0
+                        DAGManJobId    20914060
+                     DAGManNodesLog    /data/srv/glidecondor/condor_local/spool/4060/0/cluster20914060.proc0.subproc0/RunJobs.dag.nodes.log
+                    DAGManNodesMask    0,1,2,4,5,7,9,10,11,12,13,16,17,24,27
+                        DAGNodeName    Job1
+                 DAGParentNodeNames    
+                      DESIRED_Archs    X86_64
+           DESIRED_CMSDataLocations    T3_US_TAMU
+                 DESIRED_CMSDataset    /DarkSUSY_mH_125_mN1_10_mND_1_mGammaD_0p25_cT_100_MG5_pythia8/wshi-GEN_SIM-21fd64682e845e630b293e515db358b1/USER
+                      DESIRED_SITES    T3_US_TAMU
+                          DiskUsage    45000
+                      DiskUsage_RAW    43643
+               EnteredCurrentStatus    1525774791
+                        Environment    CRAB_TASKMANAGER_TARBALL=local SCRAM_ARCH=slc6_amd64_gcc630 CRAB_RUNTIME_TARBALL=local
+                                Err    job_err.1
+              EstimatedWallTimeMins    60
+                     ExecutableSize    10
+                 ExecutableSize_RAW    9
+                           ExitCode    92
+                         ExitStatus    0
+                        GlobalJobId    crab3@vocms0120.cern.ch#20916852.0#1525774428
+                          ImageSize    750000
+                      ImageSize_RAW    618260
+                                 In    /dev/null
+                                Iwd    /data/srv/glidecondor/condor_local/spool/4060/0/cluster20914060.proc0.subproc0
+              JobAdInformationAttrs    MATCH_EXP_JOBGLIDEIN_CMSSite, JOBGLIDEIN_CMSSite, RemoteSysCpu, RemoteUserCpu
+                       JobBatchName    RunJobs.dag+20914060
+                JobCurrentStartDate    1525774721
+       JobCurrentStartExecutingDate    1525774728
+  JobCurrentStartTransferOutputDate    9160928
+                JobFinishedHookDone    1525774791
+                 JOBGLIDEIN_CMSSite    $$([ifThenElse(GLIDEIN_CMSSite is undefined, \Unknown\, GLIDEIN_CMSSite)])
+                   JobLeaseDuration    2400
+                    JobNotification    0
+                            JobPrio    10
+                        JobRunCount    1
+                       JobStartDate    1525774721
+                          JobStatus    4
+                        JobUniverse    5
+                        JOB_CMSSite    $$(GLIDEIN_CMSSite:Unknown)
+               JOB_GLIDECLIENT_Name    $$(GLIDECLIENT_Name:Unknown)
+              JOB_GLIDEIN_ClusterId    $$(GLIDEIN_ClusterId:Unknown)
+                JOB_GLIDEIN_CMSSite    $$(GLIDEIN_CMSSite:Unknown)
+             JOB_GLIDEIN_Entry_Name    $$(GLIDEIN_Entry_Name:Unknown)
+                JOB_GLIDEIN_Factory    $$(GLIDEIN_Factory:Unknown)
+           JOB_GLIDEIN_Job_Max_Time    $$(GLIDEIN_Job_Max_Time:Unknown)
+              JOB_GLIDEIN_MaxMemMBs    $$(GLIDEIN_MaxMemMBs:Unknown)
+           JOB_GLIDEIN_Max_Walltime    $$(GLIDEIN_Max_Walltime:Unknown)
+                 JOB_GLIDEIN_Memory    $$(Memory:Unknown)
+                   JOB_GLIDEIN_Name    $$(GLIDEIN_Name:Unknown)
+                 JOB_GLIDEIN_ProcId    $$(GLIDEIN_ProcId:Unknown)
+                 JOB_GLIDEIN_Schedd    $$(GLIDEIN_Schedd:Unknown)
+                    JOB_GLIDEIN_SEs    $$(GLIDEIN_SEs:Unknown)
+                   JOB_GLIDEIN_Site    $$(GLIDEIN_Site:Unknown)
+                JOB_GLIDEIN_SiteWMS    $$(GLIDEIN_SiteWMS:Unknown)
+          JOB_GLIDEIN_SiteWMS_JobId    $$(GLIDEIN_SiteWMS_JobId:Unknown)
+          JOB_GLIDEIN_SiteWMS_Queue    $$(GLIDEIN_SiteWMS_Queue:Unknown)
+           JOB_GLIDEIN_SiteWMS_Slot    $$(GLIDEIN_SiteWMS_Slot:Unknown)
+                  JOB_GLIDEIN_ToDie    $$(GLIDEIN_ToDie:Unknown)
+               JOB_GLIDEIN_ToRetire    $$(GLIDEIN_ToRetire:Unknown)
+                           JOB_Site    $$(GLIDEIN_Site:Unknown)
+                LastJobLeaseRenewal    1525774790
+                      LastJobStatus    2
+                      LastMatchTime    1525774721
+                  LastPublicClaimId    <192.168.200.30:45035>#1525774023#3#...
+                     LastRemoteHost    glidein_29322_251210436@c0121.brazos.tamu.edu
+                 LastSuspensionTime    0
+                    LastTimingTuned    1525774665
+                   MachineAttrCpus0    1
+       MachineAttrMJF_JOB_HS06_JOB0    Unknown
+             MachineAttrSlotWeight0    1
+          MachineAttrTotalSlotCpus0    1
+       MATCH_EXP_JOBGLIDEIN_CMSSite    T3_US_TAMU
+              MATCH_EXP_JOB_CMSSite    T3_US_TAMU
+     MATCH_EXP_JOB_GLIDECLIENT_Name    CMSG-v1_0.local_users
+    MATCH_EXP_JOB_GLIDEIN_ClusterId    1255353
+      MATCH_EXP_JOB_GLIDEIN_CMSSite    T3_US_TAMU
+   MATCH_EXP_JOB_GLIDEIN_Entry_Name    CMS_T3_TAMU_BRAZOS_ce01
+      MATCH_EXP_JOB_GLIDEIN_Factory    CMS-CERN-Production
+ MATCH_EXP_JOB_GLIDEIN_Job_Max_Time    14400
+    MATCH_EXP_JOB_GLIDEIN_MaxMemMBs    2500
+ MATCH_EXP_JOB_GLIDEIN_Max_Walltime    432000
+       MATCH_EXP_JOB_GLIDEIN_Memory    2500
+         MATCH_EXP_JOB_GLIDEIN_Name    v3_2
+       MATCH_EXP_JOB_GLIDEIN_ProcId    7
+       MATCH_EXP_JOB_GLIDEIN_Schedd    schedd_glideins5@vocms0805.cern.ch
+          MATCH_EXP_JOB_GLIDEIN_SEs    srm.brazos.tamu.edu
+         MATCH_EXP_JOB_GLIDEIN_Site    TAMU_BRAZOS
+      MATCH_EXP_JOB_GLIDEIN_SiteWMS    SLURM
+MATCH_EXP_JOB_GLIDEIN_SiteWMS_JobId    21302623
+MATCH_EXP_JOB_GLIDEIN_SiteWMS_Queue    Unknown
+ MATCH_EXP_JOB_GLIDEIN_SiteWMS_Slot    Unknown
+        MATCH_EXP_JOB_GLIDEIN_ToDie    1526011817
+     MATCH_EXP_JOB_GLIDEIN_ToRetire    1525997417
+                 MATCH_EXP_JOB_Site    TAMU_BRAZOS
+          MATCH_EXP_Used_Gatekeeper    ce01.brazos.tamu.edu ce01.brazos.tamu.edu:9619
+             MATCH_GLIDECLIENT_Name    CMSG-v1_0.local_users
+            MATCH_GLIDEIN_ClusterId    1255353
+              MATCH_GLIDEIN_CMSSite    T3_US_TAMU
+           MATCH_GLIDEIN_Entry_Name    CMS_T3_TAMU_BRAZOS_ce01
+              MATCH_GLIDEIN_Factory    CMS-CERN-Production
+           MATCH_GLIDEIN_Gatekeeper    ce01.brazos.tamu.edu ce01.brazos.tamu.edu:9619
+         MATCH_GLIDEIN_Job_Max_Time    14400
+            MATCH_GLIDEIN_MaxMemMBs    2500
+         MATCH_GLIDEIN_Max_Walltime    432000
+                 MATCH_GLIDEIN_Name    v3_2
+               MATCH_GLIDEIN_ProcId    7
+               MATCH_GLIDEIN_Schedd    schedd_glideins5@vocms0805.cern.ch
+                  MATCH_GLIDEIN_SEs    srm.brazos.tamu.edu
+                 MATCH_GLIDEIN_Site    TAMU_BRAZOS
+              MATCH_GLIDEIN_SiteWMS    SLURM
+        MATCH_GLIDEIN_SiteWMS_JobId    21302623
+        MATCH_GLIDEIN_SiteWMS_Queue    Unknown
+         MATCH_GLIDEIN_SiteWMS_Slot    Unknown
+                MATCH_GLIDEIN_ToDie    1526011817
+             MATCH_GLIDEIN_ToRetire    1525997417
+                       MATCH_Memory    2500
+                           MaxHosts    1
+                    MaxWallTimeMins    1250
+                MaxWallTimeMins_RAW    1250
+                           MinHosts    1
+                             MyType    Job
+                           NumCkpts    0
+                       NumCkpts_RAW    0
+                  NumJobCompletions    1
+                      NumJobMatches    1
+                       NumJobStarts    1
+                        NumRestarts    0
+                    NumShadowStarts    1
+                     NumSystemHolds    0
+                       OrigMaxHosts    1
+                                Out    job_out.1
+                              Owner    cms280
+                       PostJobPrio1    -1525772185
+                       PostJobPrio2    2
+                        PreJobPrio1    0
+                             ProcId    0
+                              QDate    1525774428
+              RecentBlockReadKbytes    0
+                   RecentBlockReads    0
+             RecentBlockWriteKbytes    0
+                  RecentBlockWrites    0
+         RecentStatsLifetimeStarter    52
+                        RequestCpus    1
+                        RequestDisk    100000
+                    RequestDisk_RAW    1
+                      RequestMemory    2000
+                  RequestMemory_RAW    2000
+                        REQUIRED_OS    rhel6
+                    ResidentSetSize    4000
+                ResidentSetSize_RAW    3992
+                            RootDir    /
+                ShouldTransferFiles    YES
+                 SpooledOutputFiles    jobReport.json.1,WMArchiveReport.json.1
+                    StartdPrincipal    execute-side@matchsession/165.91.55.24
+               StatsLifetimeStarter    60
+                   SubmitEventNotes    DAG Node: Job1
+                         TargetType    Machine
+                           TaskType    Job
+                   TotalSubmitProcs    1
+                   TotalSuspensions    0
+                      TransferInput    CMSRunAnalysis.sh,cmscp.py,CMSRunAnalysis.tar.gz,sandbox.tar.gz,run_and_lumis.tar.gz,input_files.tar.gz
+                TransferInputSizeMB    4
+                     TransferOutput    jobReport.json.1,WMArchiveReport.json.1
+                    Used_Gatekeeper    $$(GLIDEIN_Gatekeeper:Unknown)
+                               User    cms280@cms
+                            UserLog    /data/srv/glidecondor/condor_local/spool/4060/0/cluster20914060.proc0.subproc0/job_log
+               WhenToTransferOutput    ON_EXIT_OR_EVICT
+                      x509userproxy    /data/srv/glidecondor/condor_local/spool/4060/0/cluster20914060.proc0.subproc0/aae00b45be2ec79d71339d457d5a9788729ac18a
+                 x509UserProxyEmail    ws13@rice.edu
+            x509UserProxyExpiration    1526376960
+             x509UserProxyFirstFQAN    /cms/Role=NULL/Capability=NULL
+                  x509UserProxyFQAN    /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=wshi/CN=791920/CN=Wei Shi,/cms/Role=NULL/Capability=NULL
+               x509userproxysubject    /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=wshi/CN=791920/CN=Wei Shi
+                x509UserProxyVOName    cms
+Tue, 08 May 2018 12:20:01 CEST(+0000):DEBUG:PostJob ----------------------------------------------------------------------------------------------------
+Tue, 08 May 2018 12:20:01 CEST(+0000):INFO:PostJob ======== Finished post-job execution with status code 2.
+Ended TaskManagerBootstrap with code 2
