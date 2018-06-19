@@ -1,0 +1,13 @@
+hltIntegrationTests /users/wshi/HLT_TrkMu16_TrkMu6NoFiltersNoVtx/V5 -s /dev/CMSSW_10_1_0/GRun --mc --input root://cms-xrd-global.cern.ch//store/mc/RunIISummer17DRStdmix/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/GEN-SIM-RAW/NZSFlatPU28to62_92X_upgrade2017_realistic_v10-v2/50000/0043237F-0DA1-E711-AD49-346AC29F11B8.root -n -1   
+Will run 2 HLT paths over all events, with 4 jobs in parallel
+Extracting full menu dump
+HLT menu: hltGetConfiguration /users/wshi/HLT_TrkMu16_TrkMu6NoFiltersNoVtx/V5 --full --offline --mc --input root://cms-xrd-global.cern.ch//store/mc/RunIISummer17DRStdmix/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/GEN-SIM-RAW/NZSFlatPU28to62_92X_upgrade2017_realistic_v10-v2/50000/0043237F-0DA1-E711-AD49-346AC29F11B8.root --unprescale --process TEST20180619105421 --max-events -1
+Preparing single-path configurations
+Extracting setup_cff dump
+Running...
+	full menu dump
+	HLTriggerFirstPath
+	HLT_DoubleTrkMu_16_6_NoFiltersNoVtx
+Comparing the results of running each path by itself with those from the full menu
+exit status: 0
+done
