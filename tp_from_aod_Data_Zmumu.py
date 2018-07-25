@@ -70,7 +70,7 @@ elif "CMSSW_9_4_" in os.environ['CMSSW_VERSION']:
             '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/0001B172-B9D8-E711-9771-34E6D7E05F1B.root'
     ]
 elif "CMSSW_10_1_" in os.environ['CMSSW_VERSION']:
-    process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v10')
+    process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v11')
 
     process.source.fileNames = [
         '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/B6F906F2-597C-E811-BBAA-FA163E4F3A7C.root',
