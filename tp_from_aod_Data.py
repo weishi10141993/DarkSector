@@ -49,31 +49,13 @@ if "CMSSW_7_4_" in os.environ['CMSSW_VERSION']:
 elif "CMSSW_7_6_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('76X_dataRun2_v15')
     process.source.fileNames = [
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/00A3E567-75A8-E511-AD0D-0CC47A4D769E.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/06CC1B3A-FDA7-E511-B02B-00259073E388.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/0A9FEDA2-6DA8-E511-A451-002590596490.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/0AEF074D-EBA7-E511-B229-0002C94CDAF4.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/12998942-7BA8-E511-B1AA-003048FFCB84.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/145E4DB2-EFA7-E511-8E21-00266CF3DFE0.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/148E0F6C-EEA7-E511-A70E-0090FAA588B4.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/149A16F7-6DA8-E511-8A40-003048FFCC0A.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/18D542EB-FAA7-E511-A011-00259073E4E8.root',
-            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/24537A2D-0BA8-E511-8D7C-20CF300E9ECF.root',
+            '/store/data/Run2015D/SingleMuon/AOD/16Dec2015-v1/10000/00A3E567-75A8-E511-AD0D-0CC47A4D769E.root'
     ]
 elif "CMSSW_8_0_"in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('80X_dataRun2_Prompt_v9')
 
     process.source.fileNames = [
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/0001E5C0-AE44-E611-9F88-02163E014235.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/007E4250-AE44-E611-867E-02163E011AB6.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/00997A4B-B044-E611-9FBB-02163E011EDE.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/02BB51AA-B044-E611-8DB0-02163E014168.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/0466BA91-AE44-E611-825B-02163E0136EF.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/0485506E-AE44-E611-A24B-02163E0140ED.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/0494A580-B044-E611-993A-02163E012944.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/04C4B374-B044-E611-97D0-02163E011ECD.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/06056373-B044-E611-B41D-02163E0137AA.root',
-        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/064D926A-B044-E611-9CAA-02163E011FCC.root',
+        '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/0001E5C0-AE44-E611-9F88-02163E014235.root'
         ]
 elif "CMSSW_9_2_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('92X_dataRun2_Express_v2')
@@ -85,24 +67,13 @@ elif "CMSSW_9_4_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('91X_mcRun2_asymptotic_v3')
 
     process.source.fileNames = [
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/0001B172-B9D8-E711-9771-34E6D7E05F1B.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/000D8EBA-DDD8-E711-9CC1-90E2BACBAA90.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/00187E27-4AD7-E711-B889-0CC47AD98D08.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/0063F440-69D8-E711-B1AB-0CC47A1E0DBC.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/0069F8CB-60D8-E711-BC59-002590E7D7D0.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/00B5B771-28D8-E711-8BFF-FA163ED9E97A.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/00E5B76F-DBD8-E711-B65D-02163E013935.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/00FFF78E-03D8-E711-8B50-FA163EB4E1E2.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/02306463-3FD8-E711-A33F-0025904C7DF8.root',
-            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/02A63A34-09D8-E711-B377-1866DA879ED8.root'
-            
-            
+            '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/0001B172-B9D8-E711-9771-34E6D7E05F1B.root'
     ]
 elif "CMSSW_10_1_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v10')
 
     process.source.fileNames = [
-        '/SingleMuon/Run2018B-PromptReco-v2/AOD'
+        '/SingleMuon/Run2018B-PromptReco-v2/AOD'#Only use runs after control triggers are implemented, i.e. after run 317509
     ]
 else: raise RuntimeError, "Unknown CMSSW version %s" % os.environ['CMSSW_VERSION']
 
