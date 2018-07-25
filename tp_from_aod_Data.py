@@ -75,7 +75,7 @@ elif "CMSSW_8_0_"in os.environ['CMSSW_VERSION']:
         '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/06056373-B044-E611-B41D-02163E0137AA.root',
         '/store/data/Run2016C/SingleMuon/AOD/PromptReco-v2/000/276/283/00000/064D926A-B044-E611-9CAA-02163E011FCC.root',
         ]
-elif "CMSSW_9_2_"in os.environ['CMSSW_VERSION']:
+elif "CMSSW_9_2_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('92X_dataRun2_Express_v2')
 
     process.source.fileNames = [
@@ -98,7 +98,7 @@ elif "CMSSW_9_4_" in os.environ['CMSSW_VERSION']:
             
             
     ]
-elif "CMSSW_10_1_"in os.environ['CMSSW_VERSION']:
+elif "CMSSW_10_1_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v10')
 
     process.source.fileNames = [
