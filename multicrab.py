@@ -256,7 +256,7 @@ config.section_('JobType')
 config.JobType.psetName = pSet
 config.JobType.pluginName = 'Analysis'
 config.JobType.maxMemoryMB = 2500
-config.JobType.outputFiles = ['L1Ntuple.root']
+config.JobType.outputFiles = ['tnpZ_Data.root']
 ## config.JobType.inputFiles = ['../../data/Jet_Stage1_2015_v2.txt']
 
 config.section_('Data')
