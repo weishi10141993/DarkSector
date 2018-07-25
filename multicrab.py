@@ -18,10 +18,7 @@ if (RunOnMC):
 else:
   Nunits=80
 
-if workflow == 'raw':
-  pSet = 'l1NtupleRAWEMU_RAW2DIGI.py'
-  JOBID = 'CMSSW-'+cmssw_version+extra_info
-elif workflow == 'reco':
+if workflow == 'reco':
   pSet = 'tp_from_aod_Data_Zmumu.py'
   JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif workflow == 'MC':
