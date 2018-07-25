@@ -5,7 +5,7 @@ config = Configuration()
 
 workflow='reco' 
 cmssw_version='1015'
-extra_info='TnP2018Bv2SingleMu'
+extra_info='TnP2018BSingleMu'
 era=2018
 RunOnMC = False
 WriteToTAMU = True
@@ -48,7 +48,6 @@ elif era==2017:
   #JSON = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/Final/Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt'
   JSON = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco/Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON.txt'
 elif era==2018:
-  #JSON = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/PromptReco/Cert_314472-317696_13TeV_PromptReco_Collisions18_JSON.txt'
   JSON = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/PromptReco/Cert_314472-318876_13TeV_PromptReco_Collisions18_JSON.txt'
 elif era==-1: #custom made JSON
   JSON = './json_DCSONLY.txt'
@@ -194,9 +193,9 @@ print('Nutples will appear in the usual location in the subdiretory '+JOBID)
 #  "ZeroBias8_Run2017F-v1" :["/ZeroBias8/Run2017F-v1/RAW", Nunits, -1]
 #}
 
-logbase="Run2018B_PR_v2_SingleMuon"
+logbase="Run2018B_PR_SingleMuon"
 myJobs={
-  # "ZeroBias_Run2018B-v1" :["/ZeroBias/Run2018B-v1/RAW", Nunits, -1],
+  "SingleMu_2018B-PR-v1" :["/SingleMuon/Run2018B-PromptReco-v1/AOD", Nunits, -1],
   "SingleMu_2018B-PR-v2" :["/SingleMuon/Run2018B-PromptReco-v2/AOD", Nunits, -1],
 }
 
@@ -271,7 +270,7 @@ config.Data.unitsPerJob = 1
 ## config.Data.totalUnits = 1
 config.Data.useParent = useParent
 config.Data.outLFNDirBase = output
-config.Data.runRange = '317640'
+config.Data.runRange = '317509-318876'
 
 # apply lumi json file
 if (not(RunOnMC)) :
@@ -281,7 +280,6 @@ config.section_('Site')
 config.Site.storageSite = StorageSite
 
 ## ccla
-#config.Site.whitelist = ["T2_CH*"]
 config.Site.blacklist = ["T3_US_UCR"]
 
 if __name__ == '__main__':
