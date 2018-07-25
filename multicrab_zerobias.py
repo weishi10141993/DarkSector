@@ -3,15 +3,13 @@ import datetime
 
 config = Configuration()
 
-workflow='raw' # it could be raw,reco, reEmu
-integration_tag='unmerged'
+workflow='reco' 
 cmssw_version='1015'
-extra_info='Run317640OMTFfwV5RPCOn'
+extra_info='TnP2018Bv2SingleMu'
 era=2018
 RunOnMC = False
-WriteToCERN = True
+WriteToTAMU = True
 useParent = False
-#dryRun=True # when True, jobs are not submitted (for testing only)
 dryRun=False # when True, jobs are not submitted (for testing only)
 
 Nunits=5
@@ -20,19 +18,12 @@ if (RunOnMC):
 else:
   Nunits=80
 
-## pSey and JOB ID for MC
-#pSet = 'l1Ntuple_RAW2DIGI.py'
-#JOBID = 'l1t-integration-v63p1-CMSSW-809-reverted-to-uGMT-WideCancelOutWindow'
-
 if workflow == 'raw':
-  #pSet = 'l1Ntuple_RAW2DIGI.py'
   pSet = 'l1NtupleRAWEMU_RAW2DIGI.py'
   JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif workflow == 'reco':
-  pSet = 'l1NtupleRECO_RAW2DIGI.py'
-  #pSet = 'l1NtupleAOD_ENDJOB.py'
-  #pSet = 'l1NtupleAODRAW_RAW2DIGI.py'
-  JOBID = 'l1t-integration-'+integration_tag+'-CMSSW-'+cmssw_version+extra_info
+  pSet = 'tp_from_aod_Data_Zmumu.py'
+  JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif workflow == 'MC':
   #pSet = 'l1Ntuple_'+workflow+'_AODRAW.py'
   pSet = 'l1NtupleAODEMUGEN_RAW2DIGI.py'
@@ -214,10 +205,10 @@ print('Nutples will appear in the usual location in the subdiretory '+JOBID)
 #  "ZeroBias8_Run2017F-v1" :["/ZeroBias8/Run2017F-v1/RAW", Nunits, -1]
 #}
 
-logbase="Run2018Bv1_ZeroBias"
+logbase="Run2018B_PR_v2_SingleMuon"
 myJobs={
   # "ZeroBias_Run2018B-v1" :["/ZeroBias/Run2018B-v1/RAW", Nunits, -1],
-  "ZeroBias_Run2018B-v1" :["/ZeroBias/Run2018B-v1/RAW", 1, 317640],
+  "SingleMu_2018B-PR-v2" :["/SingleMuon/Run2018B-PromptReco-v2/AOD", Nunits, -1],
 }
 
 #logbase="Commissioning2018_ZeroBiasX"
@@ -256,9 +247,9 @@ splitting   = 'LumiBased'
 if RunOnMC :
     splitting   = 'FileBased'
 
-if WriteToCERN:
-    StorageSite = 'T2_CH_CERN'
-    output      = '/store/group/dpg_trigger/comm_trigger/L1Trigger/wshi/' + JOBID 
+if WriteToTAMU:
+    StorageSite = 'T3_US_TAMU'
+    output      = '/store/user/wshi/' + JOBID 
 else:
     sys.exit("%ERROR: If you don't want to store at CERN you need to specify an alternative storage place.")
 
