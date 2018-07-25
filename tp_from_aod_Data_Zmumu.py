@@ -73,8 +73,9 @@ elif "CMSSW_10_1_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v10')
 
     process.source.fileNames = [
-        '/SingleMuon/Run2018B-PromptReco-v2/AOD'#Only use runs after control triggers are implemented, i.e. after run 317509
+        '/SingleMuon/Run2018B-PromptReco-v2/AOD'
     ]
+    #Only use runs after control triggers are implemented, i.e. after run 317509
 else: raise RuntimeError, "Unknown CMSSW version %s" % os.environ['CMSSW_VERSION']
 
 ## SELECT WHAT DATASET YOU'RE RUNNING ON
