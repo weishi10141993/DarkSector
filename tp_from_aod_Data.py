@@ -97,7 +97,13 @@ elif "CMSSW_9_4_" in os.environ['CMSSW_VERSION']:
             '/store/data/Run2017B/SingleMuon/AOD/17Nov2017-v1/40000/02A63A34-09D8-E711-B377-1866DA879ED8.root'
             
             
-    ] 
+    ]
+elif "CMSSW_10_1_"in os.environ['CMSSW_VERSION']:
+    process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v10')
+
+    process.source.fileNames = [
+        '/SingleMuon/Run2018B-PromptReco-v2/AOD'
+    ]
 else: raise RuntimeError, "Unknown CMSSW version %s" % os.environ['CMSSW_VERSION']
 
 ## SELECT WHAT DATASET YOU'RE RUNNING ON
@@ -121,9 +127,6 @@ process.load("HLTrigger.HLTfilters.triggerResultsFilter_cfi")
 
 
 if TRIGGER == "SingleMu":
-#    process.triggerResultsFilter.triggerConditions = cms.vstring( 'HLT_Mu45_eta2p1_v*', 'HLT_Mu50_v*',
-#                                                                  'HLT_IsoMu27_v*',   'HLT_IsoMu24_v*',   'HLT_IsoMu22_v*',   'HLT_IsoMu20_v*',
-#                                                                  'HLT_IsoTkMu27_v*', 'HLT_IsoTkMu24_v*', 'HLT_IsoTkMu22_v*', 'HLT_IsoTkMu20_v*'  )
     process.triggerResultsFilter.triggerConditions = cms.vstring( 'HLT_Mu50_v*','HLT_IsoMu27_v*', 'HLT_IsoMu24_v*','HLT_IsoMu20_v*')
 elif TRIGGER == "DoubleMu":
     process.triggerResultsFilter.triggerConditions = cms.vstring( 'HLT_Mu8_v*', 'HLT_Mu17_v*',
