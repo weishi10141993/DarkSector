@@ -4,8 +4,8 @@ import datetime
 config = Configuration()
 
 workflow='reco' 
-cmssw_version='1015'
-extra_info='TnP2018BSingleMu'
+cmssw_version='1017'
+extra_info='TnP_2018B_SingleMu'
 era=2018
 RunOnMC = False
 WriteToTAMU = True
