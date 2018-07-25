@@ -216,11 +216,11 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
         mt  = cms.InputTag("probeMetMt","mt"),
     ),
     flags = cms.PSet(
-       HLT_TkMu16 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
-       HLT_TkMu6 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
        TrackQualityFlags,
        MuonIDFlags,
        HighPtTriggerFlags,
+       HLT_TkMu16 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
+       HLT_TkMu6 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
     ),
     tagVariables = cms.PSet(
         AllVariables,
