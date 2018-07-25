@@ -25,26 +25,22 @@ elif workflow == 'reco':
   pSet = 'tp_from_aod_Data_Zmumu.py'
   JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif workflow == 'MC':
-  #pSet = 'l1Ntuple_'+workflow+'_AODRAW.py'
   pSet = 'l1NtupleAODEMUGEN_RAW2DIGI.py'
-  JOBID = 'l1t-integration-'+integration_tag+'-CMSSW-'+cmssw_version+extra_info
+  JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif workflow == 'reEmu' and era==2015:
   pSet = 'l1Ntuple2015_RAW2DIGI.py'
-  JOBID = 'l1t-integration-'+integration_tag+'-CMSSW-'+cmssw_version+extra_info
+  JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif era==2016 :
-  #pSet = 'l1NtupleRECO2016_RAW2DIGI.py'
   pSet = 'l1NtupleAOD2016_ENDJOB.py'
-  #pSet = 'l1Ntuple_'+workflow+'.py'
-  JOBID = 'l1t-integration-'+integration_tag+'-CMSSW-'+cmssw_version+extra_info
+  JOBID = 'CMSSW-'+cmssw_version+extra_info
 elif era==2015 :
   pSet = 'l1Ntuple2015_'+workflow+'.py'
-  JOBID = 'l1t-integration-'+integration_tag+'-CMSSW-'+cmssw_version+workflow+extra_info
+  JOBID = 'CMSSW-'+cmssw_version+workflow+extra_info
 else:
   print('%ERR: no workflow found')
 
 
 ## JSON
-
 
 #regular PPD JSON
 if era==2015:
@@ -57,17 +53,12 @@ elif era==2017:
 elif era==2018:
   JSON = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/PromptReco/Cert_314472-317696_13TeV_PromptReco_Collisions18_JSON.txt'
 elif era==-1: #custom made JSON
-  #JSON = './fill6358golden.json'
-  #JSON = './fills6356_6358_6360golden.json'
-  #JSON = './json_DCSONLY_fill6358.txt'
   JSON = './json_DCSONLY.txt'
 else:
   sys.exit('%ERROR: Era can be 2015, 2016, 2017, or 2018.')
 
 print('Nutples will appear in the usual location in the subdiretory '+JOBID)
 
-
-#logbase='l1ntuple_campaign_'+integration_tag+'_cmssw_'+cmssw_version
 
 ###########
 
