@@ -73,7 +73,9 @@ elif "CMSSW_10_1_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('101X_dataRun2_Prompt_v10')
 
     process.source.fileNames = [
-        '/SingleMuon/Run2018B-PromptReco-v2/AOD'
+        '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/B6F906F2-597C-E811-BBAA-FA163E4F3A7C.root',
+        '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/B6228E42-547C-E811-981A-FA163EBCAB45.root',
+        '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/ACAA703C-4F7C-E811-A0AD-FA163E3BE999.root'
     ]
     #Only use runs after control triggers are implemented, i.e. after run 317509
 else: raise RuntimeError, "Unknown CMSSW version %s" % os.environ['CMSSW_VERSION']
