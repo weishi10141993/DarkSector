@@ -183,12 +183,6 @@ process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
 )
 process.onePair = cms.EDFilter("CandViewCountFilter", src = cms.InputTag("tpPairs"), minNumber = cms.uint32(1))
 
-from MuonAnalysis.TagAndProbe.muon.tag_probe_muon_extraIso_cff import ExtraIsolationVariables
-
-from MuonAnalysis.TagAndProbe.puppiIso_cfi import load_fullPFpuppiIsolation
-process.fullPuppIsolationSequence = load_fullPFpuppiIsolation(process)
-from MuonAnalysis.TagAndProbe.puppiIso_cff import PuppiIsolationVariables
-
 process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # choice of tag and probe pairs, and arbitration
     tagProbePairs = cms.InputTag("tpPairs"),
