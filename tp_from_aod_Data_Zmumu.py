@@ -201,8 +201,8 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
         abseta = cms.string("abs(eta)"),
     ),
     flags = cms.PSet(
-       HLT_TkMu16 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
-       HLT_TkMu6 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
+       HLT_TrkMu16NoFiltersNoVtx = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
+       HLT_TrkMu6NoFiltersNoVtx = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
     ),
     tagVariables = cms.PSet(
         pt  = cms.string("pt"),
@@ -213,7 +213,7 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
         combRelIsoPF04dBeta = cms.string("(pfIsolationR04().sumChargedHadronPt + max(pfIsolationR04().sumNeutralHadronEt + pfIsolationR04().sumPhotonEt - pfIsolationR04().sumPUPt/2,0.0))/pt"),
     ),
     tagFlags = cms.PSet(
-        IsoMu24 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu24_v*',1,0).empty()"),
+        HLT_IsoMu24 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu24_v*',1,0).empty()"),
     ),
     pairVariables = cms.PSet(
         probeMultiplicity = cms.InputTag("probeMultiplicity"),
