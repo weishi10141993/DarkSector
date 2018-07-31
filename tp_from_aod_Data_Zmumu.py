@@ -195,69 +195,28 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
     arbitration   = cms.string("None"),
     # probe variables: all useful ones
     variables = cms.PSet(
-        AllVariables,
-        ExtraIsolationVariables,
-        PuppiIsolationVariables,
-        isoTrk03Abs = cms.InputTag("probeMuonsIsoValueMaps","probeMuonsIsoFromDepsTk"),
-        isoTrk03Rel = cms.InputTag("probeMuonsIsoValueMaps","probeMuonsRelIsoFromDepsTk"),
-        dxyBS = cms.InputTag("muonDxyPVdzmin","dxyBS"),
-        dxyPVdzmin = cms.InputTag("muonDxyPVdzmin","dxyPVdzmin"),
-        dzPV = cms.InputTag("muonDxyPVdzmin","dzPV"),
-        JetPtRatio= cms.InputTag("AddLeptonJetRelatedVariables","JetPtRatio"),
-        JetPtRel= cms.InputTag("AddLeptonJetRelatedVariables","JetPtRel"),
-        JetNDauCharged= cms.InputTag("AddLeptonJetRelatedVariables","JetNDauCharged"),
-        JetBTagCSV= cms.InputTag("AddLeptonJetRelatedVariables","JetBTagCSV"),
-        miniIsoCharged = cms.InputTag("muonMiniIsoCharged","miniIso"),
-        activity_miniIsoCharged = cms.InputTag("muonMiniIsoCharged","activity"),
-        miniIsoPUCharged = cms.InputTag("muonMiniIsoPUCharged","miniIso"),
-        activity_miniIsoPUCharged = cms.InputTag("muonMiniIsoPUCharged","activity"),
-        miniIsoNeutrals = cms.InputTag("muonMiniIsoNeutrals","miniIso"),
-        activity_miniIsoNeutrals = cms.InputTag("muonMiniIsoNeutrals","activity"),
-        miniIsoPhotons = cms.InputTag("muonMiniIsoPhotons","miniIso"),
-        activity_miniIsoPhotons = cms.InputTag("muonMiniIsoPhotons","activity"),
-        nSplitTk  = cms.InputTag("splitTrackTagger"),
-        mt  = cms.InputTag("probeMetMt","mt"),
+        pt  = cms.string("pt"),
+        eta = cms.string("eta"),
+        phi = cms.string("phi"),
+        abseta = cms.string("abs(eta)"),
     ),
     flags = cms.PSet(
-       TrackQualityFlags,
-       MuonIDFlags,
-       HighPtTriggerFlags,
        HLT_TkMu16 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
        HLT_TkMu6 = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
     ),
     tagVariables = cms.PSet(
-        AllVariables,
-        ExtraIsolationVariables,
+        pt  = cms.string("pt"),
+        eta = cms.string("eta"),
+        phi = cms.string("phi"),
+        abseta = cms.string("abs(eta)"),
         nVertices   = cms.InputTag("nverticesModule"),
-        isoTrk03Abs = cms.InputTag("probeMuonsIsoValueMaps","probeMuonsIsoFromDepsTk"),
-        isoTrk03Rel = cms.InputTag("probeMuonsIsoValueMaps","probeMuonsRelIsoFromDepsTk"),
-        dxyBS = cms.InputTag("muonDxyPVdzminTags","dxyBS"),
-        dxyPVdzmin = cms.InputTag("muonDxyPVdzminTags","dxyPVdzmin"),
-        dzPV = cms.InputTag("muonDxyPVdzminTags","dzPV"),
-        nSplitTk  = cms.InputTag("splitTrackTagger"),
-        l1rate = cms.InputTag("l1rate"),
-        bx     = cms.InputTag("l1rate","bx"),
-        instLumi = cms.InputTag("addEventInfo", "instLumi"),
-        met = cms.InputTag("tagMetMt","met"),
-        mt  = cms.InputTag("tagMetMt","mt"),
+        combRelIsoPF04dBeta = cms.string("(pfIsolationR04().sumChargedHadronPt + max(pfIsolationR04().sumNeutralHadronEt + pfIsolationR04().sumPhotonEt - pfIsolationR04().sumPUPt/2,0.0))/pt"),
     ),
     tagFlags = cms.PSet(
-        HighPtTriggerFlags
+        IsoMu24 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu24_v*',1,0).empty()"),
     ),
     pairVariables = cms.PSet(
-        nJets30 = cms.InputTag("njets30Module"),
-        dz      = cms.string("daughter(0).vz - daughter(1).vz"),
-        pt      = cms.string("pt"), 
-        rapidity = cms.string("rapidity"),
-        deltaR   = cms.string("deltaR(daughter(0).eta, daughter(0).phi, daughter(1).eta, daughter(1).phi)"), 
         probeMultiplicity = cms.InputTag("probeMultiplicity"),
-        probeMultiplicity_TMGM = cms.InputTag("probeMultiplicityTMGM"),
-        probeMultiplicity_Pt10_M60140 = cms.InputTag("probeMultiplicityPt10M60140"),
-        ## New TuneP variables
-        newTuneP_probe_pt            = cms.InputTag("newTunePVals", "pt"),
-        newTuneP_probe_sigmaPtOverPt = cms.InputTag("newTunePVals", "ptRelError"),
-        newTuneP_probe_trackType     = cms.InputTag("newTunePVals", "trackType"),
-        newTuneP_mass                = cms.InputTag("newTunePVals", "mass"),
     ),
     pairFlags = cms.PSet(
         BestZ = cms.InputTag("bestPairByZMass"),
@@ -281,9 +240,6 @@ process.miniIsoSeq = cms.Sequence(
     process.muonMiniIsoPhotons 
 )
 
-# process.load("JetMETCorrections.Configuration.JetCorrectionProducersAllAlgos_cff")
-# process.ak4PFCHSJetsL1L2L3 = process.ak4PFCHSJetsL1.clone( correctors = ['ak4PFCHSL1FastL2L3'] )
-
 process.extraProbeVariablesSeq = cms.Sequence(
     process.probeMuonsIsoSequence +
     process.computeCorrectedIso + 
@@ -291,7 +247,6 @@ process.extraProbeVariablesSeq = cms.Sequence(
     process.muonDxyPVdzmin + 
     process.probeMetMt + process.tagMetMt +
     process.miniIsoSeq +
-    # process.ak4PFCHSJetsL1L2L3 +
     process.ak4PFCHSL1FastL2L3CorrectorChain * process.AddLeptonJetRelatedVariables +
     process.fullPuppIsolationSequence 
 )
