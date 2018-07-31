@@ -221,6 +221,8 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
         HLT_IsoMu24 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu24_v*',1,0).empty()"),
         HLT_IsoMu27 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu27_v*',1,0).empty()"),
         HLT_IsoMu30 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu30_v*',1,0).empty()"),
+        HLT_TrkMu16NoFiltersNoVtx = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
+        HLT_TrkMu6NoFiltersNoVtx = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
     ),
     pairVariables = cms.PSet(
         probeMultiplicity = cms.InputTag("probeMultiplicity"),
