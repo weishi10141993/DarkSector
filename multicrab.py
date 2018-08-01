@@ -16,7 +16,7 @@ Nunits=5
 if (RunOnMC):
   Nunits=3
 else:
-  Nunits=80
+  Nunits=5
 
 if workflow == 'reco':
   pSet = 'tp_from_aod_Data_Zmumu.py'
