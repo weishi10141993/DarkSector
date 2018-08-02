@@ -140,7 +140,7 @@ mass_ = "mass"
 
 Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
     NumCPU = cms.uint32(1),
-    SaveWorkspace = cms.bool(False),
+    SaveWorkspace = cms.bool(True),
     Variables = cms.PSet(),
     Categories = cms.PSet(),
     Expressions = cms.PSet(),
