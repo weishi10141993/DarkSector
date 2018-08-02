@@ -299,10 +299,7 @@ for ID, ALLBINS in ID_BINS:
     FillBin(par)
 
     if not "iso" in num: #customize only for ID
-        if bgFitFunction == 'default':
-            
-            # SYSTEMATIC STUDIES: signal function variation
-            if 'signalvar' in sample:
+        if bgFitFunction == 'default':          
                 if ('pt' in X):
                     print 'SYSTEMATIC STUDIES: the signal function will be ONE voigtian + CMSshape'
                     print 'den is', den 
@@ -315,34 +312,12 @@ for ID, ALLBINS in ID_BINS:
                                 shape = cms.vstring("voigtPlusCMSbeta0p2","*pt_bin0*","voigtPlusExpo","*pt_bin1*","voigtPlusExpo","*pt_bin2*","voigtPlusExpo","*pt_bin3*","voigtPlusExpo","*pt_bin4*","voigtPlusCMSbeta0p2","*pt_bin5*","voigtPlusCMSbeta0p2","*pt_bin6*","voigtPlusCMSbeta0p2","*pt_bin7*","voigtPlusCMSbeta0p2", "*pt_bin8*","voigtPlusCMSbeta0p2")
 
                     else:
+                        if (len(DEN.pt)==12):
+                            shape = cms.vstring("voigtPlusCMSbeta0p2")
                         if (len(DEN.pt)==26):
-                            shape = cms.vstring("voigtPlusCMSbeta0p2")
-                        if scenario == "mc_all":
-                            shape = cms.vstring("voigtPlusCMSbeta0p2")
-
+                            shape = cms.vstring("vpvPlusCMSbeta0p2")
                         if (len(DEN.pt)==9 or len(DEN.pt)==8 or len(DEN.pt)==10):
                             shape = cms.vstring("voigtPlusCMS","*pt_bin0*","voigtPlusCMS","*pt_bin1*","voigtPlusCMS","*pt_bin2*","voigtPlusCMS","*pt_bin3*","voigtPlusCMSbeta0p2","*pt_bin4*","voigtPlusCMSbeta0p2","*pt_bin5*","voigtPlusCMSbeta0p2","*pt_bin6*","voigtPlusCMSbeta0p2","*pt_bin7*","voigtPlusCMSbeta0p2","*pt_bin8*","voigtPlusCMSbeta0p2")
-
-            #NOMINAL CASE: ID vs pT fit funtion by default -> two voigtians + CMSshape
-            else:
-                if ('pt' in X):
-                    print 'den is', den 
-                    print 'num_ is ', num
-                    if den == "highptid" or num == "highptid" or den == "trkhighptid" or num == "trkhighptid":
-                        if (len(DEN.pair_newTuneP_probe_pt)==9 or len(DEN.pair_newTuneP_probe_pt)==8 or len(DEN.pair_newTuneP_probe_pt)==10):
-                            shape = cms.vstring("vpvPlusCMS","*pt_bin0*","vpvPlusCMS","*pt_bin1*","vpvPlusCMS","*pt_bin2*","vpvPlusCMS","*pt_bin3*","vpvPlusCMSbeta0p2","*pt_bin4*","vpvPlusCMSbeta0p2","*pt_bin5*","vpvPlusCMSbeta0p2","*pt_bin6*","vpvPlusCMSbeta0p2","*pt_bin7*","vpvPlusCMSbeta0p2", "*pt_bin8*","vpvPlusCMSbeta0p2")
-                        if scenario == "mc_all":
-                            if (len(DEN.pair_newTuneP_probe_pt)==9 or len(DEN.pair_newTuneP_probe_pt)==8 or len(DEN.pair_newTuneP_probe_pt)==10):
-                                shape = cms.vstring("vpvPlusCMSbeta0p2","*pt_bin0*","vpvPlusExpo","*pt_bin1*","vpvPlusExpo","*pt_bin2*","vpvPlusExpo","*pt_bin3*","vpvPlusExpo","*pt_bin4*","vpvPlusCMSbeta0p2","*pt_bin5*","vpvPlusCMSbeta0p2","*pt_bin6*","vpvPlusCMSbeta0p2","*pt_bin7*","vpvPlusCMSbeta0p2", "*pt_bin8*","vpvPlusCMSbeta0p2")
-
-                    else:
-                        if (len(DEN.pt)==26):
-                            shape = cms.vstring("vpvPlusCMSbeta0p2")
-                        if scenario == "mc_all":
-                            shape = cms.vstring("vpvPlusCMSbeta0p2")
-
-                        if (len(DEN.pt)==9 or len(DEN.pt)==8 or len(DEN.pt)==10):
-                            shape = cms.vstring("vpvPlusCMS","*pt_bin0*","vpvPlusCMS","*pt_bin1*","vpvPlusCMS","*pt_bin2*","vpvPlusCMS","*pt_bin3*","vpvPlusCMSbeta0p2","*pt_bin4*","vpvPlusCMSbeta0p2","*pt_bin5*","vpvPlusCMSbeta0p2","*pt_bin6*","vpvPlusCMSbeta0p2","*pt_bin7*","vpvPlusCMSbeta0p2","*pt_bin8*","vpvPlusCMSbeta0p2")
 
         elif bgFitFunction == 'CMSshape':
             if den == "highpt":
