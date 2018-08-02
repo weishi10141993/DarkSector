@@ -82,9 +82,8 @@ def FillBin(par):
         DEN.tag_nVertices = cms.vdouble(6.5,10.5,14.5,18.5,22.5,26.5,30.5,34.5,50.5)
  
     #Selections
-    if den == "pT16": DEN.Pt16Cut = cms.vstring("pass")
-    elif den == "pT6": DEN.Pt6Cut = cms.vstring("pass")
-
+    if den == "pT16": DEN.pt = cms.vdouble(16, 1000)
+    elif den == "pT6": DEN.pt = cms.vdouble(6, 1000)
 
 args = sys.argv[1:]
 iteration = ''
