@@ -303,7 +303,6 @@ for ID, ALLBINS in ID_BINS:
         if ('pt' in X):
             print 'den is', den 
             print 'num_ is ', num
-
             shape = cms.vstring("voigtPlusCMSbeta0p2")
                     
     print 'd3'
@@ -328,10 +327,3 @@ for ID, ALLBINS in ID_BINS:
                 ))
         setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
         setattr(process, "run_"+ID+"_"+X, cms.Path(module))
-        if num_.find("puppiIso") != -1:
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                    EfficiencyCategoryAndState = cms.vstring(num_,"below"),
-                    UnbinnedVariables = cms.vstring(mass_variable),
-                    BinnedVariables = DEN,
-                    BinToPDFmap = shape
-                    ))
