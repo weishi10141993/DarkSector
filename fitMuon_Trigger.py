@@ -355,8 +355,6 @@ for ID, ALLBINS in ID_BINS:
     print 'd3'
     mass_variable ="mass"
     print 'den is', den
-    if den == "highptid" or den == "trkhighptid":
-        mass_variable = "pair_newTuneP_mass"
     #compute isolation efficiency
     if scenario == 'data_all':
         if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
@@ -381,56 +379,5 @@ for ID, ALLBINS in ID_BINS:
                     EfficiencyCategoryAndState = cms.vstring(num_,"below"),
                     UnbinnedVariables = cms.vstring(mass_variable),
                     BinnedVariables = DEN,
-                    BinToPDFmap = shape
-                    ))
-    elif scenario == 'mc_all' and par=='vtx':
-        print 'MC sample as function of nVertices -> the PU reweighting will not be applied'
-        if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                EfficiencyCategoryAndState = cms.vstring(num_,"below"),
-                UnbinnedVariables = cms.vstring(mass_variable),
-                BinnedVariables = DEN,
-                BinToPDFmap = shape
-                ))
-        else:
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                EfficiencyCategoryAndState = cms.vstring(num_,"above"),
-                UnbinnedVariables = cms.vstring(mass_variable),
-                BinnedVariables = DEN,
-                BinToPDFmap = shape
-                ))
-        setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
-        setattr(process, "run_"+ID+"_"+X, cms.Path(module))
-        if num_.find("puppiIso") != -1:
-             setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                    EfficiencyCategoryAndState = cms.vstring(num_,"below"),
-                    UnbinnedVariables = cms.vstring(mass_variable),
-                        BinnedVariables = DEN,
-                    BinToPDFmap = shape
-                    ))
-    elif scenario == 'mc_all' and par!='vtx':
-        # PU reweighting applied for MC when par != vtx
-        print 'the PU reweighting will be applied'
-        if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                EfficiencyCategoryAndState = cms.vstring(num_,"below"),
-                UnbinnedVariables = cms.vstring(mass_variable, "weight"),
-                BinnedVariables = DEN,
-                BinToPDFmap = shape
-                ))
-        else:
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                EfficiencyCategoryAndState = cms.vstring(num_,"above"),
-                UnbinnedVariables = cms.vstring(mass_variable, "weight"),
-                BinnedVariables = DEN,
-                BinToPDFmap = shape
-                ))
-        setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
-        setattr(process, "run_"+ID+"_"+X, cms.Path(module))
-        if num_.find("puppiIso") != -1:
-             setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
-                    EfficiencyCategoryAndState = cms.vstring(num_,"below"),
-                    UnbinnedVariables = cms.vstring(mass_variable,"weight"),
-                        BinnedVariables = DEN,
                     BinToPDFmap = shape
                     ))
