@@ -288,7 +288,7 @@ for ID, ALLBINS in ID_BINS:
         _output += '/MC' + '_' + sample
     if not os.path.exists(_output):
         os.makedirs(_output)
-    module = process.TnP_Trigger.clone(OutputFileName = cms.string(_output + "/TnP_MC_%s.root" % (X)))
+    module = process.TnP_Trigger.clone(OutputFileName = cms.string(_output + "/TnP_Trigger_%s.root" % (X)))
     #save the fitconfig in the plot directory
     shutil.copyfile(os.getcwd()+'/fitMuon_Trigger.py',_output+'/fitMuon_Trigger.py')
     #DEFAULT FIT FUNCTION
