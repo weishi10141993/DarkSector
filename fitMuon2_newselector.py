@@ -29,20 +29,26 @@ def FillNumDen(num, den):
         #New selector:
 
 
-    if num == "looseid":
-        process.TnP_Trigger.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.CutBasedIdLooseVar = cms.vstring("CutBasedIdLooseVar", "CutBasedIdLoose==1", "CutBasedIdLoose")
-        process.TnP_Trigger.Cuts.LooseCutid  = cms.vstring("LooseCutid", "CutBasedIdLooseVar", "0.5")
-    elif num == "mediumid":
-        process.TnP_Trigger.Categories.CutBasedIdMedium  = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.CutBasedIdMediumVar = cms.vstring("CutBasedIdMediumVar", "CutBasedIdMedium==1", "CutBasedIdMedium")
-        process.TnP_Trigger.Cuts.MediumCutid  = cms.vstring("MediumCutid", "CutBasedIdMediumVar", "0.5")
+    if num == "TrkMu16NoVtx":
+        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
+        process.TnP_Trigger.Categories.HLT_TrkMu16NoFiltersNoVtx  = cms.vstring("PassTrkMu16NoVtx", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.PassHLTCutHighPt = cms.vstring("PassHLTCutPt", "pt > 16 && HLT_TrkMu16NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
+        process.TnP_Trigger.Cuts.HLTTrkMu16  = cms.vstring("HLTTrkMu16", "PassHLTCutHighPt", "0.5")
+    elif num == "TrkMu6NoVtx":
+        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
+        process.TnP_Trigger.Categories.HLT_TrkMu6NoFiltersNoVtx  = cms.vstring("PassTrkMu6NoVtx", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.PassHLTCutLowPt = cms.vstring("PassHLTCutPt", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
+        process.TnP_Trigger.Cuts.HLTTrkMu6  = cms.vstring("HLTTrkMu6", "PassHLTCutLowPt", "0.5")
 
 
-    if den == "looseid":
-        process.TnP_Trigger.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
-    elif den == "mediumid":
-        process.TnP_Trigger.Categories.CutBasedIdMedium = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
+    if den == "pT16":
+        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
+        process.TnP_Trigger.Expressions.PassHighPtCut = cms.vstring("PassHighPtCut", "pt > 16", "pt")
+        process.TnP_Trigger.Cuts.Pt16Cut  = cms.vstring("Pt16Cut", "PassHighPtCut", "0.5")
+    elif den == "pT6":
+        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
+        process.TnP_Trigger.Expressions.PassLowPtCut = cms.vstring("PassLowPtCut", "pt > 6", "pt")
+        process.TnP_Trigger.Cuts.Pt6Cut  = cms.vstring("Pt6Cut", "PassLowPtCut", "0.5")
 
                                     
 def FillVariables(par):
@@ -90,13 +96,8 @@ def FillBin(par):
         DEN.tag_nVertices = cms.vdouble(6.5,10.5,14.5,18.5,22.5,26.5,30.5,34.5,50.5)
  
     #Selections
-    if den == "gentrack": pass
-    elif den == "trackermuons": DEN.TM = cms.vstring("pass") #For low pT ID efficiencies
-    elif den == "looseid": DEN.CutBasedIdLoose = cms.vstring("pass")
-    elif den == "mediumid": DEN.CutBasedIdMedium = cms.vstring("pass")
-    elif den == "tightid": DEN.CutBasedIdTight = cms.vstring("pass")
-    elif den == "highptid": DEN.CutBasedIdGlobalHighPt = cms.vstring("pass")
-    elif den == "trkhighptid": DEN.CutBasedIdTrkHighPt = cms.vstring("pass")
+    if den == "pT16": DEN.Pt16Cut = cms.vstring("pass")
+    elif den == "pT6": DEN.Pt6Cut = cms.vstring("pass")
 
 
 args = sys.argv[1:]
