@@ -124,80 +124,16 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
     Cuts = cms.PSet(),
     PDFs = cms.PSet(
         voigtPlusExpo = cms.vstring(
-            "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])".replace("mass",mass_),
-            "Exponential::backgroundPass(mass, lp[0,-5,5])".replace("mass",mass_),
-            "Exponential::backgroundFail(mass, lf[0,-5,5])".replace("mass",mass_),
+            "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])",
+            "Exponential::backgroundPass(mass, lp[0,-5,5])",
+            "Exponential::backgroundFail(mass, lf[0,-5,5])",
             "efficiency[0.9,0,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        vpvPlusExpo = cms.vstring(
-            "Voigtian::signal1(mass, mean1[90,80,100], width[2.495], sigma1[2,1,3])".replace("mass",mass_),
-            "Voigtian::signal2(mass, mean2[90,80,100], width,        sigma2[4,2,10])".replace("mass",mass_),
-            "SUM::signal(vFrac[0.8,0,1]*signal1, signal2)",
-            "Exponential::backgroundPass(mass, lp[-0.1,-1,0.1])".replace("mass",mass_),
-            "Exponential::backgroundFail(mass, lf[-0.1,-1,0.1])".replace("mass",mass_),
-            "efficiency[0.9,0,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        vpvPlusExpoMin70 = cms.vstring(
-            "Voigtian::signal1(mass, mean1[90,80,100], width[2.495], sigma1[2,1,3])".replace("mass",mass_),
-            "Voigtian::signal2(mass, mean2[90,80,100], width,        sigma2[4,3,10])".replace("mass",mass_),
-            "SUM::signal(vFrac[0.8,0.5,1]*signal1, signal2)",
-            "Exponential::backgroundPass(mass, lp[-0.1,-1,0.1])".replace("mass",mass_),
-            "Exponential::backgroundFail(mass, lf[-0.1,-1,0.1])".replace("mass",mass_),
-            "efficiency[0.9,0.7,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        vpvPlusCheb = cms.vstring(
-            "Voigtian::signal1(mass, mean1[90,80,100], width[2.495], sigma1[2,1,3])".replace("mass",mass_),
-            "Voigtian::signal2(mass, mean2[90,80,100], width,        sigma2[4,3,10])".replace("mass",mass_),
-            "SUM::signal(vFrac[0.8,0.5,1]*signal1, signal2)",
-            #par3
-            "RooChebychev::backgroundPass(mass, {a0[0.25,0,0.5], a1[-0.25,-1,0.1],a2[0.,-0.25,0.25]})".replace("mass",mass_),
-            "RooChebychev::backgroundFail(mass, {a0[0.25,0,0.5], a1[-0.25,-1,0.1],a2[0.,-0.25,0.25]})".replace("mass",mass_),
-            "efficiency[0.9,0.7,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        vpvPlusCMS = cms.vstring(
-            "Voigtian::signal1(mass, mean1[90,80,100], width[2.495], sigma1[2,1,3])".replace("mass",mass_),
-            "Voigtian::signal2(mass, mean2[90,80,100], width,        sigma2[4,3,10])".replace("mass",mass_),
-            "SUM::signal(vFrac[0.8,0.5,1]*signal1, signal2)",
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.02, 0.01,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])".replace("mass",mass_),
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.02, 0.01,0.1], gammaFail[0.001, 0.,0.1], peakPass)".replace("mass",mass_),
-            "efficiency[0.9,0.7,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        voigtPlusCMS = cms.vstring(
-            "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])".replace("mass",mass_),
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.02, 0.01,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])".replace("mass",mass_),
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.02, 0.01,0.1], gammaFail[0.001, 0.,0.1], peakPass)".replace("mass",mass_),
-            "efficiency[0.9,0.7,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        vpvPlusCMS10_20 = cms.vstring(
-            "Voigtian::signal1(mass, mean1[90,80,100], width[2.495], sigma1[1.5,1,2])".replace("mass",mass_),
-            "Voigtian::signal2(mass, mean2[90,80,100], width,        sigma2[4,3,7])".replace("mass",mass_),
-            "SUM::signal(vFrac[0.8,0.5,1]*signal1, signal2)",
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.02, 0.01,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])".replace("mass",mass_),
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.02, 0.01,0.1], gammaFail[0.001, 0.,0.1], peakPass)".replace("mass",mass_),
-            "efficiency[0.9,0.7,1]",
-            "signalFractionInPassing[0.9]"
-        ),
-        vpvPlusCMSbeta0p2 = cms.vstring(
-            "Voigtian::signal1(mass, mean1[90,80,100], width[2.495], sigma1[2,1,3])".replace("mass",mass_),
-            "Voigtian::signal2(mass, mean2[90,80,100], width,        sigma2[4,3,10])".replace("mass",mass_),
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.001, 0.,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])".replace("mass",mass_),
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.03, 0.02,0.1], gammaFail[0.001, 0.,0.1], peakPass)".replace("mass",mass_),
-            #"RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.001, 0.01,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])".replace("mass",mass_),
-            #"RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.001, 0.01,0.1], gammaFail[0.001, 0.,0.1], peakPass)".replace("mass",mass_),
-            "SUM::signal(vFrac[0.8,0.5,1]*signal1, signal2)",
-            "efficiency[0.9,0.7,1]",
             "signalFractionInPassing[0.9]"
         ),
         voigtPlusCMSbeta0p2 = cms.vstring(
-            "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])".replace("mass",mass_),
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.001, 0.,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])".replace("mass",mass_),
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.03, 0.02,0.1], gammaFail[0.001, 0.,0.1], peakPass)".replace("mass",mass_),
+            "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])",
+            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.001, 0.,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])",
+            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.03, 0.02,0.1], gammaFail[0.001, 0.,0.1], peakPass)",
             "efficiency[0.9,0.7,1]",
             "signalFractionInPassing[0.9]"
         )
