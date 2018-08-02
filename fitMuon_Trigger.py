@@ -18,38 +18,31 @@ def FillNumDen(num, den):
         process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
 
     if num == "TrkMu16NoVtx":
-        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Categories.HLT_TrkMu16NoFiltersNoVtx  = cms.vstring("PassTrkMu16NoVtx", "dummy[pass=1,fail=0]")
         process.TnP_Trigger.Expressions.HLT16CutPt16 = cms.vstring("HLT16CutPt16", "pt > 16 && HLT_TrkMu16NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.PassHLT16CutPt16  = cms.vstring("PassHLT16CutPt16", "HLT16CutPt16", "0.5")
     elif num == "TrkMu6NoVtx":
-        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Categories.HLT_TrkMu6NoFiltersNoVtx  = cms.vstring("PassTrkMu6NoVtx", "dummy[pass=1,fail=0]")
         process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
 
     if den == "pT16":
-        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Expressions.CutPt16 = cms.vstring("CutPt16", "pt > 16", "pt")
         process.TnP_Trigger.Cuts.PassCutPt16  = cms.vstring("PassCutPt16", "CutPt16", "0.5")
     elif den == "pT6":
-        process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Expressions.CutPt6 = cms.vstring("CutPt6", "pt > 6", "pt")
         process.TnP_Trigger.Cuts.PassCutPt6  = cms.vstring("PassCutPt6", "CutPt6", "0.5")
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
-
+    '''Always fill pt'''
+    process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0", "1000", "GeV/c")
     if par == 'eta':
         process.TnP_Trigger.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
     if par == 'phi':
         process.TnP_Trigger.Variables.phi  = cms.vstring("muon #phi", "-3.2", "3.2", "")   
-    if par == 'pt' or 'pt_eta':
-        process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0", "1000", "GeV/c")
     if par == 'pt_eta' or 'newpt_eta':
         process.TnP_Trigger.Variables.abseta  = cms.vstring("muon |#eta|", "0", "2.5", "")
-    if par == 'tag_instLumi':
-        process.TnP_Trigger.Variables.tag_instLumi  = cms.vstring("Inst. Lumi [10E30]", "0", "15", "")
     if par == 'pair_deltaR':
         process.TnP_Trigger.Variables.pair_deltaR  = cms.vstring("deltaR", "0", "4", "")
     if par == 'vtx':
@@ -72,8 +65,6 @@ def FillBin(par):
         DEN.pt = cms.vdouble(3, 6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 200)
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
-    elif par == 'tag_instLumi':
-        DEN.tag_instLumi = cms.vdouble(1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000, 4200, 4400, 4600, 4800, 5000, 5200, 5400, 5600, 5800, 6000, 6200, 6400, 6600, 6800, 7000, 7200, 7400, 7600, 7800, 8000, 8200, 8400, 8600, 8800, 9000, 9200, 9400, 9600, 9800, 10000, 10200, 10400, 10600, 10800, 11000) # for runs BCD 
     elif par == 'pt_eta':
         DEN.pt = cms.vdouble(10, 20, 25, 30, 40, 50, 60, 120)
         DEN.abseta = cms.vdouble( 0., 0.9, 1.2, 2.1, 2.4)
@@ -123,8 +114,8 @@ if not num  in ['TrkMu16NoVtx', 'TrkMu6NoVtx']:
 if not den in ['pT16', 'pT6']:
     print '@ERROR: den should be',['pT16', 'pT6'], 'You used', den, '.Abort'
     sys.exit()
-if not par in  ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR']:
-    print '@ERROR: par should be', ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR'], 'You used', par, '.Abort'
+if not par in  ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'pair_deltaR']:
+    print '@ERROR: par should be', ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'pair_deltaR'], 'You used', par, '.Abort'
 
 #_*_*_*_*_*_*_*_*_*_*_*_*
 #Prepare variables, den, num and fit funct
