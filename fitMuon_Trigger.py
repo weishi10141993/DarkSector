@@ -291,17 +291,10 @@ for ID, ALLBINS in ID_BINS:
         os.makedirs(_output)
     module = process.TnP_Trigger.clone(OutputFileName = cms.string(_output + "/TnP_MC_%s.root" % (X)))
     #save the fitconfig in the plot directory
-    shutil.copyfile(os.getcwd()+'/fitMuon2.py',_output+'/fitMuon2.py')
-    if 'signalvar' in sample:
-        shape = cms.vstring("voigtPlusExpo")
-        print 'debug2'
-        print 'SYSTEMATIC STUDIES: the signal function will be ONE voigtian + CMSshape'
-    else:
-    # DEFAULT FIT FUNCTION: two voingtians + Exponential
-        shape = cms.vstring("vpvPlusExpo")
-        print 'debug2'
-
-
+    shutil.copyfile(os.getcwd()+'/fitMuon_Trigger.py',_output+'/fitMuon_Trigger.py')
+    #DEFAULT FIT FUNCTION
+    shape = cms.vstring("voigtPlusExpo")
+    print 'default fit func'
 
     DEN = B.clone(); num_ = ID;
     FillBin(par)
