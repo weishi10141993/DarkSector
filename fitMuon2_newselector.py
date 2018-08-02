@@ -1,8 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 import sys, os, shutil
 from optparse import OptionParser
-### USAGE: cmsRun fitMuonID.py TEST tight loose mc mc_all
-###_id: tight, loose, medium, soft
 
 #_*_*_*_*_*_
 #Read Inputs
@@ -14,57 +12,57 @@ def FillNumDen(num, den):
     #Define the mass distribution
     if den == "highptid" or den == "trkhighptid":
         if 'mass_up' in sample:
-            process.TnP_MuonID.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
+            process.TnP_Trigger.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
             print 'SISTEMATIC STUDIES: mass_up = 140 GeV'
         elif 'mass_down' in sample:
-            process.TnP_MuonID.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
+            process.TnP_Trigger.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
             print 'SISTEMATIC STUDIES: mass_down = 120 GeV'
         else:
-            process.TnP_MuonID.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
+            process.TnP_Trigger.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
     else:
         if 'mass_up' in sample:
-            process.TnP_MuonID.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
+            process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
         elif 'mass_down' in sample:
-            process.TnP_MuonID.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
+            process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
         else:
-            process.TnP_MuonID.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
+            process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
         #New selector:
 
 
     if num == "looseid":
-        process.TnP_MuonID.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.CutBasedIdLooseVar = cms.vstring("CutBasedIdLooseVar", "CutBasedIdLoose==1", "CutBasedIdLoose")
-        process.TnP_MuonID.Cuts.LooseCutid  = cms.vstring("LooseCutid", "CutBasedIdLooseVar", "0.5")
+        process.TnP_Trigger.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.CutBasedIdLooseVar = cms.vstring("CutBasedIdLooseVar", "CutBasedIdLoose==1", "CutBasedIdLoose")
+        process.TnP_Trigger.Cuts.LooseCutid  = cms.vstring("LooseCutid", "CutBasedIdLooseVar", "0.5")
     elif num == "mediumid":
-        process.TnP_MuonID.Categories.CutBasedIdMedium  = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.CutBasedIdMediumVar = cms.vstring("CutBasedIdMediumVar", "CutBasedIdMedium==1", "CutBasedIdMedium")
-        process.TnP_MuonID.Cuts.MediumCutid  = cms.vstring("MediumCutid", "CutBasedIdMediumVar", "0.5")
+        process.TnP_Trigger.Categories.CutBasedIdMedium  = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.CutBasedIdMediumVar = cms.vstring("CutBasedIdMediumVar", "CutBasedIdMedium==1", "CutBasedIdMedium")
+        process.TnP_Trigger.Cuts.MediumCutid  = cms.vstring("MediumCutid", "CutBasedIdMediumVar", "0.5")
 
 
     if den == "looseid":
-        process.TnP_MuonID.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
     elif den == "mediumid":
-        process.TnP_MuonID.Categories.CutBasedIdMedium = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Categories.CutBasedIdMedium = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
 
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
 
     if par == 'eta':
-        process.TnP_MuonID.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
+        process.TnP_Trigger.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
     if par == 'phi':
-        process.TnP_MuonID.Variables.phi  = cms.vstring("muon #phi", "-3.2", "3.2", "")   
+        process.TnP_Trigger.Variables.phi  = cms.vstring("muon #phi", "-3.2", "3.2", "")   
     if par == 'pt' or 'pt_eta':
-        process.TnP_MuonID.Variables.pt  = cms.vstring("muon p_{T}", "0", "1000", "GeV/c")
+        process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0", "1000", "GeV/c")
     if par == 'pt_eta' or 'newpt_eta':
-        process.TnP_MuonID.Variables.abseta  = cms.vstring("muon |#eta|", "0", "2.5", "")
+        process.TnP_Trigger.Variables.abseta  = cms.vstring("muon |#eta|", "0", "2.5", "")
     if par == 'tag_instLumi':
-        process.TnP_MuonID.Variables.tag_instLumi  = cms.vstring("Inst. Lumi [10E30]", "0", "15", "")
+        process.TnP_Trigger.Variables.tag_instLumi  = cms.vstring("Inst. Lumi [10E30]", "0", "15", "")
     if par == 'pair_deltaR':
-        process.TnP_MuonID.Variables.pair_deltaR  = cms.vstring("deltaR", "0", "4", "")
+        process.TnP_Trigger.Variables.pair_deltaR  = cms.vstring("deltaR", "0", "4", "")
     if par == 'vtx':
         print 'I filled it'
-        process.TnP_MuonID.Variables.tag_nVertices   = cms.vstring("Number of vertices", "0", "999", "")
+        process.TnP_Trigger.Variables.tag_nVertices   = cms.vstring("Number of vertices", "0", "999", "")
 
 def FillBin(par):
     '''Sets the values of the bin paramters and the bool selections on the denominators'''
@@ -250,7 +248,7 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 
 
 if sample == "dataidF_test_TM":
-    process.TnP_MuonID = Template.clone(                                                                                                 
+    process.TnP_Trigger = Template.clone(                                                                                                 
        InputFileNames = cms.vstring(                            
             '/eos/cms/store/group/phys_muon/fernanpe/TnPTrees/test/TnPTree_17Nov2017_SingleMuon_Run2017Fv1_Full_GoldenJSON_skimmedID.root'
             ),                                                                                                                           
@@ -263,7 +261,7 @@ if sample == "dataidF_test_TM":
 
 
 if sample == "mctest":
-    process.TnP_MuonID = Template.clone(                                                                                                 
+    process.TnP_Trigger = Template.clone(                                                                                                 
        InputFileNames = cms.vstring(                            
             '/eos/cms/store/group/phys_muon/fernanpe/TnPTrees/94X/mctest.root'
             #'/afs/cern.ch/work/g/gaperrin/public/ForPedro/ForMorion2018SF/tnpZ_MC.root'
@@ -277,8 +275,8 @@ if sample == "mctest":
 
 if scenario == "mc_all":
     print "Including the weight for MC"
-    process.TnP_MuonID.WeightVariable = cms.string("weight")
-    process.TnP_MuonID.Variables.weight = cms.vstring("weight","0","10","")
+    process.TnP_Trigger.WeightVariable = cms.string("weight")
+    process.TnP_Trigger.Variables.weight = cms.vstring("weight","0","10","")
 
 
 BIN = cms.PSet()
@@ -322,7 +320,7 @@ for ID, ALLBINS in ID_BINS:
         _output += '/MC' + '_' + sample
     if not os.path.exists(_output):
         os.makedirs(_output)
-    module = process.TnP_MuonID.clone(OutputFileName = cms.string(_output + "/TnP_MC_%s.root" % (X)))
+    module = process.TnP_Trigger.clone(OutputFileName = cms.string(_output + "/TnP_MC_%s.root" % (X)))
     #save the fitconfig in the plot directory
     shutil.copyfile(os.getcwd()+'/fitMuon2.py',_output+'/fitMuon2.py')
     if 'signalvar' in sample:
@@ -415,7 +413,7 @@ for ID, ALLBINS in ID_BINS:
                 BinnedVariables = DEN,
                 BinToPDFmap = shape
                 ))
-        setattr(process, "TnP_MuonID_"+ID+"_"+X, module)
+        setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
         setattr(process, "run_"+ID+"_"+X, cms.Path(module))
         if num_.find("puppiIso") != -1:
             setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
@@ -440,7 +438,7 @@ for ID, ALLBINS in ID_BINS:
                 BinnedVariables = DEN,
                 BinToPDFmap = shape
                 ))
-        setattr(process, "TnP_MuonID_"+ID+"_"+X, module)
+        setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
         setattr(process, "run_"+ID+"_"+X, cms.Path(module))
         if num_.find("puppiIso") != -1:
              setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
@@ -466,7 +464,7 @@ for ID, ALLBINS in ID_BINS:
                 BinnedVariables = DEN,
                 BinToPDFmap = shape
                 ))
-        setattr(process, "TnP_MuonID_"+ID+"_"+X, module)
+        setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
         setattr(process, "run_"+ID+"_"+X, cms.Path(module))
         if num_.find("puppiIso") != -1:
              setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
