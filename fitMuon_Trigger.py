@@ -29,7 +29,7 @@ def FillNumDen(num, den):
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
     '''Always fill pt'''
-    process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0", "1000", "GeV/c")
+    process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0.0", "1000.0", "GeV/c")
     if par == 'eta':
         process.TnP_Trigger.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
     if par == 'phi':
@@ -45,28 +45,23 @@ def FillVariables(par):
 def FillBin(par):
     '''Sets the values of the bin paramters and the bool selections on the denominators'''
     #Parameter 
-    if par == 'newpt_eta':
-        DEN.pair_newTuneP_probe_pt = cms.vdouble(10, 15, 20, 25, 30, 40, 50, 60, 120) 
-        DEN.abseta = cms.vdouble( 0., 0.9, 1.2, 2.1, 2.4)
-    elif par == 'newpt':
-        DEN.pair_newTuneP_probe_pt = cms.vdouble(10, 20, 25, 30, 40, 50, 60, 120, 200)
-    elif par == 'eta':
+    if par == 'eta':
         DEN.eta = cms.vdouble(-2.4, -2.1, -1.6, -1.2, -0.9, -0.3, -0.2, 0.2, 0.3, 0.9, 1.2, 1.6, 2.1, 2.4)
     elif par == 'phi':
-        DEN.phi = cms.vdouble(-3.0, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0)
+        DEN.phi = cms.vdouble(-3.15, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.15)
     elif par == 'pt':
-        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 200)
+        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 1000)
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
     elif par == 'pt_eta':
-        DEN.pt = cms.vdouble(10, 20, 25, 30, 40, 50, 60, 120)
-        DEN.abseta = cms.vdouble( 0., 0.9, 1.2, 2.1, 2.4)
+        DEN.pt = cms.vdouble(20, 25, 30, 40, 50, 60, 120, 1000)
+        DEN.abseta = cms.vdouble(0., 0.9, 1.2, 2.1, 2.4)
     elif par == 'vtx':
-        DEN.tag_nVertices = cms.vdouble(6.5,10.5,14.5,18.5,22.5,26.5,30.5,34.5,50.5)
+        DEN.tag_nVertices = cms.vdouble(6.5, 10.5, 14.5, 18.5, 22.5, 26.5, 30.5, 34.5, 50.5)
  
     #Selections
-    if den == "pT16": DEN.pt = cms.vdouble(16, 1000)
-    elif den == "pT6": DEN.pt = cms.vdouble(6, 1000)
+    if den == "pT16": DEN.pt = cms.vdouble(16.0, 1000.0)
+    elif den == "pT6": DEN.pt = cms.vdouble(6.0, 1000.0)
 
 args = sys.argv[1:]
 iteration = ''
