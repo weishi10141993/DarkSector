@@ -10,24 +10,12 @@ def FillNumDen(num, den):
     '''Declares the needed selections for a givent numerator, denominator'''
 
     #Define the mass distribution
-    if den == "highptid" or den == "trkhighptid":
-        if 'mass_up' in sample:
-            process.TnP_Trigger.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
-            print 'SISTEMATIC STUDIES: mass_up = 140 GeV'
-        elif 'mass_down' in sample:
-            process.TnP_Trigger.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
-            print 'SISTEMATIC STUDIES: mass_down = 120 GeV'
-        else:
-            process.TnP_Trigger.Variables.pair_newTuneP_mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
+    if 'mass_up' in sample:
+        process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
+    elif 'mass_down' in sample:
+        process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
     else:
-        if 'mass_up' in sample:
-            process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
-        elif 'mass_down' in sample:
-            process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
-        else:
-            process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
-        #New selector:
-
+        process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
 
     if num == "TrkMu16NoVtx":
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
@@ -40,7 +28,6 @@ def FillNumDen(num, den):
         process.TnP_Trigger.Expressions.PassHLTCutLowPt = cms.vstring("PassHLTCutPt", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.HLTTrkMu6  = cms.vstring("HLTTrkMu6", "PassHLTCutLowPt", "0.5")
 
-
     if den == "pT16":
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Expressions.PassHighPtCut = cms.vstring("PassHighPtCut", "pt > 16", "pt")
@@ -49,7 +36,6 @@ def FillNumDen(num, den):
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Expressions.PassLowPtCut = cms.vstring("PassLowPtCut", "pt > 6", "pt")
         process.TnP_Trigger.Cuts.Pt6Cut  = cms.vstring("Pt6Cut", "PassLowPtCut", "0.5")
-
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
@@ -83,7 +69,7 @@ def FillBin(par):
     elif par == 'phi':
         DEN.phi = cms.vdouble(-3.0, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0)
     elif par == 'pt':
-        DEN.pt = cms.vdouble(10, 20, 25, 30, 40, 50, 60, 120, 200)
+        DEN.pt = cms.vdouble(3, 6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 200)
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
     elif par == 'tag_instLumi':
@@ -127,11 +113,10 @@ elif bgFitFunction == 'custom':
 else:
     print 'Will use the standard fit functions for the backgroud'
 
-
 process = cms.Process("TagProbe")
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.source = cms.Source("EmptySource")
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 if not num  in ['looseid', 'mediumid', 'mediumidprompt', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso','muCleanerIII', 'muCleanerIV', 'highptid', 'trkhighptid', 'softid', 'softmvaid', 'mvaloose', 'mvamedium', 'mvatight', 'looseiso', 'tightiso', 'tklooseiso', 'tktightiso', 'mediumiso', 'miniisotight', 'trackermuons']:
     print '@ERROR: num should be in ',['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso', 'muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso', 'mediumiso'], 'You used', num, '.Abort'
@@ -151,8 +136,7 @@ _mrange = "70"
 if 'iso' in num:
     _mrange = "77"
 print '_mrange is', _mrange
-mass_ =" mass"
-if den == "highptid" or den == "trkhighptid": mass_ = "pair_newTuneP_mass"
+mass_ = "mass"
 
 Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
     NumCPU = cms.uint32(1),
@@ -248,31 +232,16 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 )
 
 
-if sample == "dataidF_test_TM":
+if sample == "2018B":
     process.TnP_Trigger = Template.clone(                                                                                                 
        InputFileNames = cms.vstring(                            
-            '/eos/cms/store/group/phys_muon/fernanpe/TnPTrees/test/TnPTree_17Nov2017_SingleMuon_Run2017Fv1_Full_GoldenJSON_skimmedID.root'
-            ),                                                                                                                           
-        InputTreeName = cms.string("fitter_tree"),                                                                                       
-        InputDirectoryName = cms.string("tpTree"),                                                                                       
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),                                                                   
+            '/afs/cern.ch/work/w/wshi/public/2018DataControlHLT/CMSSW_10_1_7/src/MuonAnalysis/TagAndProbe/test/zmumu/'
+            ),     
+        InputDirectoryName = cms.string("tpTree"), 
+        InputTreeName = cms.string("fitter_tree"),                                                                                     
+        OutputFileName = cms.string("TnP_Trigger_%s.root" % scenario),                                                                   
         Efficiencies = cms.PSet(),                                                                                                       
-        )  
-
-
-
-if sample == "mctest":
-    process.TnP_Trigger = Template.clone(                                                                                                 
-       InputFileNames = cms.vstring(                            
-            '/eos/cms/store/group/phys_muon/fernanpe/TnPTrees/94X/mctest.root'
-            #'/afs/cern.ch/work/g/gaperrin/public/ForPedro/ForMorion2018SF/tnpZ_MC.root'
-            ),                                                                                                                           
-        InputTreeName = cms.string("fitter_tree"),                                                                                       
-        InputDirectoryName = cms.string("tpTree"),                                                                                       
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),                                                                   
-        Efficiencies = cms.PSet(),                                                                                                       
-        )  
-
+        ) 
 
 if scenario == "mc_all":
     print "Including the weight for MC"
