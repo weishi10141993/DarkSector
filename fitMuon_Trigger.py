@@ -298,34 +298,14 @@ for ID, ALLBINS in ID_BINS:
     DEN = B.clone(); num_ = ID;
     FillBin(par)
 
-    if not "iso" in num: #customize only for ID
-        if bgFitFunction == 'default':          
-                if ('pt' in X):
-                    print 'den is', den 
-                    print 'num_ is ', num
-                    if den == "highptid" or num == "highptid" or den == "trkhighptid" or num == "trkhighptid":
-                        if (len(DEN.pair_newTuneP_probe_pt)==9 or len(DEN.pair_newTuneP_probe_pt)==8 or len(DEN.pair_newTuneP_probe_pt)==10):
-                            shape = cms.vstring("voigtPlusCMS","*pt_bin0*","voigtPlusCMS","*pt_bin1*","voigtPlusCMS","*pt_bin2*","voigtPlusCMS","*pt_bin3*","voigtPlusCMSbeta0p2","*pt_bin4*","voigtPlusCMSbeta0p2","*pt_bin5*","voigtPlusCMSbeta0p2","*pt_bin6*","voigtPlusCMSbeta0p2","*pt_bin7*","voigtPlusCMSbeta0p2", "*pt_bin8*","voigtPlusCMSbeta0p2")
-                        if scenario == "mc_all":
-                            if (len(DEN.pair_newTuneP_probe_pt)==9 or len(DEN.pair_newTuneP_probe_pt)==8 or len(DEN.pair_newTuneP_probe_pt)==10):
-                                shape = cms.vstring("voigtPlusCMSbeta0p2","*pt_bin0*","voigtPlusExpo","*pt_bin1*","voigtPlusExpo","*pt_bin2*","voigtPlusExpo","*pt_bin3*","voigtPlusExpo","*pt_bin4*","voigtPlusCMSbeta0p2","*pt_bin5*","voigtPlusCMSbeta0p2","*pt_bin6*","voigtPlusCMSbeta0p2","*pt_bin7*","voigtPlusCMSbeta0p2", "*pt_bin8*","voigtPlusCMSbeta0p2")
+    
+    if bgFitFunction == 'default':          
+        if ('pt' in X):
+            print 'den is', den 
+            print 'num_ is ', num
 
-                    else:
-                        if (len(DEN.pt)==12):
-                            shape = cms.vstring("voigtPlusCMSbeta0p2")
-                        if (len(DEN.pt)==26):
-                            shape = cms.vstring("vpvPlusCMSbeta0p2")
-                        if (len(DEN.pt)==9 or len(DEN.pt)==8 or len(DEN.pt)==10):
-                            shape = cms.vstring("voigtPlusCMS","*pt_bin0*","voigtPlusCMS","*pt_bin1*","voigtPlusCMS","*pt_bin2*","voigtPlusCMS","*pt_bin3*","voigtPlusCMSbeta0p2","*pt_bin4*","voigtPlusCMSbeta0p2","*pt_bin5*","voigtPlusCMSbeta0p2","*pt_bin6*","voigtPlusCMSbeta0p2","*pt_bin7*","voigtPlusCMSbeta0p2","*pt_bin8*","voigtPlusCMSbeta0p2")
-
-        elif bgFitFunction == 'CMSshape':
-            if den == "highpt":
-                if (len(DEN.pair_newTuneP_probe_pt)==9):
-                    shape = cms.vstring("vpvPlusExpo","*pt_bin4*","vpvPlusCMS","*pt_bin5*","vpvPlusCMS","*pt_bin6*","vpvPlusCheb","*pt_bin7*","vpvPlusCheb")
-            else:
-                if (len(DEN.pt)==9):
-                    shape = cms.vstring("vpvPlusExpo","*pt_bin4*","vpvPlusCMS","*pt_bin5*","vpvPlusCheb","*pt_bin6*","vpvPlusCheb", "*pt_bin7*","vpvPlusCheb")
-
+            shape = cms.vstring("voigtPlusCMSbeta0p2")
+                    
     print 'd3'
     mass_variable ="mass"
     print 'den is', den
