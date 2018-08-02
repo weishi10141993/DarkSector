@@ -233,8 +233,8 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 
 if sample == "2018B":
     process.TnP_Trigger = Template.clone(                                                                                                 
-       InputFileNames = cms.vstring(                            
-            '/afs/cern.ch/work/w/wshi/public/2018DataControlHLT/CMSSW_10_1_7/src/MuonAnalysis/TagAndProbe/test/zmumu/'
+        InputFileNames = cms.vstring(                            
+            '/afs/cern.ch/work/w/wshi/public/2018DataControlHLT/CMSSW_10_1_7/src/MuonAnalysis/TagAndProbe/test/zmumu/tnpZ_Data_2018B_Skim.root'
             ),     
         InputDirectoryName = cms.string("tpTree"), 
         InputTreeName = cms.string("fitter_tree"),                                                                                     
@@ -301,7 +301,6 @@ for ID, ALLBINS in ID_BINS:
     if not "iso" in num: #customize only for ID
         if bgFitFunction == 'default':          
                 if ('pt' in X):
-                    print 'SYSTEMATIC STUDIES: the signal function will be ONE voigtian + CMSshape'
                     print 'den is', den 
                     print 'num_ is ', num
                     if den == "highptid" or num == "highptid" or den == "trkhighptid" or num == "trkhighptid":
