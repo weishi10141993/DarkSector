@@ -20,22 +20,22 @@ def FillNumDen(num, den):
     if num == "TrkMu16NoVtx":
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Categories.HLT_TrkMu16NoFiltersNoVtx  = cms.vstring("PassTrkMu16NoVtx", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.PassHLTCutHighPt = cms.vstring("PassHLTCutPt", "pt > 16 && HLT_TrkMu16NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
-        process.TnP_Trigger.Cuts.HLTTrkMu16  = cms.vstring("HLTTrkMu16", "PassHLTCutHighPt", "0.5")
+        process.TnP_Trigger.Expressions.HLT16CutPt16 = cms.vstring("HLT16CutPt16", "pt > 16 && HLT_TrkMu16NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
+        process.TnP_Trigger.Cuts.PassHLT16CutPt16  = cms.vstring("PassHLT16CutPt16", "HLT16CutPt16", "0.5")
     elif num == "TrkMu6NoVtx":
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
         process.TnP_Trigger.Categories.HLT_TrkMu6NoFiltersNoVtx  = cms.vstring("PassTrkMu6NoVtx", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.PassHLTCutLowPt = cms.vstring("PassHLTCutPt", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
-        process.TnP_Trigger.Cuts.HLTTrkMu6  = cms.vstring("HLTTrkMu6", "PassHLTCutLowPt", "0.5")
+        process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
+        process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
 
     if den == "pT16":
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
-        process.TnP_Trigger.Expressions.PassHighPtCut = cms.vstring("PassHighPtCut", "pt > 16", "pt")
-        process.TnP_Trigger.Cuts.Pt16Cut  = cms.vstring("Pt16Cut", "PassHighPtCut", "0.5")
+        process.TnP_Trigger.Expressions.CutPt16 = cms.vstring("CutPt16", "pt > 16", "pt")
+        process.TnP_Trigger.Cuts.PassCutPt16  = cms.vstring("PassCutPt16", "CutPt16", "0.5")
     elif den == "pT6":
         process.TnP_Trigger.Variables.pt  = cms.vstring("probe pt", "0", "1000", "")
-        process.TnP_Trigger.Expressions.PassLowPtCut = cms.vstring("PassLowPtCut", "pt > 6", "pt")
-        process.TnP_Trigger.Cuts.Pt6Cut  = cms.vstring("Pt6Cut", "PassLowPtCut", "0.5")
+        process.TnP_Trigger.Expressions.CutPt6 = cms.vstring("CutPt6", "pt > 6", "pt")
+        process.TnP_Trigger.Cuts.PassCutPt6  = cms.vstring("PassCutPt6", "CutPt6", "0.5")
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
@@ -252,11 +252,10 @@ if scenario == "mc_all":
 BIN = cms.PSet()
 
 print 'debug1'
-Num_dic = {'looseid':'LooseID', 'mediumid':'MediumID', 'mediumidprompt':'MediumPromptID', 'tightid':'TightID', 'trkhighptid':'TrkHighPtID', 'softid':'SoftID', 'softmvaid':'SoftMVAID', 'mvaloose':'MVALoose', 'mvamedium':'MVAMedium', 'mvatight':'MVATight', 'tightidhww':'TightIDHWW','puppiIso':'PuppiIso','puppiIsoNoLep':'PuppiIsoNoLep','combpuppiIso':'combPuppiIso', 'muCleanerIII':'MuonCleanerIII', 'muCleanerIV':'MuonCleanerIV', 'highptid':'HighPtID','looseiso':'LooseRelIso', 'mediumiso':'MediumISO', 'miniisotight':'MiniISOTight', 'tightiso':'TightRelIso','tklooseiso':'LooseRelTkIso', 'tktightiso':'TightRelTkIso', 'mediumiso':'MediumIso', 'trackermuons':'TrackerMuons'}
-Den_dic = {'gentrack':'genTracks','looseid':'LooseID','mediumid':'MediumID', 'tightid':'TightIDandIPCut','tightidhww':'TightIDHWW','highptid':'HighPtIDandIPCut', 'trkhighptid':'TrkHighPtID', 'trackermuons':'TrackerMuons'}
-Sel_dic = {'looseid':'LooseCutid','mediumid':'MediumCutid','mediumidprompt':'MediumCutidPrompt', 'tightid':'TightCutid','tightidhww':'Tight2012_zIPdBCut','puppiIso':'puppiIsoCut', 'puppiIsoNoLep':'puppiIsoNoLepCut','combpuppiIso':'combpuppiIsoCut','muCleanerIII':'TM_cleanMuonIIICut', 'muCleanerIV':'TM_cleanMuonIVCut', 'highptid':'HighptCutid','looseiso':'LooseCutiso','tightiso':'TightCutiso','tklooseiso':'TrkLooseCutiso', 'tktightiso':'TrkTightCutiso', 'mediumiso':'MediumCutiso', 'trkhighptid':'trkHighptCutid', 'softid':'SoftCutid', 'softmvaid':'SoftMVACutid', 'mvaloose':'MVALooseCut', 'mvamedium':'MVAMediumCut', 'mvatight':'MVATightCut', 'miniisotight':'MiniTightCutiso', 'tightiso':'TightCutiso', 'trackermuons':'TMCut'}
+Num_dic = {'TrkMu16NoVtx':'HLT_TrkMu16NoFiltersNoVtx', 'TrkMu6NoVtx':'HLT_TrkMu6NoFiltersNoVtx'}
+Den_dic = {'pT16':'Pt16Cut','pT6':'Pt6Cut'}
+Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
 print 'debugSel'
-#Par_dic = {'eta':'eta', 'pt':}
 
 FillVariables(par)
 FillNumDen(num,den)
