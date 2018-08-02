@@ -8,14 +8,7 @@ from optparse import OptionParser
 
 def FillNumDen(num, den):
     '''Declares the needed selections for a givent numerator, denominator'''
-
-    #Define the mass distribution
-    if 'mass_up' in sample:
-        process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "140", "GeV/c^{2}")
-    elif 'mass_down' in sample:
-        process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "120", "GeV/c^{2}")
-    else:
-        process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
+    process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
 
     if num == "TrkMu16NoVtx":
         process.TnP_Trigger.Categories.HLT_TrkMu16NoFiltersNoVtx  = cms.vstring("PassTrkMu16NoVtx", "dummy[pass=1,fail=0]")
