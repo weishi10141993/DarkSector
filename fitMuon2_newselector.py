@@ -50,10 +50,10 @@ def FillNumDen(num, den):
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
 
-    if par == 'newpt' or 'newpt_eta':
-        process.TnP_MuonID.Variables.pair_newTuneP_probe_pt = cms.vstring("muon p_{T} (tune-P)", "0", "1000", "GeV/c")
     if par == 'eta':
         process.TnP_MuonID.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
+    if par == 'phi':
+        process.TnP_MuonID.Variables.phi  = cms.vstring("muon #phi", "-3.2", "3.2", "")   
     if par == 'pt' or 'pt_eta':
         process.TnP_MuonID.Variables.pt  = cms.vstring("muon p_{T}", "0", "1000", "GeV/c")
     if par == 'pt_eta' or 'newpt_eta':
@@ -76,9 +76,10 @@ def FillBin(par):
         DEN.pair_newTuneP_probe_pt = cms.vdouble(10, 20, 25, 30, 40, 50, 60, 120, 200)
     elif par == 'eta':
         DEN.eta = cms.vdouble(-2.4, -2.1, -1.6, -1.2, -0.9, -0.3, -0.2, 0.2, 0.3, 0.9, 1.2, 1.6, 2.1, 2.4)
+    elif par == 'phi':
+        DEN.phi = cms.vdouble(-3.0, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0)
     elif par == 'pt':
         DEN.pt = cms.vdouble(10, 20, 25, 30, 40, 50, 60, 120, 200)
-#        DEN.pt = cms.vdouble(2.0, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 4.5, 5.0, 6.0, 8.0, 10.0, 15.0, 20.0, 25.0, 30.0, 40.0, 50.0, 60.0, 120.0, 200.0, 300.0, 500.0, 700.0, 1200.0)
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
     elif par == 'tag_instLumi':
@@ -88,9 +89,9 @@ def FillBin(par):
         DEN.abseta = cms.vdouble( 0., 0.9, 1.2, 2.1, 2.4)
     elif par == 'vtx':
         print 'I filled it also asdf'
-# first_single       DEN.tag_nVertices = cms.vdouble(10.5,14.5,18.5,22.5,26.5,30.5,34.5,50.5)
         DEN.tag_nVertices = cms.vdouble(6.5,10.5,14.5,18.5,22.5,26.5,30.5,34.5,50.5)
- #Selections
+ 
+    #Selections
     if den == "gentrack": pass
     elif den == "trackermuons": DEN.TM = cms.vstring("pass") #For low pT ID efficiencies
     elif den == "looseid": DEN.CutBasedIdLoose = cms.vstring("pass")
@@ -154,24 +155,13 @@ print '_mrange is', _mrange
 mass_ =" mass"
 if den == "highptid" or den == "trkhighptid": mass_ = "pair_newTuneP_mass"
 
-
-
 Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
-                          NumCPU = cms.uint32(1),
+    NumCPU = cms.uint32(1),
     SaveWorkspace = cms.bool(False),
-
-
-    Variables = cms.PSet(
-        #essential for all den/num
-        #mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}"),
-        #Jeta    = cms.vstring("muon #eta", "-2.5", "2.5", ""),
-        ),
-
+    Variables = cms.PSet(),
     Categories = cms.PSet(),
     Expressions = cms.PSet(),
     Cuts = cms.PSet(),
-
-
     PDFs = cms.PSet(
         voigtPlusExpo = cms.vstring(
             "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])".replace("mass",mass_),
@@ -252,11 +242,9 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
             "signalFractionInPassing[0.9]"
         )
     ),
-
     binnedFit = cms.bool(True),
     binsForFit = cms.uint32(40),
     saveDistributionsPlot = cms.bool(False),
-
     Efficiencies = cms.PSet(), # will be filled later
 )
 
@@ -293,8 +281,7 @@ if scenario == "mc_all":
     process.TnP_MuonID.Variables.weight = cms.vstring("weight","0","10","")
 
 
-BIN = cms.PSet(
-        )
+BIN = cms.PSet()
 
 print 'debug1'
 Num_dic = {'looseid':'LooseID', 'mediumid':'MediumID', 'mediumidprompt':'MediumPromptID', 'tightid':'TightID', 'trkhighptid':'TrkHighPtID', 'softid':'SoftID', 'softmvaid':'SoftMVAID', 'mvaloose':'MVALoose', 'mvamedium':'MVAMedium', 'mvatight':'MVATight', 'tightidhww':'TightIDHWW','puppiIso':'PuppiIso','puppiIsoNoLep':'PuppiIsoNoLep','combpuppiIso':'combPuppiIso', 'muCleanerIII':'MuonCleanerIII', 'muCleanerIV':'MuonCleanerIV', 'highptid':'HighPtID','looseiso':'LooseRelIso', 'mediumiso':'MediumISO', 'miniisotight':'MiniISOTight', 'tightiso':'TightRelIso','tklooseiso':'LooseRelTkIso', 'tktightiso':'TightRelTkIso', 'mediumiso':'MediumIso', 'trackermuons':'TrackerMuons'}
