@@ -118,14 +118,14 @@ process.load('FWCore.MessageService.MessageLogger_cfi')
 process.source = cms.Source("EmptySource")
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
-if not num  in ['looseid', 'mediumid', 'mediumidprompt', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso','muCleanerIII', 'muCleanerIV', 'highptid', 'trkhighptid', 'softid', 'softmvaid', 'mvaloose', 'mvamedium', 'mvatight', 'looseiso', 'tightiso', 'tklooseiso', 'tktightiso', 'mediumiso', 'miniisotight', 'trackermuons']:
-    print '@ERROR: num should be in ',['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso', 'muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso', 'mediumiso'], 'You used', num, '.Abort'
+if not num  in ['TrkMu16NoVtx', 'TrkMu6NoVtx']:
+    print '@ERROR: num should be in ',['TrkMu16NoVtx', 'TrkMu6NoVtx'], 'You used', num, '.Abort'
     sys.exit()
-if not den in ['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid', 'gentrack', 'trkhighptid', 'trackermuons']:
-    print '@ERROR: den should be',['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid'], 'You used', den, '.Abort'
+if not den in ['pT16', 'pT6']:
+    print '@ERROR: den should be',['pT16', 'pT6'], 'You used', den, '.Abort'
     sys.exit()
-if not par in  ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR']:
-    print '@ERROR: par should be', ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR'], 'You used', par, '.Abort'
+if not par in  ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR']:
+    print '@ERROR: par should be', ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR'], 'You used', par, '.Abort'
 
 #_*_*_*_*_*_*_*_*_*_*_*_*
 #Prepare variables, den, num and fit funct
