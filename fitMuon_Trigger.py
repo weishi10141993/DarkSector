@@ -14,26 +14,33 @@ def FillNumDen(num, den):
         process.TnP_Trigger.Categories.HLT_TrkMu16NoFiltersNoVtx  = cms.vstring("Control HLT16", "dummy[pass=1,fail=0]")
         process.TnP_Trigger.Expressions.HLT16CutPt16 = cms.vstring("HLT16CutPt16", "pt > 16 && HLT_TrkMu16NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.PassHLT16CutPt16  = cms.vstring("PassHLT16CutPt16", "HLT16CutPt16", "0.5")
+        print 'Num Cut: PassHLT16CutPt16'
     elif num == "TrkMu6NoVtx":
         process.TnP_Trigger.Categories.HLT_TrkMu6NoFiltersNoVtx  = cms.vstring("Control HLT6", "dummy[pass=1,fail=0]")
         process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu6NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
+        print 'Num Cut: PassHLT6CutPt6'
 
     if den == "pT16":
         process.TnP_Trigger.Expressions.CutPt16 = cms.vstring("CutPt16", "pt > 16", "pt")
         process.TnP_Trigger.Cuts.PassCutPt16  = cms.vstring("PassCutPt16", "CutPt16", "0.5")
+        print 'Den Cut: PassCutPt16'
     elif den == "pT6":
         process.TnP_Trigger.Expressions.CutPt6 = cms.vstring("CutPt6", "pt > 6", "pt")
         process.TnP_Trigger.Cuts.PassCutPt6  = cms.vstring("PassCutPt6", "CutPt6", "0.5")
+        print 'Den Cut: PassCutPt6'
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
     '''Always fill pt'''
     process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0.0", "1000.0", "GeV/c")
+    print 'muon pt is filled as variable: 0, 1000, GeV/c'
     if par == 'eta':
         process.TnP_Trigger.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
+        print 'muon eta is filled as variable: -2.5, 2.5'
     if par == 'phi':
         process.TnP_Trigger.Variables.phi  = cms.vstring("muon #phi", "-3.2", "3.2", "")   
+        print 'muon phi is filled as variable: -3.2, 3.2'
     if par == 'pt_eta' or 'newpt_eta':
         process.TnP_Trigger.Variables.abseta  = cms.vstring("muon |#eta|", "0", "2.5", "")
     if par == 'pair_deltaR':
@@ -46,10 +53,13 @@ def FillBin(par):
     #Parameter 
     if par == 'eta':
         DEN.eta = cms.vdouble(-2.4, -2.1, -1.6, -1.2, -0.9, -0.3, -0.2, 0.2, 0.3, 0.9, 1.2, 1.6, 2.1, 2.4)
+        print 'Set bins: eta'
     elif par == 'phi':
         DEN.phi = cms.vdouble(-3.15, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.15)
+        print 'Set bins: phi'
     elif par == 'pt':
         DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 1000)
+        print 'Set many bins: pt'
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
     elif par == 'pt_eta':
@@ -59,8 +69,12 @@ def FillBin(par):
         DEN.tag_nVertices = cms.vdouble(6.5, 10.5, 14.5, 18.5, 22.5, 26.5, 30.5, 34.5, 50.5)
  
     #Selections
-    if den == "pT16": DEN.pt = cms.vdouble(16.0, 1000.0)
-    elif den == "pT6": DEN.pt = cms.vdouble(6.0, 1000.0)
+    if den == "pT16": 
+        DEN.pt = cms.vdouble(16.0, 1000.0)
+        print 'Set bins: pt, 16, 1000'
+    elif den == "pT6": 
+        DEN.pt = cms.vdouble(6.0, 1000.0)
+        print 'Set bins: pt, 6, 1000'
 
 args = sys.argv[1:]
 
@@ -111,8 +125,6 @@ if not par in  ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'pair
 
 #Set-up the mass range
 _mrange = "70"
-if 'iso' in num:
-    _mrange = "77"
 print '_mrange is', _mrange
 mass_ = "mass"
 
