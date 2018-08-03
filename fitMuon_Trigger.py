@@ -222,7 +222,6 @@ for ID, ALLBINS in ID_BINS:
     
     if bgFitFunction == 'default':          
         if ('pt' in X):
-            print 'par is pt'
             shape = cms.vstring("voigtPlusCMSbeta0p2")
                     
     mass_variable ="mass"
