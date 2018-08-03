@@ -179,6 +179,10 @@ print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
 for ID, ALLBINS in ID_BINS:
     X = ALLBINS[0]
     B = ALLBINS[1]
+    print 'X'
+    print X
+    print 'B'
+    print B
     _output = os.getcwd() + '/Efficiency' + iteration
     if not os.path.exists(_output):
         print 'Creating', '/Efficiency' + iteration,', the directory where the fits are stored.'
