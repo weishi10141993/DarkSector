@@ -126,7 +126,6 @@ if not par in  ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'pair
 #Set-up the mass range
 _mrange = "70"
 print 'Lower mass range is', _mrange
-mass_ = "mass"
 
 Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
     NumCPU = cms.uint32(1),
