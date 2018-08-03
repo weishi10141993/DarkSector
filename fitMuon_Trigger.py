@@ -64,31 +64,31 @@ def FillBin(par):
     elif den == "pT6": DEN.pt = cms.vdouble(6.0, 1000.0)
 
 args = sys.argv[1:]
-iteration = ''
+
 if len(args) > 1: iteration = args[1]
 print "The iteration is", iteration
-num = 'tight'
+
 if len(args) > 2: num = args[2]
 print 'The num is', num 
-den = 'tight'
+
 if len(args) > 3: den = args[3]
 print 'The den is', den 
-scenario = "data_all"
+
 if len(args) > 4: scenario = args[4]
 print "Will run scenario ", scenario
-sample = 'data'
+
 if len(args) > 5: sample = args[5]
 print 'The sample is', sample
+
 if len(args) > 6: par = args[6]
 print 'The binning is', par 
+
 bgFitFunction = 'default'
 if len(args) > 7: bgFitFunction = args[7]
-if bgFitFunction == 'CMSshape':
-    print 'Will use the CMS shape to fit the background'
-elif bgFitFunction == 'custom':
+if bgFitFunction == 'custom':
     print 'Will experiment with custom fit functions'
 else:
-    print 'Will use the standard fit functions for the backgroud'
+    print 'Will use the deault fit functions for the backgroud'
 
 process = cms.Process("TagProbe")
 process.load('FWCore.MessageService.MessageLogger_cfi')
