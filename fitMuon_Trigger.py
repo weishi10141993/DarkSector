@@ -206,7 +206,7 @@ for ID, ALLBINS in ID_BINS:
         if ('pt' in X):
             print 'par is pt'
             shape = cms.vstring("voigtPlusCMSbeta0p2")
-            print 'Fit func updated: ' + shape
+            print 'Fit func updated: ', shape
                     
     mass_variable ="mass"
     #compute isolation efficiency
