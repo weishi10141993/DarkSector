@@ -148,7 +148,7 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 if sample == "2018B":
     process.TnP_Trigger = Template.clone(                                                                                                 
         InputFileNames = cms.vstring(                            
-            '/afs/cern.ch/work/w/wshi/public/2018DataControlHLT/CMSSW_10_1_7/src/MuonAnalysis/TagAndProbe/test/zmumu/tnpZ_Data_2018B_Skim.root'
+            '/afs/cern.ch/work/w/wshi/public/2018DataControlHLT/CMSSW_10_1_7/src/MuonAnalysis/TagAndProbe/test/zmumu/tnpZ_Data_All_Skim.root'
             ),     
         InputDirectoryName = cms.string("tpTree"), 
         InputTreeName = cms.string("fitter_tree"),                                                                                     
