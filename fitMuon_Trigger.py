@@ -158,7 +158,6 @@ if sample == "2018":
 
 BIN = cms.PSet()
 
-print 'BIN: ' + BIN
 Num_dic = {'TrkMu16NoVtx':'HLT_TrkMu16NoFiltersNoVtx', 'TrkMu6NoVtx':'HLT_TrkMu6NoFiltersNoVtx'}
 Den_dic = {'pT16':'Pt16Cut','pT6':'Pt6Cut'}
 Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
@@ -171,9 +170,6 @@ print 'The num: ', num,' dic ',Num_dic[num]
 print 'The par: ', par
 
 ID_BINS = [(Sel_dic[num],("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN))]
-print 'ID_BINS: ', ID_BINS
-
-print 'Sel_dic[num]: ', Sel_dic[num]
 print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
 
 #_*_*_*_*_*_*_*_*_*_*_*
