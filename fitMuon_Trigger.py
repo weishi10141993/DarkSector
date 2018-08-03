@@ -39,7 +39,6 @@ def FillVariables(par):
     if par == 'pair_deltaR':
         process.TnP_Trigger.Variables.pair_deltaR  = cms.vstring("deltaR", "0", "4", "")
     if par == 'vtx':
-        print 'I filled it'
         process.TnP_Trigger.Variables.tag_nVertices   = cms.vstring("Number of vertices", "0", "999", "")
 
 def FillBin(par):
@@ -89,6 +88,8 @@ if bgFitFunction == 'custom':
     print 'Will experiment with custom fit functions'
 else:
     print 'Will use the deault fit functions for the backgroud'
+
+print '--------------------'
 
 process = cms.Process("TagProbe")
 process.load('FWCore.MessageService.MessageLogger_cfi')
@@ -165,9 +166,9 @@ Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
 FillVariables(par)
 FillNumDen(num,den)
 
-print 'den is ', den,' dic ',Den_dic[den]
-print 'num is ', num,' dic ',Num_dic[num]
-print 'par is ', par
+print 'The den: ', den,' dic ',Den_dic[den]
+print 'The num: ', num,' dic ',Num_dic[num]
+print 'The par: ', par
 
 ID_BINS = [(Sel_dic[num],("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN))]
 print 'ID_BINS: ', ID_BINS
@@ -206,7 +207,6 @@ for ID, ALLBINS in ID_BINS:
         if ('pt' in X):
             print 'par is pt'
             shape = cms.vstring("voigtPlusCMSbeta0p2")
-            print 'Fit func updated: ', shape
                     
     mass_variable ="mass"
     #compute isolation efficiency
