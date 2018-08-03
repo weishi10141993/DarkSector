@@ -198,23 +198,14 @@ if bgFitFunction == 'default':
 mass_variable ="mass"
 #compute isolation efficiency
 if scenario == 'data_all':
-    if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
-        setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
-            EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"below"),
-            UnbinnedVariables = cms.vstring(mass_variable),
-            BinnedVariables = DEN,
-            BinToPDFmap = shape
-            )
+    print 'Fitting'
+    setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
+        EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"above"),
+        UnbinnedVariables = cms.vstring(mass_variable),
+        BinnedVariables = DEN,
+        BinToPDFmap = shape
         )
-    else:
-        print 'Fitting'
-        setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
-            EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"above"),
-            UnbinnedVariables = cms.vstring(mass_variable),
-            BinnedVariables = DEN,
-            BinToPDFmap = shape
-            )
-        )
+    )
             
 process.p = cms.Path(
     process.TnP_Trigger
