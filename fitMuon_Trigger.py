@@ -169,8 +169,6 @@ if sample == "2018":
         Efficiencies = cms.PSet(),                                                                                                       
     )
 
-BIN = cms.PSet()
-
 Num_dic = {'TrkMu16NoVtx':'HLT_TrkMu16NoFiltersNoVtx', 'TrkMu6NoVtx':'HLT_TrkMu6NoFiltersNoVtx'}
 Den_dic = {'pT16':'Pt16Cut','pT6':'Pt6Cut'}
 Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
@@ -180,61 +178,44 @@ FillNumDen(num,den)
 
 print 'Dic: ', den,' : ',Den_dic[den]
 print 'Dic: ', num,' : ',Num_dic[num]
-
-ID_BINS = [(Sel_dic[num],("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN))]
-print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
-print 'ID_BINS'
-print ID_BINS
+print 'Dic: ', par,' : ',Sel_dic[num]
 
 #_*_*_*_*_*_*_*_*_*_*_*
 #Launch fit production
 #_*_*_*_*_*_*_*_*_*_*_*
-
-for ID, ALLBINS in ID_BINS:
-    X = ALLBINS[0]
-    B = ALLBINS[1]
-    print 'ID'
-    print ID
-    print 'ALLBINS'
-    print ALLBINS
-    print 'X'
-    print X
-    print 'B'
-    print B
     
-    #DEFAULT FIT FUNCTION
-    shape = cms.vstring("voigtPlusExpo")
-    print 'Default fit func: voigtPlusExpo'
+#DEFAULT FIT FUNCTION
+shape = cms.vstring("voigtPlusExpo")
+print 'Default fit func: voigtPlusExpo'
 
-    DEN = B.clone(); 
-    num_ = ID;
-    FillBin(par)
+DEN = cms.PSet();
+FillBin(par)
     
-    if bgFitFunction == 'default':          
-        if ('pt' in X):
-            shape = cms.vstring("twoVoigtians")
-            print 'Fit func updated: twoVoigtians'
+if bgFitFunction == 'default':          
+    if ('pt' in par):
+        shape = cms.vstring("twoVoigtians")
+        print 'Fit func updated: twoVoigtians'
                     
-    mass_variable ="mass"
-    #compute isolation efficiency
-    if scenario == 'data_all':
-        if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
-            setattr(process.TnP_Trigger.Efficiencies, ID+"_"+X, cms.PSet(
-                EfficiencyCategoryAndState = cms.vstring(num_,"below"),
-                UnbinnedVariables = cms.vstring(mass_variable),
-                BinnedVariables = DEN,
-                BinToPDFmap = shape
-                )
+mass_variable ="mass"
+#compute isolation efficiency
+if scenario == 'data_all':
+    if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
+        setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
+            EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"below"),
+            UnbinnedVariables = cms.vstring(mass_variable),
+            BinnedVariables = DEN,
+            BinToPDFmap = shape
             )
-        else:
-            print 'Fitting'
-            setattr(process.TnP_Trigger.Efficiencies, ID+"_"+X, cms.PSet(
-                EfficiencyCategoryAndState = cms.vstring(num_,"above"),
-                UnbinnedVariables = cms.vstring(mass_variable),
-                BinnedVariables = DEN,
-                BinToPDFmap = shape
-                )
+        )
+    else:
+        print 'Fitting'
+        setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
+            EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"above"),
+            UnbinnedVariables = cms.vstring(mass_variable),
+            BinnedVariables = DEN,
+            BinToPDFmap = shape
             )
+        )
             
 process.p = cms.Path(
     process.TnP_Trigger
