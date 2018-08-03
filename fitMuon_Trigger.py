@@ -143,13 +143,14 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
             "efficiency[0.9,0,1]",
             "signalFractionInPassing[0.9]"
         ),
-        voigtPlusCMSbeta0p2 = cms.vstring(
-            "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])",
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.001, 0.,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])",
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.03, 0.02,0.1], gammaFail[0.001, 0.,0.1], peakPass)",
-            "efficiency[0.9,0.7,1]",
+        twoVoigtians = cms.vstring(
+            "Voigtian::signalPass(mass, meanP[90,80,100], width[2.495], sigmaP[3,1,20])", ## allow different means and sigmas for
+            "Voigtian::signalFail(mass, meanF[90,80,100], width[2.495], sigmaF[3,1,20])",    ## passing and failing probes
+            "Exponential::backgroundPass(mass, lp[0,-5,5])",
+            "Exponential::backgroundFail(mass, lf[0,-5,5])",
+            "efficiency[0.9,0,1]",
             "signalFractionInPassing[0.9]"
-        )
+        ),
     ),
     binnedFit = cms.bool(True),
     binsForFit = cms.uint32(40),
@@ -222,7 +223,8 @@ for ID, ALLBINS in ID_BINS:
     
     if bgFitFunction == 'default':          
         if ('pt' in X):
-            shape = cms.vstring("voigtPlusCMSbeta0p2")
+            shape = cms.vstring("twoVoigtians")
+            print 'Fit func updated: twoVoigtians'
                     
     mass_variable ="mass"
     #compute isolation efficiency
