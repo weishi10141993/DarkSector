@@ -144,7 +144,6 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
     Efficiencies = cms.PSet(), # will be filled later
 )
 
-
 if sample == "2018":
     process.TnP_Trigger = Template.clone(                                                                                                 
         InputFileNames = cms.vstring(                            
@@ -154,13 +153,7 @@ if sample == "2018":
         InputTreeName = cms.string("fitter_tree"),                                                                                     
         OutputFileName = cms.string("TnP_Trigger_%s.root" % scenario),                                                                   
         Efficiencies = cms.PSet(),                                                                                                       
-        ) 
-
-if scenario == "mc_all":
-    print "Including the weight for MC"
-    process.TnP_Trigger.WeightVariable = cms.string("weight")
-    process.TnP_Trigger.Variables.weight = cms.vstring("weight","0","10","")
-
+        )
 
 BIN = cms.PSet()
 
@@ -211,7 +204,6 @@ for ID, ALLBINS in ID_BINS:
 
     DEN = B.clone(); num_ = ID;
     FillBin(par)
-
     
     if bgFitFunction == 'default':          
         if ('pt' in X):
