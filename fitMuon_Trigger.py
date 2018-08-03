@@ -177,12 +177,13 @@ Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
 FillVariables(par)
 FillNumDen(num,den)
 
-print 'The den: ', den,' dic ',Den_dic[den]
-print 'The num: ', num,' dic ',Num_dic[num]
-print 'The par: ', par
+print 'Dic: ', den,' : ',Den_dic[den]
+print 'Dic: ', num,' : ',Num_dic[num]
 
 ID_BINS = [(Sel_dic[num],("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN))]
 print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
+print 'ID_BINS'
+print ID_BINS
 
 #_*_*_*_*_*_*_*_*_*_*_*
 #Launch fit production
@@ -191,6 +192,10 @@ print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
 for ID, ALLBINS in ID_BINS:
     X = ALLBINS[0]
     B = ALLBINS[1]
+    print 'ID'
+    print ID
+    print 'ALLBINS'
+    print ALLBINS
     print 'X'
     print X
     print 'B'
