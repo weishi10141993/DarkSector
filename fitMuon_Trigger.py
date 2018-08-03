@@ -153,28 +153,26 @@ if sample == "2018":
         InputTreeName = cms.string("fitter_tree"),                                                                                     
         OutputFileName = cms.string("TnP_Trigger_%s.root" % scenario),                                                                   
         Efficiencies = cms.PSet(),                                                                                                       
-        )
+    )
 
 BIN = cms.PSet()
 
-print 'debug1'
+print 'BIN: ' + BIN
 Num_dic = {'TrkMu16NoVtx':'HLT_TrkMu16NoFiltersNoVtx', 'TrkMu6NoVtx':'HLT_TrkMu6NoFiltersNoVtx'}
 Den_dic = {'pT16':'Pt16Cut','pT6':'Pt6Cut'}
 Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
-print 'debugSel'
 
 FillVariables(par)
 FillNumDen(num,den)
-print 'debugFill'
 
-print 'den is', den,'dic',Den_dic[den]
-print 'num is', num,'dic',Num_dic[num]
-print 'par is', par
+print 'den is ', den,' dic ',Den_dic[den]
+print 'num is ', num,' dic ',Num_dic[num]
+print 'par is ', par
 
 ID_BINS = [(Sel_dic[num],("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN))]
-print 'debug5'
+print 'ID_BINS: ' + ID_BINS
 
-print Sel_dic[num]
+print 'Sel_dic[num]: ' + Sel_dic[num]
 print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
 
 #_*_*_*_*_*_*_*_*_*_*_*
@@ -200,20 +198,18 @@ for ID, ALLBINS in ID_BINS:
     shutil.copyfile(os.getcwd()+'/fitMuon_Trigger.py',_output+'/fitMuon_Trigger.py')
     #DEFAULT FIT FUNCTION
     shape = cms.vstring("voigtPlusExpo")
-    print 'default fit func'
+    print 'Default fit func: voigtPlusExpo'
 
     DEN = B.clone(); num_ = ID;
     FillBin(par)
     
     if bgFitFunction == 'default':          
         if ('pt' in X):
-            print 'den is', den 
-            print 'num_ is ', num
+            print 'par is pt'
             shape = cms.vstring("voigtPlusCMSbeta0p2")
+            print 'Fit func updated: ' + shape
                     
-    print 'd3'
     mass_variable ="mass"
-    print 'den is', den
     #compute isolation efficiency
     if scenario == 'data_all':
         if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
@@ -224,7 +220,7 @@ for ID, ALLBINS in ID_BINS:
                 BinToPDFmap = shape
                 ))
         else:
-            print 'd4'
+            print 'Fitting'
             setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
                 EfficiencyCategoryAndState = cms.vstring(num_,"above"),
                 UnbinnedVariables = cms.vstring(mass_variable),
