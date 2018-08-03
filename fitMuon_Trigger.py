@@ -170,9 +170,9 @@ print 'num is ', num,' dic ',Num_dic[num]
 print 'par is ', par
 
 ID_BINS = [(Sel_dic[num],("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN))]
-print 'ID_BINS: ' + ID_BINS
+print 'ID_BINS: ', ID_BINS
 
-print 'Sel_dic[num]: ' + Sel_dic[num]
+print 'Sel_dic[num]: ', Sel_dic[num]
 print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
 
 #_*_*_*_*_*_*_*_*_*_*_*
@@ -180,7 +180,6 @@ print ("NUM_%s_DEN_%s_PAR_%s"%(Num_dic[num],Den_dic[den],par),BIN)
 #_*_*_*_*_*_*_*_*_*_*_*
 
 for ID, ALLBINS in ID_BINS:
-    print 'debug1'
     X = ALLBINS[0]
     B = ALLBINS[1]
     _output = os.getcwd() + '/Efficiency' + iteration
