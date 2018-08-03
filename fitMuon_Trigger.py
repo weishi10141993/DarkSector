@@ -79,22 +79,22 @@ def FillBin(par):
 args = sys.argv[1:]
 
 if len(args) > 1: iteration = args[1]
-print "The iteration is", iteration
+print "The iteration is ", iteration
 
 if len(args) > 2: num = args[2]
-print 'The num is', num 
+print 'The num is ', num 
 
 if len(args) > 3: den = args[3]
-print 'The den is', den 
+print 'The den is ', den 
 
 if len(args) > 4: scenario = args[4]
 print "Will run scenario ", scenario
 
 if len(args) > 5: sample = args[5]
-print 'The sample is', sample
+print 'The sample is ', sample
 
 if len(args) > 6: par = args[6]
-print 'The binning is', par 
+print 'The binning is ', par 
 
 bgFitFunction = 'default'
 if len(args) > 7: bgFitFunction = args[7]
@@ -201,24 +201,13 @@ for ID, ALLBINS in ID_BINS:
     print X
     print 'B'
     print B
-    _output = os.getcwd() + '/Efficiency' + iteration
-    if not os.path.exists(_output):
-        print 'Creating', '/Efficiency' + iteration,', the directory where the fits are stored.'
-        os.makedirs(_output)
-    if scenario == 'data_all':
-        _output += '/DATA' + '_' + sample
-    elif scenario == 'mc_all':
-        _output += '/MC' + '_' + sample
-    if not os.path.exists(_output):
-        os.makedirs(_output)
-    module = process.TnP_Trigger.clone(OutputFileName = cms.string(_output + "/TnP_Trigger_%s.root" % (X)))
-    #save the fitconfig in the plot directory
-    shutil.copyfile(os.getcwd()+'/fitMuon_Trigger.py',_output+'/fitMuon_Trigger.py')
+    
     #DEFAULT FIT FUNCTION
     shape = cms.vstring("voigtPlusExpo")
     print 'Default fit func: voigtPlusExpo'
 
-    DEN = B.clone(); num_ = ID;
+    DEN = B.clone(); 
+    num_ = ID;
     FillBin(par)
     
     if bgFitFunction == 'default':          
@@ -230,19 +219,23 @@ for ID, ALLBINS in ID_BINS:
     #compute isolation efficiency
     if scenario == 'data_all':
         if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
+            setattr(process.TnP_Trigger.Efficiencies, ID+"_"+X, cms.PSet(
                 EfficiencyCategoryAndState = cms.vstring(num_,"below"),
                 UnbinnedVariables = cms.vstring(mass_variable),
                 BinnedVariables = DEN,
                 BinToPDFmap = shape
-                ))
+                )
+            )
         else:
             print 'Fitting'
-            setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
+            setattr(process.TnP_Trigger.Efficiencies, ID+"_"+X, cms.PSet(
                 EfficiencyCategoryAndState = cms.vstring(num_,"above"),
                 UnbinnedVariables = cms.vstring(mass_variable),
                 BinnedVariables = DEN,
                 BinToPDFmap = shape
-                ))
-        setattr(process, "TnP_Trigger_"+ID+"_"+X, module)
-        setattr(process, "run_"+ID+"_"+X, cms.Path(module))
+                )
+            )
+            
+process.p = cms.Path(
+    process.TnP_Trigger
+)
