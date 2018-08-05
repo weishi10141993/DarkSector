@@ -196,7 +196,7 @@ if bgFitFunction == 'default':
         print 'Fit func updated: twoVoigtians'
                     
 mass_variable ="mass"
-#compute isolation efficiency
+#compute efficiency
 if scenario == 'data_all':
     print 'Fitting'
     setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
