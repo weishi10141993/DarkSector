@@ -32,9 +32,11 @@ def FillNumDen(num, den):
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
+    
     '''Always fill pt'''
     process.TnP_Trigger.Variables.pt  = cms.vstring("muon p_{T}", "0.0", "1000.0", "GeV/c")
     print 'muon pt is filled as variable: 0, 1000, GeV/c'
+    
     if par == 'eta':
         process.TnP_Trigger.Variables.eta  = cms.vstring("muon #eta", "-2.5", "2.5", "")
         print 'muon eta is filled as variable: -2.5, 2.5'
@@ -45,8 +47,6 @@ def FillVariables(par):
         process.TnP_Trigger.Variables.abseta  = cms.vstring("muon |#eta|", "0", "2.5", "")
     if par == 'pair_deltaR':
         process.TnP_Trigger.Variables.pair_deltaR  = cms.vstring("deltaR", "0", "4", "")
-    if par == 'vtx':
-        process.TnP_Trigger.Variables.tag_nVertices   = cms.vstring("Number of vertices", "0", "999", "")
 
 def FillBin(par):
     '''Sets the values of the bin paramters and the bool selections on the denominators'''
@@ -57,24 +57,32 @@ def FillBin(par):
     elif par == 'phi':
         DEN.phi = cms.vdouble(-3.15, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.15)
         print 'Set bins: phi'
-    elif par == 'pt':
-        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 100, 200, 300, 400, 500, 1000)
-        print 'Set many bins: pt'
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
     elif par == 'pt_eta':
         DEN.pt = cms.vdouble(20, 25, 30, 40, 50, 60, 120, 1000)
         DEN.abseta = cms.vdouble(0., 0.9, 1.2, 2.1, 2.4)
-    elif par == 'vtx':
-        DEN.tag_nVertices = cms.vdouble(6.5, 10.5, 14.5, 18.5, 22.5, 26.5, 30.5, 34.5, 50.5)
  
     #Selections
-    if den == "pT16": 
-        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 100, 200, 300, 400, 500, 1000)
-        print 'Set bins: pt, 16 ... 1000'
-    elif den == "pT6": 
-        DEN.pt = cms.vdouble(6, 10, 16, 20, 30, 40, 50, 100, 200, 300, 400, 500, 1000)
-        print 'Set bins: pt, 6 ... 1000'
+    if den == "pT16" and par == "eta": 
+        DEN.pt = cms.vdouble(16, 1000)
+        print 'Set probe pt range: 16 - 1000 GeV'
+    if den == "pT16" and par == "phi": 
+        DEN.pt = cms.vdouble(16, 1000)
+        print 'Set probe pt range: 16 - 1000 GeV'
+    if den == "pT16" and par == "pt": 
+        DEN.pt = cms.vdouble(16, 20, 25, 30, 35, 40, 50, 60, 100, 500, 1000)
+        print 'Set probe pt bins: 16, ..., 1000 GeV'
+        
+    if den == "pT6" and par == "eta": 
+        DEN.pt = cms.vdouble(6, 1000)
+        print 'Set probe pt range: 6 - 1000 GeV'
+    if den == "pT6" and par == "phi": 
+        DEN.pt = cms.vdouble(6, 1000)
+        print 'Set probe pt range: 6 - 1000 GeV'
+    if den == "pT6" and par == "pt": 
+        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 35, 40, 50, 60, 100, 500, 1000)
+        print 'Set probe pt bins: 6, ..., 1000 GeV'
 
 args = sys.argv[1:]
 
