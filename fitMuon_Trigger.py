@@ -6,7 +6,7 @@ from optparse import OptionParser
 #Read Inputs
 #_*_*_*_*_*_
 
-def FillNumDen(num, den):
+def FillNumDen(num):
     '''Declares the needed selections for a givent numerator, denominator'''
     process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
 
@@ -20,15 +20,6 @@ def FillNumDen(num, den):
         process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu6NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
         print 'Num Cut: PassHLT6CutPt6'
-
-    if den == "pT16":
-        process.TnP_Trigger.Expressions.CutPt16 = cms.vstring("CutPt16", "pt > 16", "pt")
-        process.TnP_Trigger.Cuts.PassCutPt16  = cms.vstring("PassCutPt16", "CutPt16", "0.5")
-        print 'Den Cut: PassCutPt16'
-    elif den == "pT6":
-        process.TnP_Trigger.Expressions.CutPt6 = cms.vstring("CutPt6", "pt > 6", "pt")
-        process.TnP_Trigger.Cuts.PassCutPt6  = cms.vstring("PassCutPt6", "CutPt6", "0.5")
-        print 'Den Cut: PassCutPt6'
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
@@ -48,7 +39,7 @@ def FillVariables(par):
     if par == 'pair_deltaR':
         process.TnP_Trigger.Variables.pair_deltaR  = cms.vstring("deltaR", "0", "4", "")
 
-def FillBin(par):
+def FillBin(par,den):
     '''Sets the values of the bin paramters and the bool selections on the denominators'''
     #Parameter 
     if par == 'eta':
@@ -86,26 +77,23 @@ def FillBin(par):
 
 args = sys.argv[1:]
 
-if len(args) > 1: iteration = args[1]
-print "The iteration is ", iteration
-
-if len(args) > 2: num = args[2]
+if len(args) > 1: num = args[1]
 print 'The num is ', num 
 
-if len(args) > 3: den = args[3]
+if len(args) > 2: den = args[2]
 print 'The den is ', den 
 
-if len(args) > 4: scenario = args[4]
+if len(args) > 3: scenario = args[3]
 print "Will run scenario ", scenario
 
-if len(args) > 5: sample = args[5]
+if len(args) > 4: sample = args[4]
 print 'The sample is ', sample
 
-if len(args) > 6: par = args[6]
+if len(args) > 5: par = args[5]
 print 'The binning is ', par 
 
 bgFitFunction = 'default'
-if len(args) > 7: bgFitFunction = args[7]
+if len(args) > 6: bgFitFunction = args[6]
 if bgFitFunction == 'custom':
     print 'Will experiment with custom fit functions'
 else:
@@ -176,13 +164,11 @@ if sample == "2018":
     )
 
 Num_dic = {'TrkMu16NoVtx':'HLT_TrkMu16NoFiltersNoVtx', 'TrkMu6NoVtx':'HLT_TrkMu6NoFiltersNoVtx'}
-Den_dic = {'pT16':'Pt16Cut','pT6':'Pt6Cut'}
 Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
 
 FillVariables(par)
 FillNumDen(num,den)
 
-print 'Dic: ', den,' : ',Den_dic[den]
 print 'Dic: ', num,' : ',Num_dic[num]
 print 'Dic: ', par,' : ',Sel_dic[num]
 
