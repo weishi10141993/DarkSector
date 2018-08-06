@@ -112,8 +112,8 @@ if not num  in ['TrkMu16NoVtx', 'TrkMu6NoVtx']:
 if not den in ['pT16', 'pT6']:
     print '@ERROR: den should be',['pT16', 'pT6'], 'You used', den, '.Abort'
     sys.exit()
-if not par in  ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'pair_deltaR']:
-    print '@ERROR: par should be', ['pt', 'eta', 'phi', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'pair_deltaR'], 'You used', par, '.Abort'
+if not par in  ['pt', 'eta', 'phi', 'pt_eta', 'pair_deltaR']:
+    print '@ERROR: par should be', ['pt', 'eta', 'phi', 'pt_eta', 'pair_deltaR'], 'You used', par, '.Abort'
 
 #_*_*_*_*_*_*_*_*_*_*_*_*
 #Prepare variables, den, num and fit funct
