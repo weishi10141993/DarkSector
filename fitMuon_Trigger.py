@@ -58,7 +58,7 @@ def FillBin(par):
         DEN.phi = cms.vdouble(-3.15, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.15)
         print 'Set bins: phi'
     elif par == 'pt':
-        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 60, 120, 1000)
+        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 100, 200, 300, 400, 500, 1000)
         print 'Set many bins: pt'
     elif par == 'pair_deltaR':
         DEN.pair_deltaR = cms.vdouble(0., 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 2.8, 3.2, 5.0)
@@ -70,10 +70,10 @@ def FillBin(par):
  
     #Selections
     if den == "pT16": 
-        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 60, 120, 1000)
+        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 100, 200, 300, 400, 500, 1000)
         print 'Set bins: pt, 16 ... 1000'
     elif den == "pT6": 
-        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 1000)
+        DEN.pt = cms.vdouble(6, 10, 16, 20, 30, 40, 50, 100, 200, 300, 400, 500, 1000)
         print 'Set bins: pt, 6 ... 1000'
 
 args = sys.argv[1:]
