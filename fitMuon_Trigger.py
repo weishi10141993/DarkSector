@@ -163,13 +163,11 @@ if sample == "2018":
         Efficiencies = cms.PSet(),                                                                                                       
     )
 
-Num_dic = {'TrkMu16NoVtx':'HLT_TrkMu16NoFiltersNoVtx', 'TrkMu6NoVtx':'HLT_TrkMu6NoFiltersNoVtx'}
 Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
 
 FillVariables(par)
-FillNumDen(num,den)
+FillNumDen(num)
 
-print 'Dic: ', num,' : ',Num_dic[num]
 print 'Dic: ', par,' : ',Sel_dic[num]
 
 #_*_*_*_*_*_*_*_*_*_*_*
@@ -181,7 +179,7 @@ shape = cms.vstring("voigtPlusExpo")
 print 'Default fit func: voigtPlusExpo'
 
 DEN = cms.PSet();
-FillBin(par)
+FillBin(par,den)
     
 if bgFitFunction == 'default':          
     if ('pt' in par):
