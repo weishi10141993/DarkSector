@@ -70,11 +70,11 @@ def FillBin(par):
  
     #Selections
     if den == "pT16": 
-        DEN.pt = cms.vdouble(16.0, 1000.0)
-        print 'Set bins: pt, 16, 1000'
+        DEN.pt = cms.vdouble(16, 20, 25, 30, 40, 50, 60, 120, 1000)
+        print 'Set bins: pt, 16 ... 1000'
     elif den == "pT6": 
-        DEN.pt = cms.vdouble(6.0, 1000.0)
-        print 'Set bins: pt, 6, 1000'
+        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 40, 50, 60, 120, 1000)
+        print 'Set bins: pt, 6 ... 1000'
 
 args = sys.argv[1:]
 
