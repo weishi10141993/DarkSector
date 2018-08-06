@@ -223,8 +223,6 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
         HLT_IsoMu30 = cms.string("!triggerObjectMatchesByPath('HLT_IsoMu30_v*',1,0).empty()"),
         HLT_TrkMu16NoFiltersNoVtx = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu16NoFiltersNoVtx_v*',1,0).empty()"),
         HLT_TrkMu6NoFiltersNoVtx = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',1,0).empty()"),
-        Tight2012   = cms.string("isPFMuon && numberOfMatchedStations > 1 && muonID('GlobalMuonPromptTight') && abs(dB) < 0.2 && "+
-                        "track.hitPattern.trackerLayersWithMeasurement > 5 && track.hitPattern.numberOfValidPixelHits > 0"),
     ),
     pairVariables = cms.PSet(
         probeMultiplicity = cms.InputTag("probeMultiplicity"),
