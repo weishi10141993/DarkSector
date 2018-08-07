@@ -172,7 +172,7 @@ process.probeMuons = cms.EDFilter("PATMuonSelector",
     src = cms.InputTag("patMuonsWithTrigger"),
     cut = cms.string("track.isNonnull && numberOfMatchedStations >= 2"),  #universal cut for probes following control HLT
 )
-
+#Also cut "!triggerObjectMatchesByCollection('hltL3MuonCandidates').empty()" ?
 process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
     cut = cms.string('60 < mass < 140'),
     decay = cms.string('tagMuons@+ probeMuons@-')
