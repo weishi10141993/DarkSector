@@ -161,10 +161,6 @@ process.tagMuons = cms.EDFilter("PATMuonSelector",
                      " && !triggerObjectMatchesByCollection('hltIterL3MuonCandidates').empty()"+
                      " && pfIsolationR04().sumChargedHadronPt/pt < 0.2"),
 )
-process.pseudoTag = cms.EDFilter("MuonSelector",
-    src = cms.InputTag("muons"),
-    cut = cms.string("pt > 15 && isGlobalMuon && numberOfMatchedStations >= 2 && pfIsolationR04().sumChargedHadronPt/pt < 0.2")
-)
 if TRIGGER == "DoubleMu":
     process.tagMuons.cut = ("pt > 6 && (isGlobalMuon || isTrackerMuon) && isPFMuon "+
                             " && !triggerObjectMatchesByCollection('hltL3MuonCandidates').empty()"+
@@ -174,7 +170,7 @@ process.oneTag  = cms.EDFilter("CandViewCountFilter", src = cms.InputTag("tagMuo
 
 process.probeMuons = cms.EDFilter("PATMuonSelector",
     src = cms.InputTag("patMuonsWithTrigger"),
-    cut = cms.string("track.isNonnull"),  # no real cut now
+    cut = cms.string("track.isNonnull && numberOfMatchedStations >= 2"),  #universal cut for probes following control HLT
 )
 
 process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
