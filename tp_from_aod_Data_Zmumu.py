@@ -172,11 +172,11 @@ process.oneTag  = cms.EDFilter("CandViewCountFilter", src = cms.InputTag("tagMuo
 process.probeMuons = cms.EDFilter("PATMuonSelector",
     src = cms.InputTag("patMuonsWithTrigger"),
     #universal cut for probes following control HLT L3 filter
-    cut = cms.string("track.isNonnull && numberOfMatchedStations >= 2 && !triggerObjectMatchesByCollection('hltIterL3MuonCandidatesNoVtx').empty()"),  
+    cut = cms.string("track.isNonnull && pt > 6 && numberOfMatchedStations >= 2 && !triggerObjectMatchesByCollection('hltIterL3MuonCandidatesNoVtx').empty()"),  
 )
 
 process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
-    cut = cms.string('60 < mass < 140'),
+    cut = cms.string('70 < mass < 130'),
     decay = cms.string('tagMuons@+ probeMuons@-')
 )
 process.onePair = cms.EDFilter("CandViewCountFilter", src = cms.InputTag("tpPairs"), minNumber = cms.uint32(1))
