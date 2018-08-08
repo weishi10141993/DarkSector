@@ -157,7 +157,7 @@ process.load("MuonAnalysis.TagAndProbe.common_modules_cff")
 
 process.tagMuons = cms.EDFilter("PATMuonSelector",
     src = cms.InputTag("patMuonsWithTrigger"),
-    cut = cms.string("pt > 15 && "+MuonIDFlags.Tight2012.value()+
+    cut = cms.string("pt > 24 && "+MuonIDFlags.Tight2012.value()+
                      " && ( !triggerObjectMatchesByCollection('hltIterL3MuonCandidates').empty() || !triggerObjectMatchesByCollection('hltIterL3MuonCandidatesNoVtx').empty() )"+
                      " && pfIsolationR04().sumChargedHadronPt/pt < 0.2"),
 )
