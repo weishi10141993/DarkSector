@@ -172,7 +172,8 @@ process.oneTag  = cms.EDFilter("CandViewCountFilter", src = cms.InputTag("tagMuo
 process.probeMuons = cms.EDFilter("PATMuonSelector",
     src = cms.InputTag("patMuonsWithTrigger"),
     #universal cut for probes following control HLT L3 filter
-    cut = cms.string("track.isNonnull && pt > 6 && numberOfMatchedStations >= 2 && !triggerObjectMatchesByCollection('hltIterL3MuonCandidatesNoVtx').empty()"),  
+    #Adding muon ID requirement as from analysis, no muon isolation requirement in analysis
+    cut = cms.string("track.isNonnull && pt > 6 && numberOfMatchedStations >= 2 && (isGlobalMuon || isTrackerMuon) && isPFMuon"),  
 )
 
 process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
