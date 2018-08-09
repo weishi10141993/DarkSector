@@ -177,8 +177,8 @@ process.probeMuons = cms.EDFilter("PATMuonSelector",
 )
 
 process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
-    cut = cms.string('70 < mass < 130'),
-    decay = cms.string('tagMuons@+ probeMuons@-')
+    cut = cms.string("70 < mass < 130"),
+    decay = cms.string("tagMuons@+ probeMuons@-")
 )
 process.onePair = cms.EDFilter("CandViewCountFilter", src = cms.InputTag("tpPairs"), minNumber = cms.uint32(1))
 
