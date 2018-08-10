@@ -183,8 +183,8 @@ FillBin(par,den)
     
 if bgFitFunction == 'default':          
     if ('pt' in par):
-        shape = cms.vstring("voigtPlusCMS")
-        print 'Fit func updated: voigtPlusCMS'
+        shape = cms.vstring("voigtPlusExpo")
+        print 'Fit func updated: voigtPlusExpo'
                     
 mass_variable ="mass"
 #compute efficiency
