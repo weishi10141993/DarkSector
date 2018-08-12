@@ -20,6 +20,11 @@ def FillNumDen(num):
         process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu6NoFiltersNoVtx")
         process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
         print 'Num Cut: PassHLT6CutPt6'
+    elif num == "Mu50":
+        process.TnP_Trigger.Categories.Mu50  = cms.vstring("HLT Mu 50", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.Mu50CutPt50 = cms.vstring("Mu50CutPt50", "pt > 50 && Mu50 == 1", "pt", "Mu50")
+        process.TnP_Trigger.Cuts.PassMu50CutPt50 = cms.vstring("PassMu50CutPt50", "Mu50CutPt50", "0.5")
+        print 'Num Cut: PassMu50CutPt50'
                                     
 def FillVariables(par):
     '''Declares only the parameters which are necessary, no more'''
@@ -74,6 +79,16 @@ def FillBin(par,den):
     if den == "pT6" and par == "pt": 
         DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 35, 40, 50, 60, 100, 500, 1000)
         print 'Set probe pt bins: 6, ..., 1000 GeV'
+        
+    if den == "pT50" and par == "eta": 
+        DEN.pt = cms.vdouble(50, 1000)
+        print 'Set probe pt range: 50 - 1000 GeV'
+    if den == "pT50" and par == "phi": 
+        DEN.pt = cms.vdouble(50, 1000)
+        print 'Set probe pt range: 50 - 1000 GeV'
+    if den == "pT50" and par == "pt": 
+        DEN.pt = cms.vdouble(50, 60, 70, 80, 90, 100, 500, 1000)
+        print 'Set probe pt bins: 50, ..., 1000 GeV'
 
 args = sys.argv[1:]
 
@@ -106,11 +121,11 @@ process.load('FWCore.MessageService.MessageLogger_cfi')
 process.source = cms.Source("EmptySource")
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1) )
 
-if not num  in ['TrkMu16NoVtx', 'TrkMu6NoVtx']:
-    print '@ERROR: num should be in ',['TrkMu16NoVtx', 'TrkMu6NoVtx'], 'You used', num, '.Abort'
+if not num  in ['TrkMu16NoVtx', 'TrkMu6NoVtx', 'Mu50']:
+    print '@ERROR: num should be in ',['TrkMu16NoVtx', 'TrkMu6NoVtx', 'Mu50'], 'You used', num, '.Abort'
     sys.exit()
-if not den in ['pT16', 'pT6']:
-    print '@ERROR: den should be',['pT16', 'pT6'], 'You used', den, '.Abort'
+if not den in ['pT16', 'pT6', 'pT50']:
+    print '@ERROR: den should be',['pT16', 'pT6', 'pT50'], 'You used', den, '.Abort'
     sys.exit()
 if not par in  ['pt', 'eta', 'phi', 'pt_eta', 'pair_deltaR']:
     print '@ERROR: par should be', ['pt', 'eta', 'phi', 'pt_eta', 'pair_deltaR'], 'You used', par, '.Abort'
@@ -163,7 +178,7 @@ if sample == "2018":
         Efficiencies = cms.PSet(),                                                                                                       
     )
 
-Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6'}
+Sel_dic = {'TrkMu16NoVtx':'PassHLT16CutPt16', 'TrkMu6NoVtx':'PassHLT6CutPt6', 'Mu50':"PassMu50CutPt50"}
 
 FillVariables(par)
 FillNumDen(num)
