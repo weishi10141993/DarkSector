@@ -11,13 +11,13 @@ def FillNumDen(num):
     process.TnP_Trigger.Variables.mass = cms.vstring("Tag-muon Mass", _mrange, "130", "GeV/c^{2}")
 
     if num == "TrkMu16NoVtx":
-        process.TnP_Trigger.Categories.HLT_TrkMu16NoFiltersNoVtx  = cms.vstring("Control HLT16", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.HLT16CutPt16 = cms.vstring("HLT16CutPt16", "pt > 16 && HLT_TrkMu16NoFiltersNoVtx == 1", "pt","HLT_TrkMu16NoFiltersNoVtx")
+        process.TnP_Trigger.Categories.Control16ByPathLastFilter  = cms.vstring("Control HLT16", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.HLT16CutPt16 = cms.vstring("HLT16CutPt16", "pt > 16 && Control16ByPathLastFilter == 1", "pt","Control16ByPathLastFilter")
         process.TnP_Trigger.Cuts.PassHLT16CutPt16  = cms.vstring("PassHLT16CutPt16", "HLT16CutPt16", "0.5")
         print 'Num Cut: PassHLT16CutPt16'
     elif num == "TrkMu6NoVtx":
-        process.TnP_Trigger.Categories.HLT_TrkMu6NoFiltersNoVtx  = cms.vstring("Control HLT6", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && HLT_TrkMu6NoFiltersNoVtx == 1", "pt","HLT_TrkMu6NoFiltersNoVtx")
+        process.TnP_Trigger.Categories.Control6ByPathLastFilter = cms.vstring("Control HLT6", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.HLT6CutPt6 = cms.vstring("HLT6CutPt6", "pt > 6 && Control6ByPathLastFilter == 1", "pt","Control6ByPathLastFilter")
         process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
         print 'Num Cut: PassHLT6CutPt6'
     elif num == "Mu50":
