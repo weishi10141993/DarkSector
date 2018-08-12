@@ -21,8 +21,8 @@ def FillNumDen(num):
         process.TnP_Trigger.Cuts.PassHLT6CutPt6 = cms.vstring("PassHLT6CutPt6", "HLT6CutPt6", "0.5")
         print 'Num Cut: PassHLT6CutPt6'
     elif num == "Mu50":
-        process.TnP_Trigger.Categories.Mu50  = cms.vstring("HLT Mu 50", "dummy[pass=1,fail=0]")
-        process.TnP_Trigger.Expressions.Mu50CutPt50 = cms.vstring("Mu50CutPt50", "pt > 50 && Mu50 == 1", "pt", "Mu50")
+        process.TnP_Trigger.Categories.Mu50ByPathLastFilter  = cms.vstring("HLT Mu 50", "dummy[pass=1,fail=0]")
+        process.TnP_Trigger.Expressions.Mu50CutPt50 = cms.vstring("Mu50CutPt50", "pt > 50 && Mu50ByPathLastFilter == 1", "pt", "Mu50ByPathLastFilter")
         process.TnP_Trigger.Cuts.PassMu50CutPt50 = cms.vstring("PassMu50CutPt50", "Mu50CutPt50", "0.5")
         print 'Num Cut: PassMu50CutPt50'
                                     
