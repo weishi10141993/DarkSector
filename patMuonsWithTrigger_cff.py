@@ -77,7 +77,7 @@ from PhysicsTools.PatAlgos.triggerLayer1.triggerProducer_cfi import patTrigger a
 patTriggerFull.onlyStandAlone = True
 patTrigger = cms.EDProducer("TriggerObjectFilterByCollection",
     src = cms.InputTag("patTriggerFull"),
-    collections = cms.vstring("hltL1extraParticles", "hltGmtStage2Digis", "hltL2MuonCandidates", "hltL2MuonCandidatesNoVtx", "hltIterL3MuonCandidates", "hltIterL3MuonCandidatesNoVtx", "hltIterL3FromL2MuonCandidates","hltHighPtTkMuonCands", "hltGlbTrkMuonCands", "hltGlbTrkMuonCandsNoVtx", "hltMuTrackJpsiCtfTrackCands", "hltMuTrackJpsiEffCtfTrackCands", "hltMuTkMuJpsiTrackerMuonCands","hltTracksIter"),
+    collections = cms.vstring("hltGtStage2Digis:Muon", "hltL1extraParticles", "hltGmtStage2Digis", "hltL2MuonCandidates", "hltL2MuonCandidatesNoVtx", "hltIterL3MuonCandidates", "hltIterL3MuonCandidatesNoVtx", "hltIterL3FromL2MuonCandidates","hltHighPtTkMuonCands", "hltGlbTrkMuonCands", "hltGlbTrkMuonCandsNoVtx", "hltMuTrackJpsiCtfTrackCands", "hltMuTrackJpsiEffCtfTrackCands", "hltMuTkMuJpsiTrackerMuonCands","hltTracksIter"),
 )
 #patTrigger = cms.EDFilter("PATTriggerObjectStandAloneSelector",
 #    src = cms.InputTag("patTriggerFull"),
@@ -109,7 +109,9 @@ muonMatchL1 = muonHLTL1Match.clone(
 )
 
 ### Single Mu L1
-muonMatchHLTL1 = muonMatchL1.clone(matchedCuts = cms.string('coll("hltL1extraParticles")'))
+#muonMatchHLTL1 = muonMatchL1.clone(matchedCuts = cms.string('coll("hltL1extraParticles")'))
+#adding L1 collection 
+muonMatchHLTL1 = muonMatchL1.clone(matchedCuts = cms.string('coll("hltGtStage2Digis:Muon")'))
 muonMatchHLTL2 = muonTriggerMatchHLT.clone(matchedCuts = cms.string('coll("hltL2MuonCandidates")'), maxDeltaR = 0.3, maxDPtRel = 10.0)  #maxDeltaR Changed accordingly to Zoltan tuning. It was: 1.2
 muonMatchHLTL2NoVtx = muonTriggerMatchHLT.clone(matchedCuts = cms.string('coll("hltL2MuonCandidatesNoVtx")'), maxDeltaR = 0.3, maxDPtRel = 10.0)  #maxDeltaR Changed accordingly to Zoltan tuning. It was: 1.2
 muonMatchHLTL3 = muonTriggerMatchHLT.clone(matchedCuts = cms.string('coll("hltIterL3MuonCandidates")'), maxDeltaR = 0.1, maxDPtRel = 10.0)  #maxDeltaR Changed accordingly to Zoltan tuning. It was: 0.5
@@ -124,7 +126,7 @@ muonMatchHLTTrackMu  = muonTriggerMatchHLT.clone(matchedCuts = cms.string('coll(
 muonMatchHLTTrackIt  = muonTriggerMatchHLT.clone(matchedCuts = cms.string('coll("hltTracksIter")'), maxDeltaR = 0.1, maxDPtRel = 1.0) #maxDeltaR Changed accordingly to Zoltan tuning.
 
 patTriggerMatchers1Mu = cms.Sequence(
-      #muonMatchHLTL1 +   # keep off by default, since it is slow and usually not needed
+      muonMatchHLTL1 +   # keep off by default, since it is slow and usually not needed
       muonMatchHLTL2 +
       muonMatchHLTL2NoVtx +
       muonMatchHLTL3 +
@@ -136,7 +138,7 @@ patTriggerMatchers1Mu = cms.Sequence(
 )
 patTriggerMatchers1MuInputTags = [
     #cms.InputTag('muonMatchHLTL1','propagatedReco'), # fake, will match if and only if he muon did propagate to station 2
-    #cms.InputTag('muonMatchHLTL1'),
+    cms.InputTag('muonMatchHLTL1'),
     cms.InputTag('muonMatchHLTL2'),
     cms.InputTag('muonMatchHLTL2NoVtx'),
     cms.InputTag('muonMatchHLTL3'),
