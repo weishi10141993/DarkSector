@@ -67,7 +67,7 @@ def FillBin(par,den):
         DEN.pt = cms.vdouble(16, 1000)
         print 'Set probe pt range: 16 - 1000 GeV'
     if den == "pT16" and par == "pt": 
-        DEN.pt = cms.vdouble(16, 20, 25, 30, 35, 40, 50, 60, 100, 500, 1000)
+        DEN.pt = cms.vdouble(16, 20, 25, 30, 35, 40, 50, 60, 100, 1000)
         print 'Set probe pt bins: 16, ..., 1000 GeV'
         
     if den == "pT6" and par == "eta": 
@@ -77,7 +77,7 @@ def FillBin(par,den):
         DEN.pt = cms.vdouble(6, 1000)
         print 'Set probe pt range: 6 - 1000 GeV'
     if den == "pT6" and par == "pt": 
-        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 35, 40, 50, 60, 100, 500, 1000)
+        DEN.pt = cms.vdouble(6, 10, 16, 20, 25, 30, 35, 40, 50, 60, 100, 1000)
         print 'Set probe pt bins: 6, ..., 1000 GeV'
         
     if den == "pT50" and par == "eta": 
@@ -87,7 +87,7 @@ def FillBin(par,den):
         DEN.pt = cms.vdouble(50, 1000)
         print 'Set probe pt range: 50 - 1000 GeV'
     if den == "pT50" and par == "pt": 
-        DEN.pt = cms.vdouble(50, 60, 70, 80, 90, 100, 500, 1000)
+        DEN.pt = cms.vdouble(50, 60, 70, 80, 90, 100, 1000)
         print 'Set probe pt bins: 50, ..., 1000 GeV'
 
 args = sys.argv[1:]
