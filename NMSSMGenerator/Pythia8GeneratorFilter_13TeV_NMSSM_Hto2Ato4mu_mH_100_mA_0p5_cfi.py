@@ -2,7 +2,7 @@
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Generator.Pythia8CommonSettings_cfi import *
-from Configuration.Generator.Pythia8CUEP8M1Settings_cfi import *
+from Configuration.Generator.MCTunes2017.PythiaCP5Settings_cfi import *
 
 generator = cms.EDFilter("Pythia8GeneratorFilter",
 	pythiaHepMCVerbosity = cms.untracked.bool(False),
@@ -13,7 +13,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 	comEnergy = cms.double(13000.0),
 	PythiaParameters = cms.PSet(
 		pythia8CommonSettingsBlock,
-		pythia8CUEP8M1SettingsBlock,
+		pythia8CP5SettingsBlock,
 		pythiaUESettings = cms.vstring(),
 		processParameters = cms.vstring(
 			# This section should be entirely in Pythia 8. See details in
@@ -21,11 +21,11 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 		        #   - http://home.thep.lu.se/~torbjorn/pythia82html/ParticleDataScheme.html
 			'Higgs:useBSM = on',     # Initialize and use the two-Higgs-doublet BSM states
 			'HiggsBSM:all = off',    # Switch off all BSM Higgs production
-			'HiggsBSM:gg2H2 = on',   # Switch on gg->H^0(H_2^0) scattering via loop contributions primarily from top. Code 1022. 
+			'HiggsBSM:gg2H2 = on',   # Switch on gg->H^0(H_2^0) scattering via loop contributions primarily from top. Code 1022.
 			'35:m0 = 100.0',         #  mass in GeV of H0 (PDG ID = 35)
 			'36:m0 = 0.5',           #  mass in GeV of A0 (PDG ID = 36)
 			# decays of H0 (PDG ID = 35)
-			'35:onMode = off',       # Turn off all H0 decay modes 
+			'35:onMode = off',       # Turn off all H0 decay modes
 			'35:onIfMatch = 36 36',  # Allow H0 decays to A0: H0 ->A0A0
 			# decays of A0 (PDG ID = 36)
 			'36:onMode = off',       # Turn off all A0 decay modes
@@ -36,9 +36,9 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 			#'Init:showAllParticleData = on', # Print a list of all particle and decay data. Warning: this will be a long list
 	    ),
 		parameterSets = cms.vstring(
-            'pythiaUESettings', 
+            'pythiaUESettings',
 		    'pythia8CommonSettings',
-		    'pythia8CUEP8M1Settings',
+		    'pythia8CP5Settings',
 		    'processParameters'
 	    )
     )

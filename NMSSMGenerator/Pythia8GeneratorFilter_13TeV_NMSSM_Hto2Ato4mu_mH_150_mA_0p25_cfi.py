@@ -2,7 +2,7 @@
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Generator.Pythia8CommonSettings_cfi import *
-from Configuration.Generator.Pythia8CUEP8M1Settings_cfi import *
+from Configuration.Generator.MCTunes2017.PythiaCP5Settings_cfi import *
 
 generator = cms.EDFilter("Pythia8GeneratorFilter",
                          pythiaHepMCVerbosity = cms.untracked.bool(False),
@@ -13,7 +13,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                          comEnergy = cms.double(13000.0),
                          PythiaParameters = cms.PSet(
         pythia8CommonSettingsBlock,
-        pythia8CUEP8M1SettingsBlock,
+        pythia8CP5SettingsBlock,
         pythiaUESettings = cms.vstring(),
         processParameters = cms.vstring(
             # This section should be entirely in Pythia 8. See details in
@@ -21,28 +21,27 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                     #   - http://home.thep.lu.se/~torbjorn/pythia82html/ParticleDataScheme.html
             'Higgs:useBSM = on',     # Initialize and use the two-Higgs-doublet BSM states
             'HiggsBSM:all = off',    # Switch off all BSM Higgs production
-            'HiggsBSM:gg2H2 = on',   # Switch on gg->H^0(H_2^0) scattering via loop contributions primarily from top. Code 1022. 
+            'HiggsBSM:gg2H2 = on',   # Switch on gg->H^0(H_2^0) scattering via loop contributions primarily from top. Code 1022.
             '35:m0 = 150.0',         #  mass in GeV of H0 (PDG ID = 35)
             # decays of H0 (PDG ID = 35)
-                        '35:addChannel 1 0.01 100 54 54', 
-            '35:onMode = off',       # Turn off all H0 decay modes 
-                        '35:onIfMatch = 54 54', # Allow H0 decays to A0: H0 ->A0A0
-
-                        '54:isResonance = false',
-                        '54:mWidth = 0',
-                        '54:mMin = 0.1',
-                        '54:m0 = 0.25', #  mass in GeV of A0 (PDG ID = 54)
-                        '54:onMode = off', # Turn off all A0 decay modes
-                        '54:onIfMatch = 13 -13', # Allow A0 decays to muons: A0 ->mu+mu-
+            '35:addChannel 1 0.01 100 54 54',
+            '35:onMode = off',       # Turn off all H0 decay modes
+            '35:onIfMatch = 54 54', # Allow H0 decays to A0: H0 ->A0A0
+            '54:isResonance = false',
+            '54:mWidth = 0',
+            '54:mMin = 0.1',
+            '54:m0 = 0.25', #  mass in GeV of A0 (PDG ID = 54)
+            '54:onMode = off', # Turn off all A0 decay modes
+            '54:onIfMatch = 13 -13', # Allow A0 decays to muons: A0 ->mu+mu-
             # Useful debug printouts
             'Init:showProcesses = on',        # Print a list of all processes that will be simulated, with their estimated cross section maxima
             'Init:showChangedSettings = on',  # Print a list of the changed flag/mode/parameter/word setting
             #'Init:showAllParticleData = on', # Print a list of all particle and decay data. Warning: this will be a long list
-                ),
+        ),
         parameterSets = cms.vstring(
-            'pythiaUESettings', 
+            'pythiaUESettings',
                 'pythia8CommonSettings',
-                'pythia8CUEP8M1Settings',
+                'pythia8CP5Settings',
                 'processParameters'
                 )
     )
