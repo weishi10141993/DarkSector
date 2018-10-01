@@ -1,0 +1,25 @@
+decay0: vv=-2.328306e-10 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+decay0: vv=-7.450581e-09 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+decay0: vv=-8.440111e-10 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+mkmom infinite factor
+decay0: vv=-1.502485e-09 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+mkmom infinite factor
+decay0: vv=-1.047738e-08 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+decay0: vv=-2.910383e-11 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+decay0: vv=-5.093170e-10 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+decay0: vv=-7.275958e-10 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+decay0: vv=-2.473826e-10 m1=0.000000e+00 m2=0.000000e+00
+mkmom infinite factor
+-1.000000 < x < 1.000000
+Type= 2  Bad reg= 2
+1 -4.060307 0.138935 2
+2 1.000000 -0.000000 2
+ERROR IN REGULARIZATION
