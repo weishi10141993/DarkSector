@@ -113,6 +113,6 @@ Cleanup:                         False
 Max number of cpus:          8
 
 nSess_1:   5
-nCalls_1:  1000000
+nCalls_1:  10000
 nSess_2:   5
-nCalls_2:  1000000
+nCalls_2:  10000
