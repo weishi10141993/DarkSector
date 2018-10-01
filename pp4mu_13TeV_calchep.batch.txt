@@ -107,7 +107,7 @@ Dist title:	   p,p->4mu
 Dist x-title:	   pT_max(mu) (GeV)
 
 Number of events (per run step): 1000
-Filename:                        pp_4mu_13TeV_calchep_3.6.25_1K
+Filename:                        pp_4mu_13TeV_calchep_3.7.1_1K
 Cleanup:                         False
 
 Max number of cpus:          8
