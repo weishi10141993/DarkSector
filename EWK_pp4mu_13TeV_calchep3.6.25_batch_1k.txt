@@ -1,0 +1,112 @@
+Model:         Standard Model
+Model changed: False
+Gauge:         Feynman
+
+Process:   p,p->m,M,m,M
+Remove: h
+
+Composite: p=u,U,d,D,s,S,c,C,b,B,G
+Composite: mu=m,M
+
+pdf1:      cteq6l (proton)
+pdf2:      cteq6l (proton)
+p1:        6500
+p2:        6500
+
+Parameter: Mh=125
+
+alpha Q :  MZ
+
+Regularization momentum: 34
+Regularization mass: MZ
+Regularization width: wZ
+Regularization power: 2
+
+Regularization momentum: 36
+Regularization mass: MZ
+Regularization width: wZ
+Regularization power: 2
+
+Regularization momentum: 54
+Regularization mass: MZ
+Regularization width: wZ
+Regularization power: 2
+
+Regularization momentum: 56
+Regularization mass: MZ
+Regularization width: wZ
+Regularization power: 2
+
+Regularization momentum: 34
+Regularization mass: 0
+Regularization width: 0
+Regularization power: 2
+
+Regularization momentum: 36
+Regularization mass: 0
+Regularization width: 0
+Regularization power: 2
+
+Regularization momentum: 54
+Regularization mass: 0
+Regularization width: 0
+Regularization power: 2
+
+Regularization momentum: 56
+Regularization mass: 0
+Regularization width: 0
+Regularization power: 2
+
+Kinematics :      12 -> 3 , 456
+Kinematics :      456 ->4 , 56
+Kinematics :      56 -> 5 , 6
+
+# transverse momentum of any muon in event is pT > 5 GeV
+Cut parameter:    T(mu)
+Cut invert:       False
+Cut min:          5.0
+Cut max:            
+
+# transverse momentum of leading muon in event is pT > 15 GeV
+Cut parameter:    T^(mu)
+Cut invert:       False
+Cut min:          15.0
+Cut max:            
+
+# pseudorapidity of any muon in event is -2.5 < eta < 2.5
+Cut parameter:    N(mu)
+Cut invert:       False
+Cut min:          -2.5
+Cut max:          2.5
+
+Dist parameter:    M(m,M)
+Dist min:          0.0
+Dist max:          200.0
+Dist n bins:       100
+Dist title:        p,p->4mu
+Dist x-title:      M(m,M) (GeV)
+
+Dist parameter:    T(mu)
+Dist min:	   0.0
+Dist max:	   50.0
+Dist n bins:	   100
+Dist title:	   p,p->4mu
+Dist x-title:	   pT(mu) (GeV)
+
+Dist parameter:    T^(mu)
+Dist min:	   0.0
+Dist max:	   50.0
+Dist n bins:	   100
+Dist title:	   p,p->4mu
+Dist x-title:	   pT_max(mu) (GeV)
+
+Number of events (per run step): 1000
+Filename:                        EWK_pp_4mu_13TeV_calchep_3.6.25_1K
+Cleanup:                         False
+
+Max number of cpus:          8
+
+nSess_1:   5
+nCalls_1:  1000000
+nSess_2:   5
+nCalls_2:  1000000
