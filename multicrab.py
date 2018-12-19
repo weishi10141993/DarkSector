@@ -4,8 +4,8 @@ import datetime
 config = Configuration()
 
 workflow='reco' 
-cmssw_version='1017'
-extra_info='TnP_2018B_SingleMu'
+cmssw_version='1020'
+extra_info='TnP_2018_SingleMu'
 era=2018
 RunOnMC = False
 WriteToTAMU = True
@@ -193,10 +193,14 @@ print('Nutples will appear in the usual location in the subdiretory '+JOBID)
 #  "ZeroBias8_Run2017F-v1" :["/ZeroBias8/Run2017F-v1/RAW", Nunits, -1]
 #}
 
-logbase="Run2018B_PR_SingleMuon"
+logbase="Run2018_PR_SingleMuon"
 myJobs={
   "SingleMu_2018B-PR-v1" :["/SingleMuon/Run2018B-PromptReco-v1/AOD", Nunits, -1],
   "SingleMu_2018B-PR-v2" :["/SingleMuon/Run2018B-PromptReco-v2/AOD", Nunits, -1],
+  "SingleMu_2018C-PR-v1" :["/SingleMuon/Run2018C-PromptReco-v1/AOD", Nunits, -1],
+  "SingleMu_2018C-PR-v2" :["/SingleMuon/Run2018C-PromptReco-v2/AOD", Nunits, -1],
+  "SingleMu_2018C-PR-v3" :["/SingleMuon/Run2018C-PromptReco-v3/AOD", Nunits, -1],
+  "SingleMu_2018D-PR-v2" :["/SingleMuon/Run2018D-PromptReco-v2/AOD", Nunits, -1],
 }
 
 #logbase="Commissioning2018_ZeroBiasX"
@@ -270,7 +274,7 @@ config.Data.unitsPerJob = 1
 ## config.Data.totalUnits = 1
 config.Data.useParent = useParent
 config.Data.outLFNDirBase = output
-config.Data.runRange = '317509-318876'
+config.Data.runRange = '317509-325175'
 
 # apply lumi json file
 if (not(RunOnMC)) :
