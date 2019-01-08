@@ -23,39 +23,12 @@ if "CMSSW_7_6_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('76X_dataRun2_v15')
     process.source.fileNames = [
         '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/0013A0EA-94AE-E511-9B84-001E67398683.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/02A9F67F-A2AE-E511-939A-0CC47A4C8EB6.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/02D39573-BDAE-E511-AF22-00266CF9AF00.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/0639B2A3-A7AE-E511-887E-A0000420FE80.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/06C00544-AAAE-E511-831D-00A0D1EE2BBC.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/06DCCB30-C7AE-E511-A318-0025905A6092.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/0ADF8F02-94AE-E511-96F0-549F358EB72E.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/0C78D007-95AE-E511-87A9-0CC47A4DEDCA.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/10438105-95AE-E511-ADCD-0090FAA59634.root',
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/1077A155-AAAE-E511-A1C7-0CC47A4DEF3E.root',
     ]
 elif "CMSSW_8_0_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('80X_dataRun2_2016SeptRepro_v4')
     process.source.fileNames = [
         '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/0006BA63-7097-E611-BBE8-001E67E71412.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/0018FFBA-5B94-E611-AD99-008CFAFBF52E.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/003343EB-7496-E611-B5EC-848F69FD2997.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/0060EAA8-9197-E611-9D75-001E67E59BE3.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/00E2CD87-9798-E611-8CA4-848F69FD4598.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/020BB297-5B97-E611-82B5-848F69FD4541.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/04CA2B1A-0897-E611-A716-0025907FD242.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/06069075-3C97-E611-92D8-008CFA00018C.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/061698EB-E096-E611-840C-848F69FD3EC9.root',
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/062B282E-8097-E611-9710-001E67E6F86E.root',
     ]
-    #process.source.fileNames = [ 'file:/tmp/gpetrucc/0006BA63-7097-E611-BBE8-001E67E71412.root' ]
-    import FWCore.PythonUtilities.LumiList as LumiList
-    json = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/ReReco/Final/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt'
-    process.source.lumisToProcess = LumiList.LumiList(filename = json).getVLuminosityBlockRange()
-
-#elif "CMSSW_9_" in os.environ['CMSSW_VERSION']:
-#    process.GlobalTag.globaltag = cms.string('92X_dataRun2_Prompt_v4')
-#    # process.source.fileNames = ['root://cms-xrd-global.cern.ch//store/data/Run2017C/Charmonium/AOD/PromptReco-v1/000/299/368/00000/1C041F03-806D-E711-B796-02163E0136CC.root']
-#    #process.source.fileNames = ['file:/u/user/kplee/scratch/ROOTFiles_Test/92X/AOD_Charmonium_Run2017Bv1_Run297050.root']
 elif "CMSSW_9_4_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('91X_mcRun2_asymptotic_v3')
     process.source.fileNames = [
@@ -71,8 +44,6 @@ elif "CMSSW_10_2_" in os.environ['CMSSW_VERSION']:
     ]
     #Only use runs after control triggers are implemented, i.e. after run 317509
 else: raise RuntimeError, "Unknown CMSSW version %s" % os.environ['CMSSW_VERSION']
-
-
 
 ## ==== Fast Filters ====
 process.goodVertexFilter = cms.EDFilter("VertexSelector",
@@ -92,10 +63,8 @@ process.triggerResultsFilter.triggerConditions = cms.vstring( 'HLT_Mu7p5_L2Mu2_J
 process.triggerResultsFilter.l1tResults = "gtStage2Digis"
 process.triggerResultsFilter.throw = False
 process.triggerResultsFilter.hltResults = cms.InputTag( "TriggerResults", "", "HLT" )
-process.HLTMu   = process.triggerResultsFilter.clone(triggerConditions = [ 'HLT_Mu7p5_L2Mu2_Jpsi_v*' ])
-process.HLTBoth = process.triggerResultsFilter.clone(triggerConditions = [ 'HLT_Mu7p5_L2Mu2_Jpsi_v*', 'HLT_Mu*_Track*_Jpsi*' ])
 
-process.fastFilter = cms.Sequence(process.goodVertexFilter + process.noScraping)
+process.fastFilter = cms.Sequence(process.goodVertexFilter + process.noScraping + process.triggerResultsFilter)
 
 ## ==== Merge CaloMuons and Tracks into the collection of reco::Muons  ====
 from RecoMuon.MuonIdentification.calomuons_cfi import calomuons;
@@ -242,7 +211,6 @@ process.tnpSimpleSequence = cms.Sequence(
 )
 
 process.tagAndProbe = cms.Path( 
-    process.HLTBoth    +
     process.fastFilter +
     process.mergedMuons                 *
     process.patMuonsWithTriggerSequence *
