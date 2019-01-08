@@ -149,6 +149,8 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
        Control6ByPathL3Filter = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',0,1).empty()"),
        Control6ByFilterL3 = cms.string("!triggerObjectMatchesByFilter('hltL3fL1sSingleMu3L1f0L2f10OneMuL3Filtered6NoVtx').empty()"),
        Control6ByFilterL1 = cms.string("!triggerObjectMatchesByFilter('hltL1fL1sSingleMu3L1Filtered0').empty()"),
+       #Jpsi tagging
+       Mu7p5_L2Mu2_Jpsi = cms.string("!triggerObjectMatchesByPath('HLT_Mu7p5_L2Mu2_Jpsi_v*',1,0).empty()"),
     ),
     tagVariables = cms.PSet(
         pt  = cms.string("pt"),
@@ -180,6 +182,8 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
         Control6ByPathL3Filter = cms.string("!triggerObjectMatchesByPath('HLT_TrkMu6NoFiltersNoVtx_v*',0,1).empty()"),
         Control6ByFilterL3 = cms.string("!triggerObjectMatchesByFilter('hltL3fL1sSingleMu3L1f0L2f10OneMuL3Filtered6NoVtx').empty()"),
         Control6ByFilterL1 = cms.string("!triggerObjectMatchesByFilter('hltL1fL1sSingleMu3L1Filtered0').empty()"),
+        #Jspi tagging
+        Mu7p5_L2Mu2_Jpsi = cms.string("!triggerObjectMatchesByPath('HLT_Mu7p5_L2Mu2_Jpsi_v*',1,0).empty()"),
     ),
     pairVariables = cms.PSet(
         dz  = cms.string("daughter(0).vz - daughter(1).vz"),
