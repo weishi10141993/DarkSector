@@ -22,12 +22,12 @@ import os
 if "CMSSW_7_6_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('76X_dataRun2_v15')
     process.source.fileNames = [
-        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/0013A0EA-94AE-E511-9B84-001E67398683.root',
+        '/store/data/Run2015D/Charmonium/AOD/16Dec2015-v1/50000/0013A0EA-94AE-E511-9B84-001E67398683.root'
     ]
 elif "CMSSW_8_0_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('80X_dataRun2_2016SeptRepro_v4')
     process.source.fileNames = [
-        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/0006BA63-7097-E611-BBE8-001E67E71412.root',
+        '/store/data/Run2016G/Charmonium/AOD/23Sep2016-v1/100000/0006BA63-7097-E611-BBE8-001E67E71412.root'
     ]
 elif "CMSSW_9_4_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('91X_mcRun2_asymptotic_v3')
@@ -38,9 +38,7 @@ elif "CMSSW_10_2_" in os.environ['CMSSW_VERSION']:
     process.GlobalTag.globaltag = cms.string('102X_dataRun2_Prompt_v11')
 
     process.source.fileNames = [
-        '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/B6F906F2-597C-E811-BBAA-FA163E4F3A7C.root',
-        '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/B6228E42-547C-E811-981A-FA163EBCAB45.root',
-        '/store/data/Run2018B/SingleMuon/AOD/PromptReco-v2/000/318/828/00000/ACAA703C-4F7C-E811-A0AD-FA163E3BE999.root'
+        '/store/data/Run2018C/Charmonium/AOD/PromptReco-v1/000/319/347/00000/02675E66-E084-E811-AECA-FA163E092C74.root'
     ]
     #Only use runs after control triggers are implemented, i.e. after run 317509
 else: raise RuntimeError, "Unknown CMSSW version %s" % os.environ['CMSSW_VERSION']
