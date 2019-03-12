@@ -200,18 +200,26 @@ if bgFitFunction == 'default':
     if ('pt' in par):
         shape = cms.vstring("voigtPlusExpo")
         print 'Fit func updated: voigtPlusExpo'
+        #special fit function for one bin in MC (most populated bin)
+        if scenario == 'mc_all':
+            #C16 trigger
+            if (len(DEN.pt)==9):
+                shape = cms.vstring("voigtPlusExpo","*pt_bin5*","voigtPlusCMS")
+            #C6 trigger
+            if (len(DEN.pt)==11):
+                shape = cms.vstring("voigtPlusExpo","*pt_bin7*","voigtPlusCMS")
                     
 mass_variable ="mass"
-#compute efficiency
-if scenario == 'data_all':
-    print 'Fitting'
-    setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
-        EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"above"),
-        UnbinnedVariables = cms.vstring(mass_variable),
-        BinnedVariables = DEN,
-        BinToPDFmap = shape
-        )
+
+#compute efficiency, same for mc and data
+print 'Fitting'
+setattr(process.TnP_Trigger.Efficiencies, "Wei", cms.PSet(
+    EfficiencyCategoryAndState = cms.vstring(Sel_dic[num],"above"),
+    UnbinnedVariables = cms.vstring(mass_variable),
+    BinnedVariables = DEN,
+    BinToPDFmap = shape
     )
+       )
             
 process.p = cms.Path(
     process.TnP_Trigger
