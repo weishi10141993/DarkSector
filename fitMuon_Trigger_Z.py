@@ -155,8 +155,8 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
         ),
         voigtPlusCMS = cms.vstring(
             "Voigtian::signal(mass, mean[90,80,100], width[2.495], sigma[3,1,20])",
-            "RooCMSShape::backgroundPass(mass, alphaPass[70.,60.,90.], betaPass[0.02, 0.01,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])",
-            "RooCMSShape::backgroundFail(mass, alphaFail[70.,60.,90.], betaFail[0.02, 0.01,0.1], gammaFail[0.001, 0.,0.1], peakPass)",
+            "RooCMSShape::backgroundPass(mass, alphaPass[105.,90.,120.], betaPass[0.02, 0.01,0.1], gammaPass[0.001, 0.,0.1], peakPass[90.0])",
+            "RooCMSShape::backgroundFail(mass, alphaFail[105.,90.,120.], betaFail[0.02, 0.01,0.1], gammaFail[0.001, 0.,0.1], peakPass)",
             "efficiency[0.9,0.7,1]",
             "signalFractionInPassing[0.9]"
         ),
