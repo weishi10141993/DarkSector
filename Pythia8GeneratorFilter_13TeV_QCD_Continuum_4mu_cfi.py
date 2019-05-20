@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 from Configuration.Generator.Pythia8CommonSettings_cfi import *
 from Configuration.Generator.MCTunes2017.PythiaCP5Settings_cfi import *
+#Adapted from HIN-18-003: https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/HIN-pPb816Spring16GS-00108
 
 generator = cms.EDFilter("Pythia8GeneratorFilter",
   maxEventsToPrint = cms.untracked.int32(0),
@@ -40,7 +41,6 @@ mugenfilter = cms.EDFilter("MCSmartSingleParticleFilter",
       MaxDecayRadius = cms.untracked.vdouble(2000., 2000.),
       MinDecayZ = cms.untracked.vdouble(-4000., -4000.),
       MaxDecayZ = cms.untracked.vdouble(4000., 4000.),
-#      BetaBoost = cms.untracked.double(-0.434)
 )
 
 configurationMetadata = cms.untracked.PSet(
