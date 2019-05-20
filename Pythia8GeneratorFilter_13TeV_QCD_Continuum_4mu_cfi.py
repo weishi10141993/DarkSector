@@ -33,7 +33,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 )
 
 mugenfilter = cms.EDFilter("MCSmartSingleParticleFilter",
-      MinPt = cms.untracked.vdouble(15., 15.),
+      MinPt = cms.untracked.vdouble(8., 8.),
       MinEta = cms.untracked.vdouble(-3.0, -3.0),
       MaxEta = cms.untracked.vdouble(3.0, 3.0),
       ParticleID = cms.untracked.vint32(13, -13),
