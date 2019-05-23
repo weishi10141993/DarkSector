@@ -33,18 +33,19 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
   )
 )
 
-fourmugenfilter = cms.EDFilter("MCMultiParticleFilter",
-                               src = cms.untracked.InputTag("generatorSmeared"),
-                               NumRequired = cms.int32(4),
-                               AcceptMore = cms.bool(True),
-                               ParticleID = cms.vint32(13),
-                               Status = cms.vint32(1),
-                               PtMin = cms.vdouble(8.0),
-                               EtaMax = cms.vdouble(2.4),
-                              )
+mugenfilter = cms.EDFilter("MCSmartSingleParticleFilter",
+      MinPt = cms.untracked.vdouble(8., 8.),
+      MinEta = cms.untracked.vdouble(-2.4, -2.4),
+      MaxEta = cms.untracked.vdouble(2.4, 2.4),
+      ParticleID = cms.untracked.vint32(13, -13),
+      Status = cms.untracked.vint32(1, 1),
+      MaxDecayRadius = cms.untracked.vdouble(2000., 2000.),
+      MinDecayZ = cms.untracked.vdouble(-4000., -4000.),
+      MaxDecayZ = cms.untracked.vdouble(4000., 4000.),
+)
 
 configurationMetadata = cms.untracked.PSet(
     annotation = cms.untracked.string('PYTHIA 8 QCD in pp (pt-hat 20 GeV) at sqrt(s) = 13 TeV')
 )
 
-ProductionFilterSequence = cms.Sequence(generator*fourmugenfilter)
+ProductionFilterSequence = cms.Sequence(generator*mugenfilter)
