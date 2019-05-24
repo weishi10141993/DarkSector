@@ -16,9 +16,8 @@ generator = cms.EDFilter("Pythia8HadronizerFilter",
         pythia8CP5SettingsBlock,
         processParameters = cms.vstring(
             'ParticleDecays:tau0Max = 1000.1',
-            '3000022:all = ad ad 3 0 0 5.0 0.00001 0.0 0.0 50.0', 
-            'LesHouches:setLifetime = 2', #Set lifetime using PYTHIA, ignore LHE lifetime setting
-            '3000022:tau0 = 50.0'
+            'LesHouches:setLifetime = 2', #Ignore lifetime setting in LHE
+            '3000022:all = ad void 3 0 0 5.0 0.00001 0.0 0.0 50.0', #Set lifetime in Pythia8
         ),
         parameterSets = cms.vstring(
             'pythia8CommonSettings',
