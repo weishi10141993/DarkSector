@@ -1,3 +1,5 @@
+#Adapted from: https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/HIG-RunIIFall17wmLHEGS-03786/0
+
 import FWCore.ParameterSet.Config as cms
 
 #externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
@@ -167,6 +169,7 @@ generator = cms.EDFilter("Herwig7GeneratorFilter",
     hw_np = cms.vstring(
         'cd /Herwig/Particles',
         'create ThePEG::ParticleData n1',
+	'# From Herwig7 manual: setup particle ID PDGname mass width cut ctau charge color spin(2S+1) stable',
         'setup n1 1000022 n1 10.0 0.00001 0.0 0.0 0 0 2 0',
         'create ThePEG::ParticleData nD',
         'setup nD 3000001 nD 1.0 0.0 0.0 0.0 0 0 2 1',
