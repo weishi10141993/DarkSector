@@ -15,11 +15,17 @@ generator = cms.EDFilter("Pythia8HadronizerFilter",
         pythia8CommonSettingsBlock,
         pythia8CP5SettingsBlock,
         processParameters = cms.vstring(
+            'SLHA:keepSM = on',
+            'SLHA:minMassSM = 10.',
             'SLHA:allowUserOverride = on',
+            'ParticleDecays:limitTau0 = on',
             'ParticleDecays:tau0Max = 1000.1',
-            #'LesHouches:setLifetime = 2', #Ignore lifetime setting in LHE
-            '3000022:all = ad void 3 0 0 5.0 0.00001 0.0 0.0 50.0 1 1 0 0 1', #Set lifetime in Pythia8
-            '3000022:oneChannel = on 1.0 100 13 -13' #Decay to mu pairs
+            'LesHouches:setLifetime = 2',
+            '3000022:all = ad void 3 0 0',
+            '3000022:mayDecay = true',
+            '3000022:tau0 = 50.0',
+            '3000022:oneChannel = on 1.0 0 13 -13'
+            #'3000022:all = ad void 3 0 0 5.0 0.00001 0.0 0.0 50.0 1 1 0 0 1', #Set lifetime in Pythia8
         ),
         parameterSets = cms.vstring(
             'pythia8CommonSettings',
