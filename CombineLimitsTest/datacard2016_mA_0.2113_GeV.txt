@@ -1,0 +1,28 @@
+imax 1  number of channels
+jmax 1  number of backgrounds
+kmax *  number of nuisance parameters (sources of systematical uncertainties)
+-----------------------------------------------------------------------------
+shapes * * ../../workSpaces/2016/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:$PROCESS
+shapes data_obs A  ../../workSpaces/2016/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:data_obs_SR1
+-----------------------------------------------------------------------------
+bin               A
+observation      -1
+-----------------------------------------------------------------------------
+bin                           A          A
+process                       0          1
+process                       signal1    BBbar_below_Jpsi_2D
+rate                          1.000       7.260
+-----------------------------------------------------------------------------
+lumi_13TeV              lnN   1.025       -
+CMS_eff_mu_hlt          lnN   1.060       -
+CMS_eff_mu_id           lnN   1.024       -
+CMS_eff_mu_iso          lnN   1.020       -
+CMS_eff_mu_pileup       lnN   1.002       -
+QCDscale_ggH            lnN   1.080       -
+Xsec_BR_decay           lnN   1.038       -
+CMS_H2A4Mu_eff_ovlp_trk lnN   1.024       -
+CMS_H2A4Mu_eff_ovlp_mu  lnN   1.026       -
+CMS_H2A4Mu_effdimu_mass lnN   1.015       -
+CMS_H2A4Mu_nnlo_pt      lnN   1.020       -
+CMS_H2A4Mu_BBbar_norm   lnN     -        1.123
+CMS_H2A4Mu_BBbar_syst   lnN     -        1.200 

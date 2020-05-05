@@ -1,0 +1,33 @@
+Combination of datacard2016_mA_0.2113_GeV.txt  datacard2017_mA_0.2113_GeV.txt  datacard2018_mA_0.2113_GeV.txt
+imax 3 number of bins
+jmax 1 number of processes minus 1
+kmax 13 number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes *         ch1       ../../workSpaces/2016/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:$PROCESS
+shapes data_obs  ch1       ../../workSpaces/2016/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:data_obs_SR1
+shapes *         ch2       ../../workSpaces/2017/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:$PROCESS
+shapes data_obs  ch2       ../../workSpaces/2017/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:data_obs_SR1
+shapes *         ch3       ../../workSpaces/2018/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:$PROCESS
+shapes data_obs  ch3       ../../workSpaces/2018/ws_H2A4Mu_mA_0.2113_GeV.root w_H2A4Mu:data_obs_SR1
+----------------------------------------------------------------------------------------------------------------------------------
+bin          ch1    ch2    ch3  
+observation  -1     -1     -1   
+----------------------------------------------------------------------------------------------------------------------------------
+bin                                        ch1                  ch1                  ch2                  ch2                  ch3                  ch3                
+process                                    signal1              BBbar_below_Jpsi_2D  signal1              BBbar_below_Jpsi_2D  signal1              BBbar_below_Jpsi_2D
+process                                    0                    1                    0                    1                    0                    1                  
+rate                                       1                    7.26                 1                    1.29                 1                    2.78               
+----------------------------------------------------------------------------------------------------------------------------------
+CMS_H2A4Mu_BBbar_norm   lnN                -                    1.123                -                    1.123                -                    1.123              
+CMS_H2A4Mu_BBbar_syst   lnN                -                    1.2                  -                    1.2                  -                    1.2                
+CMS_H2A4Mu_eff_ovlp_mu   lnN               1.026                -                    1.026                -                    1.026                -                  
+CMS_H2A4Mu_eff_ovlp_trk   lnN              1.024                -                    1.024                -                    1.024                -                  
+CMS_H2A4Mu_effdimu_mass   lnN              1.015                -                    1.015                -                    1.015                -                  
+CMS_H2A4Mu_nnlo_pt      lnN                1.02                 -                    1.02                 -                    1.02                 -                  
+CMS_eff_mu_hlt          lnN                1.06                 -                    1.015                -                    1.015                -                  
+CMS_eff_mu_id           lnN                1.024                -                    1.024                -                    1.024                -                  
+CMS_eff_mu_iso          lnN                1.02                 -                    1.02                 -                    1.02                 -                  
+CMS_eff_mu_pileup       lnN                1.002                -                    1.002                -                    1.002                -                  
+QCDscale_ggH            lnN                1.08                 -                    1.08                 -                    1.08                 -                  
+Xsec_BR_decay           lnN                1.038                -                    1.038                -                    1.038                -                  
+lumi_13TeV              lnN                1.025                -                    1.025                -                    1.025                -                  
