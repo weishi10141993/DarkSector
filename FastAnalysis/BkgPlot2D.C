@@ -106,8 +106,7 @@ void BkgPlot2D() {
   corridorUp->SetLineColor(1); corridorUp->SetLineStyle(9); corridorUp->SetLineWidth(2);
 
   //==================================================================================
-  //                                  Use pdf from workspace:
-  //           template2D_below_Jpsi, template2D_above_Jpsi, template2D_above_Upsilon
+  //            The workspace stores all background pdf and the dataset after cuts
   //==================================================================================
 
   TFile* file = new TFile(inputFile2);
