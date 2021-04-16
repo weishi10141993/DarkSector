@@ -36,7 +36,7 @@ To examine the dataset:
     // This prints values of the first data point in the dataset
     w->data("ds_dimudimu_signal_2D_all")->get(0)->Print("V");
     
-    // To plot one variable
+    // In the macro, to plot one variable 
     RooPlot* plotm1 = w->var("m1_all")->frame(Title("m1 data"), Bins(300));
     w->data("ds_dimudimu_signal_2D_all")->plotOn(plotm1, DataError(RooAbsData::SumW2), Name("data_m1"));
     TCanvas * c1 = new TCanvas("c1");
