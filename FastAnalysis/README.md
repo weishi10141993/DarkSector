@@ -43,5 +43,7 @@ To examine the dataset:
     c1->cd(); plotm1->Draw(); 
 
 The original macro is here: https://github.com/weishi10141993/MuJetAnalysis_BKGEstimation/blob/test/LowMassBKGPlot2D18.C
+
 The cuts applied to each dataset is here: https://github.com/weishi10141993/MuJetAnalysis_BKGEstimation/blob/test/LowMassBKGFit1D18.C#L826-L975
+
 The datasets are built from the trees in 2018 ntuples (no cuts applied for ntuples). The 2018 data ntuples are stored at TAMU Terra cluster: /scratch/user/ws13/2018DataNtuples_2SAmu_NoVtxProbCut_4HLT
